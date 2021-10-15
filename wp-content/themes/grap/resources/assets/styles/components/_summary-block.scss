@@ -1,0 +1,44 @@
+.summary-block {
+  padding: 6.7rem 0 7.9rem;
+  position: relative;
+  z-index: 3;
+
+  .block-wrap {
+    display: grid;
+    grid-template-columns: 28.26vw 51.74vw;
+    grid-column-gap: 4.5rem;
+    @include mq(lg) {
+      grid-template-columns: unset;
+    }
+
+    .title {
+      @include border-color(primary-orange);
+    }
+
+    .content {
+      h3 {
+        margin-bottom: 3.3rem;
+        @include text-color(primary-orange);
+      }
+
+      p {
+        &:not(:last-child) {
+          margin-bottom: 3.3rem;
+        }
+      }
+
+      @include mq(lg) {
+        margin-top: 3rem;
+      }
+    }
+  }
+
+  .bg-attach-left {
+    width: 31.25vw;
+    position: absolute;
+    top: 15%;
+    @include mq(lg) {
+      display: none;
+    }
+  }
+}

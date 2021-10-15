@@ -1,0 +1,190 @@
+// ==========================================================================
+// Utilities
+// Define functions and mixins at this partial.
+// ==========================================================================
+
+// Mixins
+
+//BEM(Block Element Modifier) Naming Convention
+// For Element
+// $element  - Just the element name for the parent block (doesn"t require the parent Block name)
+// @usage    - `.Nav {@include e(item){...}}`
+@mixin e($element){
+  &__#{$element}{
+    @content;
+  }
+}
+
+// For Modifier
+// $modifier  - Just the modifier name for the parent block or element
+// @usage     - `.Nav {@include e(item) {@include m(active) {...}}}`
+@mixin m($modifier){
+  &--#{$modifier}{
+    @content;
+  }
+}
+
+// Media Queries
+// $break  - RWD break point values, change them in _config.scss. Default: bootstrap grid
+// @usage  - `.Nav {@include mq(sm) {...}}`
+@mixin mq($break) {
+  @if $break == "xs" {//lowest breakpoint value
+    @media(max-width: #{$xs-device - 1px}){
+      @content;
+    }
+  }
+  @else if $break == "sm" {// phone
+    @media(max-width: #{$sm-device - 1px}){
+      @content;
+    }
+  }
+  @else if $break == "md" {// tablet
+    @media(max-width: #{$md-device - 1px}){
+      @content;
+    }
+  }
+  @else if $break == "lg" {// laptop and desktop
+    @media(max-width: #{$lg-device - 1px}){
+      @content;
+    }
+  }
+  @else if $break == "xl" {// High res desktop and TVs
+    @media(max-width: #{$xl-device - 1px}){
+      @content;
+    }
+  }
+  @else if $break == "xxl" {
+    @media(min-width: $xxl-device){
+      @content;
+    }
+  }
+  @else {
+    @error 'No value could be retrieved for "#{$break}"';
+  }
+}
+
+// Hover mixin
+// @usage  - `button {@include hover {...}}`
+@mixin hover {
+  &:hover,
+  &:active,
+  &:focus {
+    @extend %hover;
+    @content;
+  }
+}
+
+@mixin text-color($palette) {
+	color: map-get($colors, $palette);
+}
+
+@mixin bg-color($palette) {
+  background-color: map-get($colors, $palette);
+}
+
+@mixin border-color($palette) {
+  border-color: map-get($colors, $palette);
+}
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+@mixin font-size($size) {
+  font-size: map-get($font-sizes, $size);
+}
+
+@mixin font-weight($size) {
+  font-weight: map-get($font-weights, $size);
+}
+
+@mixin overlay($background-color) {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $background-color;
+}
+
+@mixin absolute-center() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin add-slide-spacing($spacing) {
+  .slick-track,
+  .slick-list {
+    display: flex;
+  }
+
+  .slick-slide {
+    margin-left: $spacing;
+    margin-right: $spacing;
+    display: flex;
+
+    & > div {
+      width: 100%;
+      display: flex;
+    }
+  }
+
+  .slick-list {
+    margin-left: -$spacing;
+    margin-right: -$spacing;
+  }
+}
+
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+
+@mixin placeholder {
+  @include optional-at-root("::-webkit-input-placeholder") {
+    @content;
+  }
+
+  @include optional-at-root(":-moz-placeholder") {
+    @content;
+  }
+
+  @include optional-at-root("::-moz-placeholder") {
+    @content;
+  }
+
+  @include optional-at-root(":-ms-input-placeholder") {
+    @content;
+  }
+}
+
+@mixin bg-attach-bottom-right() {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}

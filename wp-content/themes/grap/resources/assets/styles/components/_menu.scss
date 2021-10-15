@@ -1,0 +1,76 @@
+.menu {
+  background-image: url(../images/nav-bg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: fixed;
+  left: 100%;
+  width: 100%;
+  height: 100vh;
+  z-index: 999;
+  transition: left 0.5s;
+  overflow-y: auto;
+  @include mq(sm) {
+    background-position: 45% center;
+  }
+
+  &.opened {
+    left: 0%;
+  }
+
+  .nav-wrap {
+    padding: 3.75vw 0 4.24vw;
+
+    .logo {
+      width: 20.1vw;
+      @include mq(lg) {
+        width: 20rem;
+      }
+      @include mq(sm) {
+        width: 15rem;
+      }
+    }
+
+    .menu-icon {
+      cursor: pointer;
+
+      .label {
+        text-transform: uppercase;
+        font-size: 2rem;
+        line-height: 20px;
+        margin-right: 1.6rem;
+      }
+
+      .icon {
+        width: 3rem;
+      }
+    }
+  }
+
+  &-group {
+    margin-top: 4.4rem;
+
+    .menu-item {
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+      
+      &:hover {
+        @include text-color(primary-orange);
+      }
+    }
+  }
+
+  .cta-group {
+    margin-top: 7.4rem;
+    margin-bottom: 8.9rem;
+
+    .cta-item {
+      margin-bottom: 1.6rem;
+
+      &:hover {
+        @include text-color(primary-orange);
+      }
+    }
+  }
+}

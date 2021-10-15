@@ -1,0 +1,52 @@
+.container {
+  @media(min-width: $lg-device) {
+    max-width: $max-container-width;
+  }
+
+  @include mq(lg) {
+    max-width: 100%;
+    padding-left: $padding-on-mobile;
+    padding-right: $padding-on-mobile;
+  }
+}
+
+button:focus {
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+a[href^=tel] {
+  @include text-color(base-light);
+}
+
+a, btn, input {
+  &:focus {
+    box-shadow: inherit;
+    outline: none;
+  }
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+a {
+  transition: color .3s;
+
+  &, &:hover {
+    @include text-color(base-dark);
+    text-decoration: none;
+  }
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ol, ul, dl {
+  margin: 0;
+}

@@ -1,0 +1,27 @@
+header {
+  height: 35.42vw;
+  min-height: 45rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  @include mq(lg) {
+    height: auto;
+    min-height: auto;
+  }
+
+  &.bg-attach-top-right {
+    background-position: center;
+    position: relative;
+  }
+
+  .title {
+    margin-top: 7.014vw;
+    @include mq(lg) {
+      padding-bottom: 5rem;
+      text-align: center;
+    }
+
+    .page-title {
+      margin-bottom: 1.2rem;
+    }
+  }
+}

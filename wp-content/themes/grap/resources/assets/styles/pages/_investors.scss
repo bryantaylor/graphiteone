@@ -1,0 +1,13 @@
+.investors.page-investors-data {
+  .statistics-block {
+    padding-top: 7.8rem;
+
+    .statistics-wrap {
+      .statistics-item {
+        .content {
+          @include border-color(base-dark);
+        }
+      }
+    }
+  }
+}

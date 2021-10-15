@@ -1,0 +1,122 @@
+.latest-news-block {
+  padding: 7rem 0 6.7rem 4.154vw;
+  position: relative;
+  @include bg-color(base-light);
+  @include mq(lg) {
+    padding: 7rem 2.5rem 18rem;
+  }
+
+  &::before {
+    content: "";
+    height: calc(100% + 30rem);
+    background-image: url(../images/news-vector.png);
+    @include bg-attach-bottom-right();
+    @include mq(lg) {
+      height: 60%;
+    }
+  }
+
+  .block-wrap {
+    position: relative;
+    z-index: 3;
+    width: 43.96vw;
+    @include mq(lg) {
+      width: 100%;
+    }
+
+    .title {
+      width: 28.26vw;
+      @include border-color(secondary-dark);
+      @include mq(lg) {
+        width: 100%;
+      }
+      @include mq(sm) { 
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 2.5rem;
+      }
+    }
+
+    .news-wrap {
+      position: relative;
+
+      .news {
+        margin-top: 3.2rem;
+        @include add-slide-spacing(2rem);
+
+        .post {
+          &-date,
+          &-button {
+            font-size: 1.6rem;
+            line-height: 22px;
+            @include font-weight(bold);
+          }
+
+          &-date {
+            opacity: 0.5;
+          }
+
+          &-title {
+            margin-top: 1.6rem;
+          }
+
+          &-button {
+            margin-top: 1.6rem;
+
+            .arrow-icon {
+              margin-left: 1rem;
+              width: 2.4rem;
+            }
+          }
+        }
+      }
+
+      .slider-nav {
+        position: absolute;
+        right: 0;
+        bottom: -1.5rem;
+
+        .nav-icon {
+          width: 3.8rem;
+          cursor: pointer;
+        }
+
+        .prev {
+          margin-right: 1rem;
+        }
+      }
+    }
+
+    .button {
+      margin-top: 9rem;
+      @include mq(sm) {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .bg-right {
+    height: calc(100% + 23rem);
+    @include bg-attach-bottom-right();
+    background-position: bottom right;
+    @include mq(lg) {
+      height: 60%;
+    }
+  }
+
+  .bg-center {
+    position: absolute;
+    top: 7rem;
+    right: 4.154vw;
+    width: 43.88vw;
+    height: 29.24vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 2;
+    @include mq(lg) {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "fonts/Hellix-Bold.ttf": "fonts/Hellix-Bold_97237be2.ttf",
+  "fonts/Hellix-Light.ttf": "fonts/Hellix-Light_41583ef5.ttf",
+  "fonts/Hellix-Regular.ttf": "fonts/Hellix-Regular_025c0371.ttf",
+  "images/arrow-right.png": "images/arrow-right_ee200f78.png",
+  "images/body-vector-2.png": "images/body-vector-2_83f46be7.png",
+  "images/body-vector.png": "images/body-vector_cce04001.png",
+  "images/close-icon.png": "images/close-icon_addd186f.png",
+  "images/menu-icon.png": "images/menu-icon_5cf41146.png",
+  "images/nav-bg.png": "images/nav-bg_3ed3c07b.png",
+  "images/news-vector.png": "images/news-vector_d755ff97.png",
+  "images/next-icon.png": "images/next-icon_8bc53ec5.png",
+  "images/prev-icon.png": "images/prev-icon_1629f103.png",
+  "images/quote-vector.png": "images/quote-vector_b33f2d03.png",
+  "scripts/customizer.js": "scripts/customizer_21d470ad.js",
+  "styles/main.css": "styles/main_21d470ad.css",
+  "scripts/main.js": "scripts/main_21d470ad.js"
+}

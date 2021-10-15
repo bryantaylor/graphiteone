@@ -1,0 +1,33 @@
+.vertical-feature-block {
+  padding: 7rem 0;
+  @include bg-color(secondary-dark);
+
+  .block-wrap {
+    display: grid;
+    grid-template-columns: 28.26vw 51.74vw;
+    grid-column-gap: 4.5rem;
+    @include mq(lg) {
+      grid-template-columns: unset;
+    }
+
+    .title {
+      @include border-color(base-light);
+    }
+
+    .content-wrap {
+      @include mq(lg) {
+        margin-top: 3rem;
+      }
+
+      .content {
+        h3 {
+          margin-bottom: 3.3rem;
+        }
+      }
+
+      .button {
+        margin-top: 3.3rem;
+      }
+    }
+  }
+}

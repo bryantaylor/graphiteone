@@ -1,0 +1,76 @@
+.quote-block {
+  padding: 3.7rem 0 6.8rem 4.154vw;
+  display: grid;
+  grid-template-columns: 28.264vw 1fr;
+  grid-column-gap: 4.5rem;
+  @include bg-color(secondary-dark);
+  @include mq(lg) {
+    padding: 0;
+    grid-template-columns: unset;
+  }
+
+  .title {
+    @include border-color(base-light);
+    @include mq(lg) {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
+  }
+
+  .content {
+    position: relative;
+    height: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0 4.5rem;
+    @include mq(lg) {
+      height: auto;
+      padding: 0 2.5rem;
+      margin-top: 3rem;
+    }
+
+    &::before {
+      content: "";
+      height: calc(100% + 28rem);
+      background-image: url(../images/quote-vector.png);
+      @include bg-attach-bottom-right();
+      @include mq(lg) {
+        height: calc(100% + 14rem);
+      }
+    }
+
+    .quote {
+      margin-top: 3.5rem;
+      position: relative;
+      z-index: 3;
+
+      h3 {
+        font-style: italic;
+        @include font-weight(bold);
+      }
+    }
+
+    .button {
+      margin-top: 2.3rem;
+    }
+
+    .info {
+      margin: 16.18vw 0 4.1rem;
+      font-size: 1.6rem;
+      line-height: 22px;
+      position: relative;
+      z-index: 3;
+      @include mq(lg) {
+        margin: 16.18vw 0 4.1rem;
+      }
+
+      .author {
+        @include font-weight(bold);
+      }
+
+      .org {
+        font-style: italic;
+      }
+    }
+  }
+}

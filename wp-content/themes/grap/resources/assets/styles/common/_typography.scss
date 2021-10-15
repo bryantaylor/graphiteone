@@ -1,0 +1,77 @@
+h1,
+.h1 {
+  @include font-size(h1);
+  @include font-weight(regular);
+  line-height: 76.8px;
+  @include mq(lg) {
+    font-size: 3.5rem;
+    line-height: 45px;
+  }
+}
+
+h2,
+.h2 {
+  @include font-size(h2);
+  @include font-weight(regular);
+  line-height: 57.6px;
+  @include mq(lg) {
+    font-size: 3rem;
+    line-height: 35px;
+  }
+}
+
+h3,
+.h3 {
+  @include font-size(h3);
+  @include font-weight(regular);
+  line-height: 38.4px;
+  @include mq(lg) {
+    font-size: 2.2rem;
+    line-height: 25px;
+  }
+}
+
+h4,
+.h4 {
+  @include font-size(h4);
+  @include font-weight(bold);
+  line-height: 22px;
+  @include mq(lg) {
+    line-height: 30px;
+  }
+}
+
+h5,
+.h5 {
+  @include font-size(h5);
+  @include font-weight(bold);
+  line-height: 18px;
+}
+
+p,
+.p {
+  @include font-size(p);
+  @include font-weight(regular);
+  line-height: 33px;
+  @include mq(lg) {
+    font-size: 1.8rem;
+    line-height: 22px;
+  }
+}
+
+.ex,
+.ex p {
+  @include font-size(ex);
+  @include font-weight(regular);
+  line-height: 21.6px;
+}
+
+.super {
+  @include font-size(super);
+  @include font-weight(regular);
+  line-height: 92px;
+  @include mq(lg) {
+    font-size: 4.8rem;
+    line-height: 57.6px;
+  }
+}

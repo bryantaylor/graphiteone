@@ -1,0 +1,59 @@
+.statistics-block {
+  padding: 3.6rem 0 7.4rem;
+
+  .statistics-wrap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 4.5rem;
+    @include mq(lg) {
+      grid-template-columns: unset;
+      row-gap: 4.5rem;
+      text-align: center;
+    }
+
+    .statistics-item {
+      .icon-wrap {
+        margin-bottom: 5.6rem;
+        @include mq(lg) {
+          flex-direction: column;
+          margin-bottom: 3.5rem;
+        }
+
+        .icon {
+          width: 11.3rem;
+          margin-right: 5.9rem;
+          @include mq(lg) {
+            margin-right: 0;
+            margin-bottom: 2rem;
+          }
+        }
+      }
+
+      .content {
+        padding: 4.3rem 0 3.5rem;
+        border-top: 2px solid;
+        border-bottom: 2px solid;
+        @include border-color(base-light);
+
+        .big-number {
+          font-size: 11.11vw;
+          line-height: 130px;
+          @include font-weight(light);
+          @include mq(lg) {
+            font-size: 10rem;
+            line-height: 100px;
+          }
+        }
+      }
+
+      .achievement-wrap {
+        margin-top: 2.3rem;
+
+        .from-org {
+          font-size: 1.6rem;
+          line-height: 22px;
+        }
+      }
+    }
+  }
+}

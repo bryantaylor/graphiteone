@@ -1,0 +1,26 @@
+.cta-block {
+  height: 36.11vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  justify-items: center;
+  @include mq(xl) {
+    height: auto;
+    padding: 5rem 0;
+  }
+
+  .label {
+    font-size: 1.6rem;
+    line-height: 22px;
+    @include font-weight(bold);
+  }
+
+  .description {
+    width: 95%;
+    margin-top: 2.2rem;
+  }
+
+  .button {
+    margin-top: 3.2rem;
+  }
+}

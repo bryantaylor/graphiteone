@@ -1,0 +1,41 @@
+footer {
+  @include bg-color(secondary-dark);
+
+  .footer-wrap {
+    padding: 5rem 0 5.873rem;
+    @include mq(lg) {
+      padding: 4rem 0;
+    }
+
+    .logo {
+      width: 20.1vw;
+      @include mq(lg) {
+        width: 20rem;
+        margin-bottom: 2rem;
+      }
+      @include mq(sm) {
+        margin-bottom: 3.5rem;
+        width: 15rem;
+      }
+    }
+
+    .footer-cta {
+      .cta-item {
+        font-size: 1.6rem;
+        line-height: 22px;
+        @include text-color(base-light);
+
+        &:not(:last-child) {
+          margin-right: 4.5rem;
+          @include mq(lg) {
+            margin-bottom: 1rem;
+          }
+        }
+
+        &:hover {
+          @include text-color(primary-orange);
+        }
+      }
+    }
+  }
+}

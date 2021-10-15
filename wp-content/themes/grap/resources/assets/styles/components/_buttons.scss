@@ -1,0 +1,36 @@
+.button {
+  padding: 1.1rem 2.8rem 1.4rem;
+  display: inline-block;
+  font-style: normal;
+  font-size: 2rem;
+  line-height: 20px;
+  text-align: center;
+  border: 1px solid transparent;
+  border-radius: 4rem;
+  position: relative;
+  z-index: 3;
+}
+
+.primary-button {
+  @include text-color(base-light);
+  @include bg-color(primary-orange);
+  transition: all .3s;
+
+  &:hover {
+    background-color: unset;
+    @include text-color(primary-orange);
+    @include border-color(primary-orange);
+  }
+}
+
+.secondary-button {
+  @include text-color(secondary-dark);
+  @include text-color(base-light);
+  transition: all .3s;
+
+  &:hover {
+    background-color: unset;
+    @include text-color(base-light);
+    @include border-color(base-light);
+  }
+}

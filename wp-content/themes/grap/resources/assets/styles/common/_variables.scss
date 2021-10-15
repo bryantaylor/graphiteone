@@ -1,0 +1,28 @@
+//Text
+$base__font-size: 10px;
+$spacer: 1.6rem;
+
+$colors: (
+  base-light: #fff,
+  base-dark: #303B40,
+  primary-orange: #FF4F00,
+  secondary-pink: #FF3172,
+  secondary-blue: #38D9E5,
+  secondary-green: #38C963,
+  secondary-dark: #13191C,
+  black: #01193E,
+);
+
+/** Bootstrap navbar fix (https://git.io/fADqW) */
+$navbar-dark-toggler-icon-bg: none;
+$navbar-light-toggler-icon-bg: none;
+
+//Breakpoints
+$xs-device: 375px;
+$sm-device: 576px;
+$md-device: 768px;
+$lg-device: 992px;
+$xl-device: 1200px;
+$xxl-device: 1440px;
+$padding-on-mobile: 25px;
+$max-container-width: 92.75vw;

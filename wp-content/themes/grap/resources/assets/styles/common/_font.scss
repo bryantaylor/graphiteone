@@ -1,0 +1,93 @@
+$font-sizes: (
+  super: 9.2rem,
+  h1: 6.4rem,
+  h2: 4.8rem,
+  h3: 3.2rem,
+  h4: 2.2rem,
+  h5: 1.8rem,
+  p: 2.2rem,
+  ex: 1.8rem,
+);
+
+$font-weights: (
+  thin: 100,
+  light: 300,
+  regular: 400,
+  medium: 500,
+  semi-bold: 600,
+  bold: 700,
+  extra-bold: 800,
+  black: 900,
+);
+
+$extraThin: 100;
+$thin: 200;
+$light: 300;
+$book: 400;
+$medium: 500;
+$semi-bold: 600;
+$bold: 700;
+$extra-bold: 800;  
+$black: 900;
+
+$fonts:
+  Hellix "../fonts/Hellix-Bold.ttf" "truetype" $bold normal,
+  Hellix "../fonts/Hellix-Light.ttf" "truetype" $light normal,
+  Hellix "../fonts/Hellix-Regular.ttf" "truetype" $book normal;
+
+@each $font-name, $src, $format, $weight, $style in $fonts {
+  @font-face {
+    font-family: $font-name;
+    src: url($src) format($format);
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+html {
+  font-size: $base__font-size;
+}
+
+body {
+  font-family: "Hellix", sans-serif;
+  font-style: normal;
+  line-height: 33px;
+  @include font-size(p);
+  @include font-weight(book);
+  @include text-color(base-dark);
+}
+
+h1, h2, h3, h4, h5, h6, p, li, div, a, span {
+  margin-bottom: 0;
+  &.light {
+    @include text-color(base-light);
+  }
+
+  &.dark {
+    @include text-color(base-dark);
+  }
+
+  &.primary-orange {
+    @include text-color(primary-orange);
+  }
+
+  &.secondary-dark {
+    @include text-color(secondary-dark);
+  }
+
+  &.normal {
+    @include font-weight(regular);
+  }
+
+  &.medium {
+    @include font-weight(medium);
+  }
+
+  &.semi-bold {
+    @include font-weight(semi-bold);
+  }
+
+  &.bold {
+    @include font-weight(bold);
+  }
+}
