@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('hero-header')
-@include('components.hero-header.hero-header-single')
 @endsection
 
 @section('content')
