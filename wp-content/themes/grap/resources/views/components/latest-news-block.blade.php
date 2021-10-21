@@ -3,7 +3,7 @@ $latest_news_block = get_field('latest_news_block');
 $post_type = $latest_news_block['post_type'];
 $number_of_posts = $latest_news_block['number_of_posts'];
 $button = $latest_news_block['button'];
-$background = $latest_news_block['background'];
+$background_url = $latest_news_block['background'];
 $bg_position = $latest_news_block['bg_position'];
 $posts = App\get_latest_posts($post_type, $number_of_posts);
 @endphp
@@ -12,13 +12,14 @@ $posts = App\get_latest_posts($post_type, $number_of_posts);
     <div class="block-wrap">
         <div class="title title-border-top">
             @if ($post_type == 'graphite-news')
-            <h4>Latest News</h4>
+                <h4>Latest News</h4>
             @else
-            <h4>Latest Community News</h4>
+                <h4>Latest Community News</h4>
             @endif
             @if ($button['title'] && $button['url'])
-            <a href="{{ $button['url'] }}" target="{{ $button['target'] }}" class="button primary-button d-inline-block d-sm-none">{{ $button['title'] }}</a>
-        @endif
+                <a href="{{ $button['url'] }}" target="{{ $button['target'] }}"
+                    class="primary-button d-inline-block d-sm-none">{{ $button['title'] }}</a>
+            @endif
         </div>
         <div class="news-wrap">
             <div class="news">
@@ -48,10 +49,11 @@ $posts = App\get_latest_posts($post_type, $number_of_posts);
             </div>
         </div>
         @if ($button['title'] && $button['url'])
-            <a href="{{ $button['url'] }}" target="{{ $button['target'] }}" class="button primary-button d-none d-sm-inline-block">{{ $button['title'] }}</a>
+            <a href="{{ $button['url'] }}" target="{{ $button['target'] }}"
+                class="primary-button d-none d-sm-inline-block">{{ $button['title'] }}</a>
         @endif
     </div>
 
-    <div class="bg-attach {{ $bg_position == 'right' ? 'bg-right' : 'bg-center' }}" style="background-image: url('{{ $background['url'] }}')">
+    <div class="bg-attach {{ $bg_position == 'right' ? 'bg-right' : 'bg-center' }}" style="background-image: url('{{ $background_url }}')">
     </div>
 </div>

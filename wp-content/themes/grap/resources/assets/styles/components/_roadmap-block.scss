@@ -1,0 +1,75 @@
+.roadmap-block {
+  padding: 6.8rem 0 7.4rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  @include mq(lg) {
+    padding: 7rem 0;
+  }
+
+  .intro {
+    display: grid;
+    grid-template-columns: 28.26vw 51.74vw;
+    grid-column-gap: 4.5rem;
+    @include mq(lg) {
+      grid-template-columns: unset;
+    }
+
+    &-content {
+      @include mq(lg) {
+        margin-top: 3rem;
+      }
+    }
+  }
+
+  .phase-group {
+    margin-top: 8.7rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 4.5rem;
+    row-gap: 4.5rem;
+    @include mq(lg) {
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 5rem;
+    }
+    @include mq(sm) {
+      grid-template-columns: unset;
+    }
+
+    .phase {
+      .title {
+        .ordinal-number {
+          padding: 1.5rem;
+          font-size: 1.4rem;
+          line-height: 14px;
+          width: 3.2rem;
+          height: 3.2rem;
+          border-radius: 50%;
+          margin-right: 1.2rem;
+          @include text-color(primary-orange);
+          @include bg-color(base-light);
+          @include font-weight(bold);
+        }
+      }
+
+      .description-list {
+        margin: 3.6rem 0 0 2rem;
+        list-style-type: disc;
+
+        .description-item {
+          font-size: 1.6rem;
+          line-height: 19.2px;
+
+          &::marker {
+            font-size: 2rem;
+            @include text-color(primary-orange);
+          }
+
+          &:not(:last-child) {
+            margin-bottom: 3.2rem;
+          }
+        }
+      }
+    }
+  }
+}

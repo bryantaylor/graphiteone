@@ -2,7 +2,7 @@
 $summary_block = get_field('summary_block');
 $title = $summary_block['title'];
 $content = $summary_block['content'];
-$left_bg = $summary_block['left_bg'];
+$left_bg_url = $summary_block['left_bg'];
 @endphp
 
 <div class="summary-block">
@@ -10,7 +10,7 @@ $left_bg = $summary_block['left_bg'];
         <div class="block-wrap">
             <div class="title title-border-top">
                 @if ($title)
-                    <div class="primary-orange">{!! $title !!}</div>
+                    <div class="primary-orange h4">{{ $title }}</div>
                 @endif
             </div>
             @if ($content)
@@ -19,7 +19,7 @@ $left_bg = $summary_block['left_bg'];
         </div>
     </div>
 
-    @if ($left_bg)
-        <img src="{{ $left_bg['url'] }}" alt="left-attachment" class="bg-attach-left">
+    @if ($left_bg_url)
+        <img src="{{ $left_bg_url }}" alt="left-attachment" class="bg-attach-left">
     @endif
 </div>

@@ -12,7 +12,7 @@ $table_of_contents = $content_grid_block['table_of_contents'];
         <div class="intro">
             <div class="intro-title title-border-top">
                 @if ($intro_title)
-                    <div class="primary-orange">{!! $intro_title !!}</div>
+                    <div class="primary-orange h4">{{ $intro_title }}</div>
                 @endif
             </div>
             <div class="intro-description">
@@ -20,8 +20,7 @@ $table_of_contents = $content_grid_block['table_of_contents'];
                     <div class="content">{!! $intro_description !!}</div>
                 @endif
                 @if ($intro_button['title'] && $intro_button['url'])
-                    <a href="{{ $intro_button['url'] }}" target="{{ $button['target'] }}"
-                        class="button primary-button">{{ $intro_button['title'] }}</a>
+                    <a href="{{ $intro_button['url'] }}" target="{{ $button['target'] }}" class="primary-button">{{ $intro_button['title'] }}</a>
                 @endif
             </div>
         </div>
@@ -29,14 +28,14 @@ $table_of_contents = $content_grid_block['table_of_contents'];
         <div class="step">
             @foreach ($table_of_contents as $index => $item)
                 @php
-                    $icon = $item['icon'];
+                    $icon_url = $item['icon'];
                     $label = $item['label'];
                     $content = $item['content'];
                 @endphp
                 <div class="step-item" data-index="{{ $index }}">
                     <div class="icon-wrap d-flex align-items-center">
-                        @if ($icon['url'])
-                            <img src="{{ $icon['url'] }}" alt="step-icon" class="icon">
+                        @if ($icon_url)
+                            <img src="{{ $icon_url }}" alt="step-icon" class="icon">
                         @endif
                         @if ($label)
                             <div class="label h5">{{ $label }}</div>

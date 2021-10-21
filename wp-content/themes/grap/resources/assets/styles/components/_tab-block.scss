@@ -1,0 +1,71 @@
+.tab-block {
+  padding: 7.8rem 0 8.7rem;
+  @include bg-color(secondary-dark);
+  @include mq(lg) {
+    padding: 7rem 0;
+  }
+
+  .block-wrap {
+    display: grid;
+    grid-template-columns: 28.26vw 51.74vw;
+    grid-column-gap: 4.5rem;
+    position: relative;
+    z-index: 3;
+    @include mq(lg) {
+      grid-template-columns: unset;
+      row-gap: 4.5rem;
+    }
+
+    .tabs {
+      @include border-color(primary-orange);
+
+      .tab {
+        cursor: pointer;
+
+        &:not(:first-child) {
+          margin-top: 2.1rem;
+        }
+
+        .icon {
+          width: 4.8rem;
+          margin-right: 1.2rem;
+        }
+      }
+
+      .active {
+        @include text-color(primary-orange);
+      }
+    }
+
+    .tabs-content {
+      .tab-panel {
+        display: none;
+
+        &[data-index="0"] {
+          display: block;
+        }
+        
+        .content {
+          h3 {
+            @include text-color(primary-orange);
+          }
+
+          h3,
+          ul,
+          p:not(:last-child) {
+            margin-bottom: 3.3rem;
+          }
+
+          ul {
+            list-style-type: disc;
+            padding-left: 3rem;
+          }
+        }
+
+        .primary-button {
+          margin-top: 3.3rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.error404 {
+  &::before,
+  &::after {
+    display: none;
+  }
+
+  header {
+    height: auto;
+    min-height: auto;
+    @include bg-color(secondary-dark);
+
+    .title {
+      display: none;
+    }
+  }
+
+  .content {
+    padding: 20rem 0;
+    .page-header {
+      text-align: center;
+    }
+  }
+}

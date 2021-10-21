@@ -12,6 +12,7 @@
 }
 
 .primary-button {
+  @extend .button;
   @include text-color(base-light);
   @include bg-color(primary-orange);
   transition: all .3s;
@@ -24,6 +25,7 @@
 }
 
 .secondary-button {
+  @extend .button;
   @include text-color(secondary-dark);
   @include text-color(base-light);
   transition: all .3s;

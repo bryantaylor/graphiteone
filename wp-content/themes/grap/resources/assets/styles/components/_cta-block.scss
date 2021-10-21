@@ -8,19 +8,19 @@
     height: auto;
     padding: 5rem 0;
   }
+  @include mq(lg) {
+    padding: 7rem 0;
+  }
 
   .label {
     font-size: 1.6rem;
     line-height: 22px;
+    margin-bottom: 2.2rem;
     @include font-weight(bold);
   }
 
   .description {
     width: 95%;
-    margin-top: 2.2rem;
-  }
-
-  .button {
-    margin-top: 3.2rem;
+    margin-bottom: 3.2rem;
   }
 }

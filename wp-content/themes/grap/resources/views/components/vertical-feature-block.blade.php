@@ -10,7 +10,7 @@ $button = $vertical_feature_block['button'];
         <div class="block-wrap">
             <div class="title title-border-top">
                 @if ($title)
-                    <div class="light">{!! $title !!}</div>
+                    <div class="light h4">{{ $title }}</div>
                 @endif
             </div>
             <div class="content-wrap">
@@ -18,7 +18,7 @@ $button = $vertical_feature_block['button'];
                     <div class="content light">{!! $content !!}</div>
                 @endif
                 @if ($button['title'] && $button['url'])
-                    <a href="{{ $button['url'] }}" target="{{ $button['target'] }}" class="button primary-button">{{ $button['title'] }}</a>
+                    <a href="{{ $button['url'] }}" target="{{ $button['target'] }}" class="primary-button">{{ $button['title'] }}</a>
                 @endif
             </div>
         </div>

@@ -1,0 +1,127 @@
+.tabbed-content-block {
+  padding: 7.4rem 0 2.1rem;
+  @include bg-color(secondary-dark);
+  @include mq(lg) {
+    padding: 7rem 0 4rem;
+  }
+
+  .block-wrap {
+    display: grid;
+    grid-template-columns: 28.26vw 51.74vw;
+    grid-column-gap: 4.5rem;
+    @include mq(lg) {
+      grid-template-columns: unset;
+    }
+
+    .title {
+      @include border-color(base-light);
+    }
+
+    .tabs-group {
+      .tabs {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 3rem;
+        @include mq(lg) {
+          margin-top: 3rem;
+        }
+        @include mq(md) {
+          grid-template-columns: unset;
+        }
+
+        .tab {
+          cursor: pointer;
+          padding-top: 2.1rem;
+          border-top: 2px solid;
+          opacity: 0.5;
+          transition: all 0.3s;
+          @include border-color(base-light);
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+
+        .active {
+          @include border-color(primary-orange);
+          @include text-color(primary-orange);
+          opacity: 1;
+        }
+      }
+
+      .tabs-content {
+        margin-top: 3.7rem;
+        @include mq(lg) {
+          margin-top: 3rem;
+        }
+
+        .tab-panel {
+          display: none;
+
+          &[data-index="0"] {
+            display: block;
+          }
+
+          .content {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-column-gap: 4rem;
+            @include mq(md) {
+              grid-template-columns: unset;
+            }
+
+            &-item {
+              margin-bottom: 2.7rem;
+              padding-top: 3rem;
+              border-top: 2px solid;
+              @include border-color(base-light);
+              @include mq(md) {
+                text-align: center;
+                grid-template-columns: unset;
+              }
+
+              &:first-child,
+              &:nth-child(2) {
+                border-top: none;
+              }
+
+              &:nth-child(2) {
+                @include mq(md) {
+                  border-top: 2px solid;
+                }
+              }
+
+              .data-wrap {
+                display: grid;
+                grid-template-columns: 45% 55%;
+                align-items: center;
+
+                .big-number {
+                  font-size: 5vw;
+                  line-height: 5vw;
+                  @include font-weight(light);
+                  @include mq(lg) {
+                    font-size: 7.2rem;
+                    line-height: 72px;
+                  }
+                }
+
+                .unit {
+                  font-size: 3.2rem;
+                  line-height: 21.6px;
+                }
+              }
+
+              .description {
+                font-size: 1.4rem;
+                line-height: 21.6px;
+                margin-top: 1.6rem;
+                @include font-weight(bold);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,8 @@
 .statistics-block {
   padding: 3.6rem 0 7.4rem;
+  @include mq(lg) {
+    padding: 7rem 0;
+  }
 
   .statistics-wrap {
     display: grid;

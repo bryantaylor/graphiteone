@@ -1,0 +1,47 @@
+.event-list-block {
+  padding: 3rem 0 15rem;
+  @include bg-color(secondary-dark);
+  @include mq(lg) {
+    padding-bottom: 7rem;
+  }
+
+  .block-wrap {
+    display: grid;
+    grid-template-columns: 28.26vw 59.52vw;
+    grid-column-gap: 4.5rem;
+    @include mq(lg) {
+      grid-template-columns: unset;
+    }
+
+    .title {
+      @include border-color(base-light);
+    }
+
+    .event-list {
+      @include mq(lg) {
+        margin-top: 3rem;
+      }
+
+      .event {
+        padding-top: 1.6rem;
+        border-top: 2px solid rgba(255, 255, 255, 0.3);
+
+        &:not(:first-child) {
+          margin-top: 2.4rem;
+        }
+
+        &-time {
+          font-size: 1.6rem;
+          line-height: 22px;
+          opacity: 0.5;
+          @include font-weight(bold);
+        }
+
+        &-name {
+          margin-top: 0.8rem;
+          line-height: 26.4px;
+        }
+      }
+    }
+  }
+}

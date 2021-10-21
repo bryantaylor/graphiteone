@@ -1,12 +1,12 @@
 {
-    "key": "group_6168e75e4c038",
-    "title": "Summary Block",
+    "key": "group_616d22570eff0",
+    "title": "Infobox Block",
     "fields": [
         {
-            "key": "field_6168e76301f58",
-            "label": "Summary Block",
-            "name": "summary_block",
-            "type": "group",
+            "key": "field_616d225d16ed0",
+            "label": "Infobox Block",
+            "name": "infobox_block",
+            "type": "repeater",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,10 +15,14 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "block",
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
             "sub_fields": [
                 {
-                    "key": "field_6168e78401f59",
+                    "key": "field_616d226616ed1",
                     "label": "Title",
                     "name": "title",
                     "type": "text",
@@ -37,7 +41,7 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_6168e79401f5a",
+                    "key": "field_616d227b16ed2",
                     "label": "Content",
                     "name": "content",
                     "type": "wysiwyg",
@@ -56,9 +60,9 @@
                     "delay": 0
                 },
                 {
-                    "key": "field_6168e7a501f5b",
-                    "label": "Left Background Attachment",
-                    "name": "left_bg",
+                    "key": "field_616d228816ed3",
+                    "label": "Background Image",
+                    "name": "background",
                     "type": "image",
                     "instructions": "",
                     "required": 0,
@@ -87,7 +91,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/summary-block"
+                "value": "acf\/infobox-block"
             }
         ]
     ],
@@ -99,5 +103,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1634802393
+    "modified": 1634801830
 }

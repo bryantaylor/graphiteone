@@ -1,12 +1,12 @@
 {
-    "key": "group_6166a23c1e845",
-    "title": "Vertical Feature Block",
+    "key": "group_616cd7654ff46",
+    "title": "Member Block",
     "fields": [
         {
-            "key": "field_6166a2467e8c3",
-            "label": "Vertical Feature Block",
-            "name": "vertical_feature_block",
-            "type": "group",
+            "key": "field_616cdac55fe39",
+            "label": "Member Block",
+            "name": "member_block",
+            "type": "repeater",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,31 +15,16 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "block",
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
             "sub_fields": [
                 {
-                    "key": "field_6166a24d7e8c4",
+                    "key": "field_616cdacd5fe3a",
                     "label": "Title",
                     "name": "title",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_6166a26d7e8c5",
-                    "label": "Content",
-                    "name": "content",
                     "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
@@ -56,10 +41,10 @@
                     "delay": 0
                 },
                 {
-                    "key": "field_6166a27c7e8c6",
-                    "label": "Button",
-                    "name": "button",
-                    "type": "link",
+                    "key": "field_616cdb1f5fe3b",
+                    "label": "Member List",
+                    "name": "member_list",
+                    "type": "relationship",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -68,7 +53,17 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "array"
+                    "post_type": [
+                        "members"
+                    ],
+                    "taxonomy": "",
+                    "filters": [
+                        "search"
+                    ],
+                    "elements": "",
+                    "min": "",
+                    "max": "",
+                    "return_format": "object"
                 }
             ]
         }
@@ -78,7 +73,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/vertical-feature-block"
+                "value": "acf\/member-block"
             }
         ]
     ],
@@ -90,5 +85,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1634551297
+    "modified": 1634525560
 }

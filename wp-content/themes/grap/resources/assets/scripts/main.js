@@ -11,4 +11,5 @@ $(document).ready(() => {
   Func.handleToggleMobileTopMenu()
   Func.createPostSlider()
   Func.trimElement()
+  Func.activeTab()
 })

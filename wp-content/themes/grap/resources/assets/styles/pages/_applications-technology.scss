@@ -1,0 +1,7 @@
+.applications-technology.page-applications-technology-data {
+  .statistics-block {
+    @include mq(lg) {
+      padding-top: 0;
+    }
+  }
+}

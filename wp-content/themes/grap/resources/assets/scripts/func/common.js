@@ -37,7 +37,7 @@ export function trimElement() {
       _h1Contents.push(el.innerHTML)
     })
   }
-  
+
   window.addEventListener('resize', () => {
     onResize(_h1Els, _h1Contents)
   })
@@ -45,4 +45,19 @@ export function trimElement() {
   if (isMobile()) {
     onResize(_h1Els, _h1Contents)
   }
+}
+
+export function activeTab() {
+  const activeIndex = $('.active').data('index')
+  const contentEls = $('.tabs-content .tab-panel')
+  const tabEls = $('.tabs .tab');
+  contentEls.eq(activeIndex).show()
+
+  $('.tabs').on('click', '.tab', function (e) {
+    const current = $(e.currentTarget)
+    const index = current.data('index')
+    tabEls.removeClass('active')
+    current.addClass('active')
+    contentEls.hide().eq(index).show()
+  });
 }

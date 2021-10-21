@@ -1,0 +1,13 @@
+.in-the-community.page-in-the-community-data {
+  .latest-news-block {
+    @include mq(lg) {
+      padding-bottom: 7rem;
+    }
+
+    &::before {
+      @include mq(lg) {
+        display: none;
+      }
+    }
+  }
+}

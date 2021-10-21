@@ -45,12 +45,11 @@
       z-index: 3;
 
       h3 {
-        font-style: italic;
         @include font-weight(bold);
       }
     }
 
-    .button {
+    .primary-button {
       margin-top: 2.3rem;
     }
 
@@ -66,10 +65,6 @@
 
       .author {
         @include font-weight(bold);
-      }
-
-      .org {
-        font-style: italic;
       }
     }
   }

@@ -10,7 +10,7 @@ $background = $statistics_block['background'];
             @if ($statistics_list)
                 @foreach ($statistics_list as $item)
                     @php
-                        $icon = $item['icon'];
+                        $icon_url = $item['icon'];
                         $label = $item['label'];
                         $big_number = $item['big_number'];
                         $big_text = $item['big_text'];
@@ -20,8 +20,8 @@ $background = $statistics_block['background'];
                     <div class="statistics-item">
                         @if ($icon || $label)
                             <div class="icon-wrap d-flex align-items-center">
-                                @if ($icon)
-                                    <img src="{{ $icon['url'] }}" alt="" class="icon">
+                                @if ($icon_url)
+                                    <img src="{{ $icon_url }}" alt="" class="icon">
                                 @endif
                                 @if ($label)
                                     <div class="label h5">{{ $label }}</div>

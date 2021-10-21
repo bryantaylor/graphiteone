@@ -1,0 +1,27 @@
+.infobox-block {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  @include mq(xl) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include mq(sm) {
+    grid-template-columns: unset;
+  }
+
+  .box {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: auto;
+    padding: 4.5rem 4.5rem 12.5rem;
+    @include mq(lg) {
+      height: auto;
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
+
+    .content {
+      margin-top: 1.2rem;
+    }
+  }
+}
