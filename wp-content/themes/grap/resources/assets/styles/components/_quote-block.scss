@@ -1,32 +1,15 @@
 .quote-block {
   padding: 3.7rem 0 6.8rem 4.154vw;
-  display: grid;
-  grid-template-columns: 28.264vw 1fr;
-  grid-column-gap: 4.5rem;
+  position: relative;
   @include bg-color(secondary-dark);
   @include mq(lg) {
-    padding: 0;
-    grid-template-columns: unset;
+    padding: 2.5rem;
   }
 
-  .title {
-    @include border-color(base-light);
-    @include mq(lg) {
-      padding-left: 2.5rem;
-      padding-right: 2.5rem;
-    }
-  }
-
-  .content {
+  .quotes {
     position: relative;
-    height: auto;
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding: 0 4.5rem;
     @include mq(lg) {
-      height: auto;
-      padding: 0 2.5rem;
-      margin-top: 3rem;
+      @include add-slide-spacing(2rem);
     }
 
     &::before {
@@ -34,38 +17,101 @@
       height: calc(100% + 28rem);
       background-image: url(../images/quote-vector.png);
       @include bg-attach-bottom-right();
+      width: 35%;
       @include mq(lg) {
-        height: calc(100% + 14rem);
+        display: none;
       }
     }
 
-    .quote {
-      margin-top: 3.5rem;
-      position: relative;
-      z-index: 3;
-
-      h3 {
-        @include font-weight(bold);
-      }
-    }
-
-    .primary-button {
-      margin-top: 2.3rem;
-    }
-
-    .info {
-      margin: 16.18vw 0 4.1rem;
-      font-size: 1.6rem;
-      line-height: 22px;
-      position: relative;
-      z-index: 3;
+    .quote-wrap {
+      display: grid;
+      grid-template-columns: 28.264vw 1fr;
+      grid-column-gap: 4.5rem;
       @include mq(lg) {
-        margin: 16.18vw 0 4.1rem;
+        padding: 0;
+        grid-template-columns: unset;
       }
 
-      .author {
-        @include font-weight(bold);
+      .title {
+        @include border-color(base-light);
+        @include mq(lg) {
+          padding-left: 2.5rem;
+          padding-right: 2.5rem;
+        }
       }
+
+      .content {
+        height: auto;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding: 0 4.5rem;
+        @include mq(lg) {
+          height: auto;
+          padding: 0 2.5rem;
+          margin-top: 3rem;
+        }
+
+        .quote {
+          margin-top: 3.5rem;
+          position: relative;
+          z-index: 3;
+          width: 55%;
+          @include mq(lg) {
+            width: 100%;
+          }
+
+          h3 {
+            @include font-weight(bold);
+          }
+        }
+
+        .primary-button {
+          position: relative;
+          z-index: 3;
+          margin-top: 2.3rem;
+        }
+
+        .info {
+          margin: 16.18vw 0 4.1rem;
+          font-size: 1.6rem;
+          line-height: 22px;
+          position: relative;
+          z-index: 3;
+          @include mq(lg) {
+            margin: 15.1rem 0 4.1rem;
+          }
+
+          .author {
+            @include font-weight(bold);
+          }
+        }
+      }
+    }
+  }
+
+  .slider-nav {
+    position: absolute;
+    left: 26vw;
+    bottom: 6.8rem;
+    z-index: 3;
+
+    .nav-icon {
+      width: 3.8rem;
+      cursor: pointer;
+    }
+
+    .prev {
+      margin-right: 1rem;
+    }
+  }
+
+  .slick-dots {
+    z-index: 3;
+    margin-top: -1.5rem;
+    @include mq(lg) {
+      justify-content: center;
+      margin-top: 2rem;
     }
   }
 }

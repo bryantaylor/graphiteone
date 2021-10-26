@@ -1,0 +1,156 @@
+.new-and-resources-block {
+    padding: 4.5rem 0 9.2rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+    @include bg-color(secondary-dark);
+
+    .filter-bar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 9rem;
+        @include mq(sm) {
+            flex-direction: column;
+            align-items: start;
+        }
+
+        .filter-item {
+            display: flex;
+            align-items: center;
+
+            &:not(:last-child) {
+                margin-right: 4.5rem;
+            }
+
+            .red-dot {
+                width: 1.2rem;
+                height: 1.2rem;
+                margin-right: 1.2rem;
+                border: 2px solid;
+                border-radius: 50%;
+                @include border-color(primary-orange);
+            }
+
+            .filter-name {
+                transition: all 0.3s;
+                &:hover {
+                    cursor: pointer;
+                    @include text-color(primary-orange);
+                }
+            }
+        }
+
+        .filter-active {
+            .red-dot {
+                @include bg-color(primary-orange);
+            }
+        }
+    }
+
+    .posts {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 4.5rem;
+        row-gap: 4.5rem;
+        @include mq(lg) {
+            grid-template-columns: unset;
+        }
+
+        .post-card-wrap {
+            .post {
+                .post-wrap {
+                    @include text-color(base-light);
+                    &:hover .post-title {
+                        @include text-color(primary-orange);
+                    }
+
+                    .category-wrap {
+                        .category {
+                            .dot {
+                                width: 0.8rem;
+                                height: 0.8rem;
+                                border-radius: 50%;
+                                margin-right: 0.8rem;
+                                @include bg-color(primary-orange);
+                            }
+                        }
+
+                        .post-date {
+                            opacity: 0.5;
+                        }
+                    }
+
+                    .post-title {
+                        margin-top: 3.2rem;
+                        line-height: 26.4px;
+                        transition: all 0.3s;
+                    }
+
+                    .post-button {
+                        margin-top: 1.6rem;
+                        font-size: 1.6rem;
+                        line-height: 22px;
+                        @include font-weight(bold);
+
+                        .arrow-icon {
+                            width: 2.4rem;
+                            margin-left: 0.9rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .pagination-wrap {
+        display: flex;
+        margin-top: 9rem;
+
+        .page-bar {
+            display: flex;
+            margin-right: 1.6rem;
+
+            .pagination-dot {
+                margin-right: 1.6rem;
+            }
+
+            .page-number {
+                cursor: pointer;
+                transition: all 0.3s;
+
+                &:hover {
+                    @include bg-color(primary-orange);
+                }
+
+                &:not(:last-child) {
+                    margin-right: 1.6rem;
+                }
+            }
+
+            .active {
+                @include bg-color(primary-orange);
+            }
+        }
+
+        .total-page {
+            margin-left: 1.6rem;
+        }
+
+        .page-number,
+        .total-page {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.6rem;
+            line-height: 16px;
+            width: 3.3rem;
+            height: 3.3rem;
+            border-radius: 50%;
+            border: 2px solid;
+            @include border-color(primary-orange);
+        }
+    }
+
+    .spinner {
+        padding: 5rem;
+    }
+}

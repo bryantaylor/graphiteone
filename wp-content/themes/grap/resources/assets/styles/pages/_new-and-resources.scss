@@ -1,0 +1,16 @@
+.news-resources.page-news-resources-data {
+    &::before,
+    &::after {
+        display: none;
+    }
+    
+    header {
+        .title {
+            margin-top: 5vw;
+
+            .page-title {
+                display: none;
+            }
+        }
+    }
+}

@@ -2,6 +2,7 @@
 $page_id = get_the_ID();
 $primary_menu = App\get_primary_menu_items('primary-menu');
 $logo = get_field('logo', 'option');
+$mobile_logo = get_field('mobile_logo', 'option');
 $menu_cta = get_field('menu_cta', 'option');
 @endphp
 
@@ -10,7 +11,10 @@ $menu_cta = get_field('menu_cta', 'option');
         <div class="nav-wrap d-flex justify-content-between align-items-center">
             <a href="/">
                 @if ($logo)
-                    <img src="{{ $logo }}" alt="logo" class="logo">
+                    <img src="{{ $logo }}" alt="logo" class="logo d-none d-lg-block">
+                @endif
+                @if ($mobile_logo)
+                    <img src="{{ $mobile_logo }}" alt="mobile_logo" class="mobile-logo d-block d-lg-none">
                 @endif
             </a>
             <div class="menu-icon d-flex align-items-center">

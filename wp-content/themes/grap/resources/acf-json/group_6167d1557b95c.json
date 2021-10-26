@@ -19,9 +19,9 @@
             "sub_fields": [
                 {
                     "key": "field_6167d16675bfd",
-                    "label": "Select Post Type",
-                    "name": "post_type",
-                    "type": "select",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -30,38 +30,40 @@
                         "class": "",
                         "id": ""
                     },
-                    "choices": {
-                        "graphite-news": "graphite-news",
-                        "community-news": "community-news"
-                    },
-                    "default_value": [],
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "ui": 0,
-                    "return_format": "value",
-                    "ajax": 0,
-                    "placeholder": ""
-                },
-                {
-                    "key": "field_6167d1f775bfe",
-                    "label": "Number Of Posts To Show",
-                    "name": "number_of_posts",
-                    "type": "number",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": 3,
+                    "default_value": "",
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_6167d1f775bfe",
+                    "label": "Posts",
+                    "name": "posts",
+                    "type": "relationship",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": "",
+                    "taxonomy": [
+                        "category:community-news",
+                        "category:company-news",
+                        "category:press",
+                        "category:resources"
+                    ],
+                    "filters": [
+                        "search",
+                        "taxonomy"
+                    ],
+                    "elements": "",
                     "min": "",
                     "max": "",
-                    "step": ""
+                    "return_format": "object"
                 },
                 {
                     "key": "field_6167d23575bff",
@@ -146,5 +148,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1634802270
+    "modified": 1634807844
 }

@@ -189,3 +189,65 @@ function get_latest_posts($post_type, $posts_per_page)
         return $posts;
     }
 }
+
+function get_total_by_category_slug($cat_slug, $posts_per_page)
+{
+    $posts_per_page = $posts_per_page ? $posts_per_page : -1;
+    $total = 0;
+    if (is_string($cat_slug) && $cat_slug != '') {
+        $query = new \WP_Query(array(
+            'posts_per_page' => $posts_per_page,
+            'category_name'  => $cat_slug,
+        ));
+        $total = $query->max_num_pages;
+    } else {
+        $query = new \WP_Query(array(
+            'posts_per_page' => $posts_per_page,
+            'post_status'    => 'publish',
+        ));
+        $total = $query->max_num_pages;
+    }
+
+    return $total;
+}
+
+function get_post_list()
+{
+    $post_guidance_block = (array) get_field('new_and_resources_block');
+    $post_grid = $post_guidance_block;
+    $no_posts_found_message = $post_grid['no_posts_found_message'];
+    $posts_per_page = $post_grid['post_per_page'];
+    $posts_per_page = $posts_per_page ? $posts_per_page : 6;
+    $page = get_query_var('paged') ? get_query_var('paged') : 1;
+    $categories = get_terms([
+        'taxonomy' => 'category',
+        'hide_empty' => false,
+    ]);
+
+    $get_posts_args = array(
+        'posts_per_page' => $posts_per_page,
+        'paged'         => $page,
+        'post_status'    => 'publish',
+    );
+
+    $cat_query = $_GET['cat'];
+    if ($cat_query) {
+        $category_slug = $cat_query == 'all' ? null : $cat_query;
+    }
+
+    if($category_slug) {
+        $get_posts_args['tax_query'][] = array(
+            'taxonomy' => 'category',
+            'field'    => 'slug',
+            'terms'    => $category_slug
+        );
+    }
+    $posts = get_posts($get_posts_args);
+    return compact(
+        'categories',
+        'posts',
+        'page',
+        'posts_per_page',
+        'no_posts_found_message'
+    );
+}

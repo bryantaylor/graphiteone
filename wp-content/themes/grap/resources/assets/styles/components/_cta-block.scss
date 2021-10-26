@@ -1,26 +1,26 @@
 .cta-block {
-  height: 36.11vw;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   justify-items: center;
-  @include mq(xl) {
-    height: auto;
-    padding: 5rem 0;
-  }
-  @include mq(lg) {
-    padding: 7rem 0;
-  }
 
-  .label {
-    font-size: 1.6rem;
-    line-height: 22px;
-    margin-bottom: 2.2rem;
-    @include font-weight(bold);
-  }
+  .container {
+    padding-top: 8.5rem;
+    padding-bottom: 8.5rem;
 
-  .description {
-    width: 95%;
-    margin-bottom: 3.2rem;
+    .label {
+      font-size: 1.6rem;
+      line-height: 22px;
+      margin-bottom: 2.2rem;
+      @include font-weight(bold);
+    }
+
+    .description {
+      width: 95%;
+      margin-bottom: 3.2rem;
+      @include mq(lg) {
+        width: 100%;
+      }
+    }
   }
 }

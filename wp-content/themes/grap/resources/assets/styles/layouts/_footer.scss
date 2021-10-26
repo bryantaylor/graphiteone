@@ -9,26 +9,31 @@ footer {
 
     .logo {
       width: 20.1vw;
-      @include mq(lg) {
-        width: 20rem;
-        margin-bottom: 2rem;
-      }
-      @include mq(sm) {
-        margin-bottom: 3.5rem;
-        width: 15rem;
-      }
+    }
+
+    .mobile-logo {
+      width: 7.711rem;
     }
 
     .footer-cta {
+      display: flex;
+      @include mq(lg) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
       .cta-item {
         font-size: 1.6rem;
         line-height: 22px;
         @include text-color(base-light);
+        @include mq(lg) {
+          font-size: 1.4rem;
+        }
 
-        &:not(:last-child) {
-          margin-right: 4.5rem;
+        &:not(:first-child) {
+          margin-left: 4.5rem;
           @include mq(lg) {
-            margin-bottom: 1rem;
+            margin-left: 0;
           }
         }
 

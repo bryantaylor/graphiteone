@@ -1,3 +1,5 @@
 export * from './common'
 export * from './menu'
-export * from './post-slider'
+export * from './postSlider'
+export * from './quoteSlider'
+export * from './loadPosts'

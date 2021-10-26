@@ -1,5 +1,8 @@
 .content-grid-block {
   padding: 7.9rem 0 7.4rem;
+  @include mq(lg) {
+    padding: 2.7rem 0 2.5rem;
+  }
 
   .intro {
     display: grid;
@@ -15,11 +18,14 @@
 
     &-description {
       @include mq(lg) {
-        margin-top: 3rem;
+        margin-top: 2.2rem;
       }
 
       .primary-button {
         margin-top: 3.3rem;
+        @include mq(lg) {
+          margin-top: 2.2rem;
+        }
       }
     }
   }
@@ -32,6 +38,8 @@
     margin-top: 7.2rem;
     @include mq(lg) {
       grid-template-columns: unset;
+      margin-top: 3.5rem;
+      row-gap: 2.5rem;
     }
 
     &-item {
@@ -44,9 +52,13 @@
 
       .description {
         margin-top: 1.8rem;
-        padding-top: 2.7rem;
+        padding-top: 2.4rem;
         border-top: 2px solid;
         @include border-color(secondary-dark);
+        @include mq(lg) {
+          margin-top: 1.4rem;
+          padding-top: 1.6rem;
+        }
 
         .ordinal-number {
           padding: 1.5rem;

@@ -6,7 +6,7 @@
             "key": "field_61678f8f0e2d3",
             "label": "Quote Block",
             "name": "quote_block",
-            "type": "group",
+            "type": "repeater",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,7 +15,11 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "block",
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
             "sub_fields": [
                 {
                     "key": "field_61678f9f0e2d4",
@@ -152,5 +156,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1634802128
+    "modified": 1635126888
 }

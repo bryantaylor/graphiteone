@@ -10,6 +10,8 @@ import * as Func from './func'
 $(document).ready(() => {
   Func.handleToggleMobileTopMenu()
   Func.createPostSlider()
+  Func.createQuoteSlider()
   Func.trimElement()
   Func.activeTab()
+  Func.handleLoadPosts()
 })

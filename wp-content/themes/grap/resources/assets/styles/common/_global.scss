@@ -16,6 +16,9 @@ body {
     top: 0;
     right: 0;
     z-index: 0;
+    @include mq(lg) {
+      display: none;
+    }
   }
 
   &::after {
@@ -30,6 +33,9 @@ body {
     top: 0;
     right: 0;
     z-index: 2;
+    @include mq(lg) {
+      display: none;
+    }
   }
 }
 
@@ -51,7 +57,7 @@ body {
 .slick-dots {
   display: flex;
   position: relative;
-  margin-top: 7rem;
+  margin-top: 4rem;
 
   li {
     margin-right: 1rem;

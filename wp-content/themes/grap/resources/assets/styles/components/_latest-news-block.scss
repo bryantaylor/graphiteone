@@ -3,7 +3,8 @@
   position: relative;
   @include bg-color(base-light);
   @include mq(lg) {
-    padding: 7rem 2.5rem 18rem;
+    padding: 2.5rem 2.5rem 13.6rem;
+    overflow: hidden;
   }
 
   &::before {
@@ -13,6 +14,7 @@
     @include bg-attach-bottom-right();
     @include mq(lg) {
       height: 60%;
+      right: -2rem;
     }
   }
 
@@ -29,13 +31,7 @@
       @include border-color(secondary-dark);
       @include mq(lg) {
         width: 100%;
-      }
-      @include mq(sm) { 
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding-top: 2.5rem;
+        padding-top: 1.6rem;
       }
     }
 
@@ -91,8 +87,8 @@
 
     .primary-button {
       margin-top: 9rem;
-      @include mq(sm) {
-        margin-top: 0;
+      @include mq(lg) {
+        margin-top: 3.2rem;
       }
     }
   }
@@ -102,7 +98,8 @@
     @include bg-attach-bottom-right();
     background-position: bottom right;
     @include mq(lg) {
-      height: 60%;
+      height: 50%;
+      right: -4rem;
     }
   }
 

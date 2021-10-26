@@ -16,17 +16,25 @@ $background = $statistics_block['background'];
                         $big_text = $item['big_text'];
                         $achievement = $item['achievement'];
                         $from_org = $item['from_organization'];
+                        $external_link = $item['external_link'];
                     @endphp
                     <div class="statistics-item">
-                        @if ($icon || $label)
-                            <div class="icon-wrap d-flex align-items-center">
-                                @if ($icon_url)
-                                    <img src="{{ $icon_url }}" alt="" class="icon">
-                                @endif
-                                @if ($label)
-                                    <div class="label h5">{{ $label }}</div>
-                                @endif
-                            </div>
+                        @if ($icon_url && $label)
+                            <a href="{{ $external_link['url'] }}" target="{{ $external_link['target'] }}"
+                                class="icon-wrap d-flex align-items-lg-center">
+                                <img src="{{ $icon_url }}" class="icon">
+                                <div class="label-wrap h5 mb-0">
+                                    <div class="label {{ $background == 'black' ? 'light' : 'secondary-dark' }}">{{ $label }}</div>
+                                    <div class="link {{ $background == 'black' ? 'light' : 'primary-orange' }}">
+                                        <div class="link-title">{{ $external_link['title'] }}</div>
+                                        @if ($background == 'black')
+                                            <img src="@asset('images/white-arrow-right.png')" alt="white-arrow-right" class="arrow-icon">
+                                        @else
+                                            <img src="@asset('images/arrow-right.png')" alt="arrow-right" class="arrow-icon">
+                                        @endif
+                                    </div>
+                                </div>
+                            </a>
                         @endif
 
                         <div class="content">
@@ -34,7 +42,7 @@ $background = $statistics_block['background'];
                                 <div class="big-number primary-orange">{{ $big_number }}</div>
                             @endif
                             @if ($big_text)
-                                <div class="big-text h1">{{ $big_text }}</div>
+                                <div class="big-text">{{ $big_text }}</div>
                             @endif
                         </div>
 

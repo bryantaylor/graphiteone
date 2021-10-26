@@ -9,6 +9,11 @@
   border-radius: 4rem;
   position: relative;
   z-index: 3;
+  @include mq(lg) {
+    padding: 0.7rem 2.1rem 1rem;
+    font-size: 1.6rem;
+    line-height: 21px;
+  }
 }
 
 .primary-button {

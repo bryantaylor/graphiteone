@@ -2,7 +2,7 @@
   padding: 7rem 0 12rem;
   @include bg-color(secondary-dark);
   @include mq(lg) {
-    padding-bottom: 7rem;
+    padding: 4.5rem 0;
   }
 
   .block-wrap {

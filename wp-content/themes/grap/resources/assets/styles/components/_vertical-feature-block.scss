@@ -1,6 +1,9 @@
 .vertical-feature-block {
   padding: 7rem 0;
   @include bg-color(secondary-dark);
+  @include mq(lg) {
+    padding: 3.1rem 0;
+  }
 
   .block-wrap {
     display: grid;

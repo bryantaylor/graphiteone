@@ -1,10 +1,96 @@
-.single-post {
-  padding: 7rem 0;
-  position: relative;
-  z-index: 3;
+.single.single-post-data {
+  &::before,
+  &::after {
+    display: none;
+  }
 
-  ul {
-    list-style: disc;
-    padding-left: 3rem;
+  header {
+    background-image: url(../images/post-header-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: auto;
+    min-height: auto;
+
+    .title {
+      margin-top: 0;
+      padding-bottom: 6.7rem;
+
+      .single-post-title {
+        margin-top: 1.2rem;
+      }
+    }
+  }
+
+  .single-post-content {
+    padding: 9.2rem 0 9.4rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    @include bg-color(secondary-dark);
+    @include mq(lg) {
+      padding: 3rem 0;
+    }
+
+    .block-wrap {
+      display: grid;
+      grid-template-columns: 28.26vw 51.74vw;
+      grid-column-gap: 4.5rem;
+      @include mq(lg) {
+        grid-template-columns: unset;
+      }
+
+      .title {
+        &-wrap {
+          .category {
+            .dot {
+              width: 0.8rem;
+              height: 0.8rem;
+              margin-right: 0.8rem;
+              border-radius: 50%;
+              @include bg-color(primary-orange);
+            }
+          }
+
+          .post-date {
+            opacity: 0.5;
+          }
+        }
+
+        .social-share {
+          margin-top: 9rem;
+          @include mq(lg) {
+            margin-top: 3rem;
+          }
+
+          .short-code {
+            margin-top: 2.1rem;
+
+            ul {
+              li {
+                &:not(:last-child) {
+                  margin-right: 1.2rem !important;
+                }
+              }
+            }
+          }
+        }
+
+        .primary-button {
+          margin-top: 4.5rem;
+          @include mq(lg) {
+            margin-top: 3rem;
+          }
+        }
+      }
+      .content {
+        @include mq(lg) {
+          margin-top: 3rem;
+        }
+
+        ul {
+          list-style: disc;
+          padding-left: 3rem;
+        }
+      }
+    }
   }
 }

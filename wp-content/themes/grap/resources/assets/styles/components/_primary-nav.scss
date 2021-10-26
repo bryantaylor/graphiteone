@@ -4,15 +4,16 @@
 
   .nav-wrap {
     padding: 3.75vw 0 4.24vw;
+    @include mq(lg) {
+      padding: 2.5rem 0;
+    }
 
     .logo {
       width: 20.1vw;
-      @include mq(lg) {
-        width: 20rem;
-      }
-      @include mq(sm) {
-        width: 15rem;
-      }
+    }
+
+    .mobile-logo {
+      width: 7.854rem;
     }
 
     .menu-icon {

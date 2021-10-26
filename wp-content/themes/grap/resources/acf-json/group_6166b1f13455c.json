@@ -154,6 +154,21 @@
                             "prepend": "",
                             "append": "",
                             "maxlength": ""
+                        },
+                        {
+                            "key": "field_617269dda8719",
+                            "label": "External Link",
+                            "name": "external_link",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
                         }
                     ]
                 },
@@ -202,5 +217,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1634801925
+    "modified": 1634888208
 }

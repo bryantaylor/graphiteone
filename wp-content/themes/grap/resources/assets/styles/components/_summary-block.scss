@@ -1,9 +1,9 @@
 .summary-block {
-  padding: 6.7rem 0 7.9rem;
+  padding: 6.5rem 0 8rem;
   position: relative;
   z-index: 3;
   @include mq(lg) {
-    padding: 7rem 0;
+    padding: 4.5rem 0;
   }
 
   .block-wrap {
@@ -19,9 +19,15 @@
     }
 
     .content {
-      h3 {
+      h3,
+      h6 {
         margin-bottom: 3.3rem;
         @include text-color(primary-orange);
+      }
+
+      h6 {
+        font-size: 1.8rem;
+        line-height: 18px;
       }
 
       p {
