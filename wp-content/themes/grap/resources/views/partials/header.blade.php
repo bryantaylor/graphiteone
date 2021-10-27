@@ -22,7 +22,9 @@ $single_post_title = get_the_title($id);
     <header>
         @include('components.primary-nav')
         <div class="title container light">
-            <div class="page-title h4">News & Resources</div>
+            @if (!is_singular('members'))
+                <div class="page-title h4">News & Resources</div>
+            @endif
             <div class="single-post-title h2">{!! $single_post_title !!}</div>
         </div>
     </header>

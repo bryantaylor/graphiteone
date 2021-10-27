@@ -21,8 +21,9 @@ $member_block = get_field('member_block');
                             @php
                                 $member_img = get_the_post_thumbnail_url($member->ID);
                                 $position = get_field('member_position', $member->ID);
+                                $member_link = get_permalink($member->ID);
                             @endphp
-                            <div class="member {{ !$member_img ? 'light-border-top' : '' }}">
+                            <a href="{{ $member_link }}" class="member {{ !$member_img ? 'light-border-top' : '' }}">
                                 @if ($member_img)
                                     <div class="member-image">
                                         <img src="{{ $member_img }}" alt="">
@@ -48,7 +49,7 @@ $member_block = get_field('member_block');
                                         </div>
                                     @endif
                                 </div>
-                            </div>
+                            </a>
                         @endforeach
                     @endif
                 </div>

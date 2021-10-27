@@ -37,6 +37,9 @@
       }
 
       .member {
+        position: relative;
+        z-index: 3;
+        
         &-image {
           position: relative;
           margin-bottom: 1.9rem;
@@ -58,14 +61,11 @@
         }
 
         &-cta {
-          position: relative;
-          z-index: 3;
           display: flex;
           justify-content: center;
           align-items: center;
           width: 3.525rem;
           height: 3.525rem;
-          cursor: pointer;
           border-radius: 50%;
           @include bg-color(primary-orange);
           

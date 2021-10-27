@@ -81,6 +81,7 @@
           }
         }
       }
+      
       .content {
         @include mq(lg) {
           margin-top: 3rem;
@@ -89,6 +90,10 @@
         ul {
           list-style: disc;
           padding-left: 3rem;
+        }
+
+        a {
+          @include text-color(primary-orange);
         }
       }
     }
