@@ -23,8 +23,10 @@
           margin-bottom: 0;
         }
 
-        &:hover {
-          .label-wrap {
+        .label-wrap {
+          margin-top: 2rem;
+
+          &:hover {
             .label {
               transform: translateY(-1.5rem);
             }
@@ -34,10 +36,6 @@
               opacity: 1;
             }
           }
-        }
-
-        .label-wrap {
-          margin-top: 2rem;
 
           .label {
             margin-bottom: 0.8rem;

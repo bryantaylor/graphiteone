@@ -20,21 +20,24 @@ $background = $statistics_block['background'];
                     @endphp
                     <div class="statistics-item">
                         @if ($icon_url && $label)
-                            <a href="{{ $external_link['url'] }}" target="{{ $external_link['target'] }}"
-                                class="icon-wrap d-flex align-items-lg-center">
+                            <div class="icon-wrap d-flex align-items-lg-center">
                                 <img src="{{ $icon_url }}" class="icon">
-                                <div class="label-wrap h5 mb-0">
-                                    <div class="label {{ $background == 'black' ? 'light' : 'secondary-dark' }}">{{ $label }}</div>
-                                    <div class="link {{ $background == 'black' ? 'light' : 'primary-orange' }}">
-                                        <div class="link-title">{{ $external_link['title'] }}</div>
-                                        @if ($background == 'black')
-                                            <img src="@asset('images/white-arrow-right.png')" alt="white-arrow-right" class="arrow-icon">
-                                        @else
-                                            <img src="@asset('images/arrow-right.png')" alt="arrow-right" class="arrow-icon">
-                                        @endif
-                                    </div>
-                                </div>
-                            </a>
+                                @if ($external_link['url'] && $external_link['title'])
+                                    <a href="{{ $external_link['url'] }}" target="{{ $external_link['target'] }}" class="label-wrap h5 mb-0">
+                                        <div class="label {{ $background == 'black' ? 'light' : 'secondary-dark' }}">{{ $label }}</div>
+                                        <div class="link {{ $background == 'black' ? 'light' : 'primary-orange' }}">
+                                            <div class="link-title">{{ $external_link['title'] }}</div>
+                                            @if ($background == 'black')
+                                                <img src="@asset('images/white-arrow-right.png')" alt="white-arrow-right" class="arrow-icon">
+                                            @else
+                                                <img src="@asset('images/arrow-right.png')" alt="arrow-right" class="arrow-icon">
+                                            @endif
+                                        </div>
+                                    </a>
+                                @else
+                                    <div class="label h5 mb-0 {{ $background == 'black' ? 'light' : 'secondary-dark' }}">{{ $label }}</div>
+                                @endif
+                            </div>
                         @endif
 
                         <div class="content">

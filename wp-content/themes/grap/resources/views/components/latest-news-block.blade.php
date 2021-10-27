@@ -7,16 +7,16 @@ $background_url = $latest_news_block['background'];
 $bg_position = $latest_news_block['bg_position'];
 @endphp
 
-<div class="latest-news-block">
-    <div class="block-wrap">
-        <div class="title title-border-top">
-            @if ($title)
-                <h4>{{ $title }}</h4>
-            @endif
-        </div>
-        <div class="news-wrap">
-            <div class="news">
-                @if ($posts)
+@if ($posts)
+    <div class="latest-news-block">
+        <div class="block-wrap">
+            <div class="title title-border-top">
+                @if ($title)
+                    <h4>{{ $title }}</h4>
+                @endif
+            </div>
+            <div class="news-wrap">
+                <div class="news">
                     @foreach ($posts as $post)
                         @php
                             $post_date = date('F j, Y', strtotime($post->post_date));
@@ -34,18 +34,20 @@ $bg_position = $latest_news_block['bg_position'];
                             </div>
                         </a>
                     @endforeach
+                </div>
+                @if (count($posts) > 1)
+                    <div class="slider-nav d-none d-lg-block">
+                        <img src="@asset('images/prev-icon.png')" class="nav-icon prev">
+                        <img src="@asset('images/next-icon.png')" class="nav-icon next">
+                    </div>
                 @endif
             </div>
-            <div class="slider-nav d-none d-lg-block">
-                <img src="@asset('images/prev-icon.png')" class="nav-icon prev">
-                <img src="@asset('images/next-icon.png')" class="nav-icon next">
-            </div>
+            @if ($button['title'] && $button['url'])
+                <a href="{{ $button['url'] }}" target="{{ $button['target'] }}" class="primary-button">{{ $button['title'] }}</a>
+            @endif
         </div>
-        @if ($button['title'] && $button['url'])
-            <a href="{{ $button['url'] }}" target="{{ $button['target'] }}" class="primary-button">{{ $button['title'] }}</a>
-        @endif
-    </div>
 
-    <div class="bg-attach {{ $bg_position == 'right' ? 'bg-right' : 'bg-center' }}" style="background-image: url('{{ $background_url }}')">
+        <div class="bg-attach {{ $bg_position == 'right' ? 'bg-right' : 'bg-center' }}" style="background-image: url('{{ $background_url }}')">
+        </div>
     </div>
-</div>
+@endif

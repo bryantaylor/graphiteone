@@ -32,16 +32,15 @@ function handleChangePage() {
     const totalPage = +($('.total-page').text())
     const currentPage = +($(this)[0].innerHTML)
 
-    if (currentPage == 1 || currentPage == 2 || currentPage == totalPage) {
+    if (currentPage < 3 || currentPage == totalPage) {
         $('.page-bar').find('.page-number').removeClass('active')
         !$(this).hasClass('active') && $(this).addClass('active')
     } else {
+        preLoadPosts(currentPage)
         if (currentPage == 3) {
-            preLoadPosts(currentPage)
             !$('.pagination-dot').hasClass('d-none') && $('.pagination-dot').addClass('d-none')
         } else {
             if (currentPage >= 4 && currentPage < totalPage) {
-                preLoadPosts(currentPage)
                 $('.pagination-dot').removeClass('d-none')
             }
         }
@@ -86,7 +85,10 @@ function getPosts({ page, category, preRequest }) {
                     $('.spinner').addClass('d-none')
                     $('.no-posts-found').remove()
                 } else {
-                    postList.html(`<p class="no-posts-found mx-auto"><b>${noPostsFoundMessage}</b></p>`)
+                    $('.post-category').removeClass('d-none')
+                    $('.spinner').addClass('d-none')
+                    $('.pagination-wrap').hide()
+                    postList.html(`<p class="no-posts-found mx-auto py-5 text-center"><b>${noPostsFoundMessage}</b></p>`)
                 }
             } else {
                 $('.posts').removeClass('d-none')
