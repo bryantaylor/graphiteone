@@ -57,6 +57,12 @@
             }
           }
         }
+        
+        .label-outside {
+          @include mq(lg) {
+            padding-bottom: 3.2rem;
+          }
+        }
 
         .icon {
           width: 11.3rem;

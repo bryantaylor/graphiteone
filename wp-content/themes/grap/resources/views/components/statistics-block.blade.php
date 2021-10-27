@@ -35,7 +35,7 @@ $background = $statistics_block['background'];
                                         </div>
                                     </a>
                                 @else
-                                    <div class="label h5 mb-0 {{ $background == 'black' ? 'light' : 'secondary-dark' }}">{{ $label }}</div>
+                                    <div class="label-outside h5 mb-0 {{ $background == 'black' ? 'light' : 'secondary-dark' }}">{{ $label }}</div>
                                 @endif
                             </div>
                         @endif
