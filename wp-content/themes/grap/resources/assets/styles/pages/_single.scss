@@ -87,9 +87,16 @@
           margin-top: 3rem;
         }
 
+        p {
+          &:not(:last-child) {
+            margin-bottom: 3.3rem;
+          }
+        }
+
         ul {
           list-style: disc;
           padding-left: 3rem;
+          margin-bottom: 3.3rem;
         }
 
         a {

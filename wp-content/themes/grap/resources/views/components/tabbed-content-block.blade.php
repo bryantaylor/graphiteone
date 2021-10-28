@@ -26,27 +26,74 @@ $tabs = $tabbed_content_block['tabs'];
 
                     <div class="tabs-content">
                         @foreach ($tabs as $index => $tab)
-                            <div class="tab-panel" data-index="{{ $index }}">
-                                <div class="content">
-                                    @if ($tab['tab_content'])
-                                        @foreach ($tab['tab_content'] as $item)
-                                            <div class="content-item">
-                                                <div class="data-wrap">
-                                                    @if ($item['big_number'])
-                                                        <div class="big-number primary-orange">{{ $item['big_number'] }}</div>
-                                                    @endif
-                                                    @if ($item['unit'])
-                                                        <div class="unit">{{ $item['unit'] }}</div>
+                            @php
+                                $statistics = $tab['statistics'];
+                                $details_list = $tab['details_list'];
+                                $links_list = $tab['links_list'];
+                            @endphp
+                            @if ($tab['tab_content_layout'] == 'statistics')
+                                <div class="tab-panel" data-index="{{ $index }}">
+                                    <div class="content">
+                                        @if ($statistics)
+                                            @foreach ($statistics as $item)
+                                                <div class="content-item">
+                                                    <div class="data-wrap">
+                                                        @if ($item['big_number'])
+                                                            <div class="big-number primary-orange">{{ $item['big_number'] }}</div>
+                                                        @endif
+                                                        @if ($item['unit'])
+                                                            <div class="unit">{{ $item['unit'] }}</div>
+                                                        @endif
+                                                    </div>
+                                                    @if ($item['description'])
+                                                        <div class="description">{{ $item['description'] }}</div>
                                                     @endif
                                                 </div>
-                                                @if ($item['description'])
-                                                    <div class="description">{{ $item['description'] }}</div>
-                                                @endif
-                                            </div>
-                                        @endforeach
-                                    @endif
+                                            @endforeach
+                                        @endif
+                                    </div>
                                 </div>
-                            </div>
+                            @else
+                                @if ($tab['tab_content_layout'] == 'detailsList')
+                                    <div class="tab-panel" data-index="{{ $index }}">
+                                        <div class="details-list">
+                                            @if ($details_list)
+                                                @if ($details_list['item_details'])
+                                                    @foreach ($details_list['item_details'] as $item)
+                                                        <div class="details-item">
+                                                            <p class="label">{{ $item['label'] }}</p>
+                                                            <div class="value h4 primary-orange mb-0">{{ $item['value'] }}</div>
+                                                        </div>
+                                                    @endforeach
+                                                @endif
+                                                @if ($details_list['description'])
+                                                    <div class="description h5">{{ $details_list['description'] }}</div>
+                                                @endif
+                                            @endif
+                                        </div>
+                                    </div>
+                                @else
+                                    <div class="tab-panel" data-index="{{ $index }}">
+                                        <div class="links-list">
+                                            @if ($links_list)
+                                                @if ($links_list['description'])
+                                                    <div class="description ex">{!! $links_list['description'] !!}</div>
+                                                @endif
+                                                @if ($links_list['links'])
+                                                    @foreach ($links_list['links'] as $item)
+                                                        <a href="{{ $item['link_item']['url'] }}" target="{{ $item['link_item']['target'] }}"
+                                                            class="link-item d-block">{{ $item['link_item']['title'] }}</a>
+                                                    @endforeach
+                                                @endif
+                                                @if ($links_list['button'])
+                                                    <a href="{{ $links_list['button']['url'] }}" target="{{ $links_list['button']['target'] }}"
+                                                        class="primary-button">{{ $links_list['button']['title'] }}</a>
+                                                @endif
+                                            @endif
+                                        </div>
+                                    </div>
+                                @endif
+                            @endif
                         @endforeach
                     </div>
                 </div>

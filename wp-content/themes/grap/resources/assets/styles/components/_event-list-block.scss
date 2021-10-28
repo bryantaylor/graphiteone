@@ -18,16 +18,28 @@
     }
 
     .event-list {
+      position: relative;
+      z-index: 3;
       @include mq(lg) {
         margin-top: 3rem;
       }
 
       .event {
+        display: block;
         padding-top: 1.6rem;
         border-top: 2px solid rgba(255, 255, 255, 0.3);
+        @include text-color(base-light);
 
         &:not(:first-child) {
           margin-top: 2.4rem;
+        }
+
+        &:hover {
+          .event-name {
+            .link-title {
+              opacity: 1;
+            }
+          }
         }
 
         &-time {
@@ -40,6 +52,14 @@
         &-name {
           margin-top: 0.8rem;
           line-height: 26.4px;
+
+          .link-title {
+            font-size: 1.6rem;
+            line-height: 22px;
+            opacity: 0;
+            transition: all 0.3s;
+            @include font-weight(bold);
+          }
         }
       }
     }

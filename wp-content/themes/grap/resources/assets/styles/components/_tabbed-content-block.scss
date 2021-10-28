@@ -120,6 +120,57 @@
               }
             }
           }
+
+          .details-list {
+            .details-item {
+              display: grid;
+              grid-template-columns: 55% 45%;
+              grid-column-gap: 4.5rem;
+              align-items: center;
+              padding-bottom: 1.6rem;
+              border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+
+              &:not(:first-child) {
+                padding-top: 0.9rem;
+              }
+
+              .label {
+                text-align: right;
+              }
+            }
+
+            .description {
+              margin-top: 1.6rem;
+            }
+          }
+
+          .links-list {
+            .description {
+              margin-bottom: 2.3rem;
+
+              a {
+                @include text-color(primary-orange);
+              }
+            }
+
+            .link-item {
+              margin-bottom: 2.4rem;
+              padding-top: 1.6rem;
+              border-top: 2px solid rgba(255, 255, 255, 0.3);
+              line-height: 26.4px;
+              transition: all 0.3s;
+              @include text-color(base-light);
+
+              &:hover {
+                @include text-color(primary-orange);
+              }
+
+              @include mq(lg) {
+                font-size: 1.6rem;
+                line-height: 1.6rem;
+              }
+            }
+          }
         }
       }
     }

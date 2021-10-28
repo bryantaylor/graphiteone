@@ -18,12 +18,10 @@ $total_page = App\get_total_by_category_slug($cat_query, $posts_per_page);
                 <div class="filter-name">All</div>
             </div>
             @foreach ($categories as $item)
-                @if ($item->name !== 'Uncategorized')
-                    <div class="filter-item h3" data-cta="{{ $item->slug }}">
-                        <span class="red-dot"></span>
-                        <div class="filter-name">{{ $item->name }}</div>
-                    </div>
-                @endif
+                <div class="filter-item h3" data-cta="{{ $item->slug }}">
+                    <span class="red-dot"></span>
+                    <div class="filter-name">{{ $item->name }}</div>
+                </div>
             @endforeach
         </div>
 

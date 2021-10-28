@@ -221,7 +221,7 @@ function get_post_list()
     $page = get_query_var('paged') ? get_query_var('paged') : 1;
     $categories = get_terms([
         'taxonomy' => 'category',
-        'hide_empty' => false,
+        'hide_empty' => true,
     ]);
 
     $get_posts_args = array(
