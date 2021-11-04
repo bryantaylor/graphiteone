@@ -1,5 +1,8 @@
 .the-stax-advantage {
     .vertical-feature-block {
         padding-bottom: 14rem;
+        @include mq(lg) {
+            padding-bottom: 3.1rem;
+        }
     }
 }
