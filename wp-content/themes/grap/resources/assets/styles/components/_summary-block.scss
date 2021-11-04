@@ -45,6 +45,70 @@
         padding-left: 3rem;
         margin-bottom: 3.3rem;
       }
+
+      figure {
+        width: 100% !important;
+        margin-bottom: 3.3rem;
+
+        img {
+          width: 100%;
+        }
+
+        figcaption {
+          padding: 2.1rem 0;
+          height: fit-content;
+          border-top: 2px solid rgba(#303B40, 0.3);
+          border-bottom: 2px solid rgba(#303B40, 0.3);
+
+          h5 {
+            margin-bottom: 2.1rem;
+          }
+
+          p {
+            margin-bottom: 0 !important;
+            line-height: 21.6px;
+            @include font-size(ex);
+          }
+        }
+      }
+
+      figure.aligncenter {
+        img {
+          margin-bottom: 3.3rem;
+          height: 15vw;
+          @include mq(lg) {
+            height: 100%;
+          }
+        }
+
+        figcaption {
+          h5 {
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      figure.alignright,
+      figure.alignleft {
+        display: grid;
+        grid-template-columns: 1fr 20.42vw;
+        grid-column-gap: 4.5rem;
+        grid-gap: 3.3rem;
+        @include mq(lg) {
+          grid-template-columns: unset;
+        }
+
+        img {
+          height: 21vw;
+          @include mq(lg) {
+            height: auto;
+          }
+        }
+      }
+
+      figure.alignright {
+        direction: rtl;
+      }
     }
   }
 
