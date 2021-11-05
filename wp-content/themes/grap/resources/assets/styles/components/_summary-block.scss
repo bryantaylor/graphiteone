@@ -22,7 +22,7 @@
       @include mq(lg) {
         margin-top: 3rem;
       }
-      
+
       h3,
       h6 {
         margin-bottom: 3.3rem;
@@ -32,6 +32,11 @@
       h6 {
         font-size: 1.8rem;
         line-height: 18px;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
       }
 
       p {
@@ -50,15 +55,11 @@
         width: 100% !important;
         margin-bottom: 3.3rem;
 
-        img {
-          width: 100%;
-        }
-
         figcaption {
           padding: 2.1rem 0;
           height: fit-content;
-          border-top: 2px solid rgba(#303B40, 0.3);
-          border-bottom: 2px solid rgba(#303B40, 0.3);
+          border-top: 2px solid rgba(#303b40, 0.3);
+          border-bottom: 2px solid rgba(#303b40, 0.3);
 
           h5 {
             margin-bottom: 2.1rem;
@@ -75,10 +76,6 @@
       figure.aligncenter {
         img {
           margin-bottom: 3.3rem;
-          height: 15vw;
-          @include mq(lg) {
-            height: 100%;
-          }
         }
 
         figcaption {
@@ -96,13 +93,6 @@
         grid-gap: 3.3rem;
         @include mq(lg) {
           grid-template-columns: unset;
-        }
-
-        img {
-          height: 21vw;
-          @include mq(lg) {
-            height: auto;
-          }
         }
       }
 
