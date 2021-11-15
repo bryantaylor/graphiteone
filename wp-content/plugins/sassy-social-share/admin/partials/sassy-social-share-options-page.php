@@ -2,7 +2,7 @@
 /**
  * Options page
  *
- * @since    1.0.0
+ * @since    1.0
  */
 defined( 'ABSPATH' ) or die( "Cheating........Uh!!" );
 ?>
@@ -358,7 +358,7 @@ defined( 'ABSPATH' ) or die( "Cheating........Uh!!" );
 								<tr>
 									<td colspan="2">
 									<div>
-									<a href="https://www.heateor.com/comparison-between-sassy-social-share-pro-and-premium/" target="_blank"><img src="<?php echo plugins_url( '../../images/unlock/responsive-icons.png', __FILE__ ) ?>" /></a>
+									<a href="https://www.heateor.com/comparison-between-sassy-social-share-pro-and-premium/" target="_blank"><img style="width:100%" src="<?php echo plugins_url( '../../images/unlock/responsive-icons.png', __FILE__ ) ?>" /></a>
 									</div>
 									</td>
 								</tr>
@@ -833,12 +833,12 @@ defined( 'ABSPATH' ) or die( "Cheating........Uh!!" );
 						</tbody>
 						<?php
 						$like_buttons = array( 'facebook_share', 'facebook_like', 'facebook_recommend', 'twitter_tweet', 'linkedin_share', 'pinterest_pin', 'buffer_share', 'xing_share', 'yummly_share', 'reddit_badge' );
-						$sharing_networks = array( 'facebook', 'gab', 'twitter', 'linkedin', 'print', 'email', 'reddit', 'digg', 'float_it', 'tumblr', 'vkontakte', 'pinterest', 'xing', 'whatsapp', 'instagram', 'yummly', 'buffer', 'parler', 'AIM', 'Amazon_Wish_List', 'AOL_Mail', 'App.net', 'Balatarin', 'BibSonomy', 'Bitty_Browser', 'Blinklist', 'Blogger_Post', 'BlogMarks', 'Bookmarks.fr', 'Box.net', 'BuddyMarks', 'Care2_News', 'Comment', 'Copy_Link', 'Diary.Ru', 'Diaspora', 'Diigo', 'Douban', 'Draugiem', 'Evernote', 'Facebook_Messenger', 'Fark', 'Fintel', 'Flipboard', 'Folkd', 'GentleReader', 'Goodreads', 'Google_Bookmarks', 'Google_Classroom', 'Google_Gmail', 'Hacker_News', 'Hatena', 'Instapaper', 'Jamespot', 'Kakao', 'Kik', 'Kindle_It', 'Known', 'Line', 'LiveJournal', 'Mail.Ru', 'Mendeley', 'Meneame', 'MeWe', 'mix', 'Mixi', 'MySpace', 'Netvouz', 'Odnoklassniki', 'Outlook.com', 'Papaly', 'Pinboard', 'Plurk', 'Pocket', 'PrintFriendly', 'Protopage_Bookmarks', 'Pusha', 'Qzone', 'Rediff MyPage', 'Refind', 'Renren', 'Sina Weibo', 'SiteJot', 'Skype', 'Slashdot', 'SMS', 'StockTwits', 'Svejo', 'Symbaloo_Feeds', 'Telegram', 'Threema', 'Trello', 'Tuenti', 'Twiddla', 'TypePad_Post', 'Viadeo', 'Viber', 'Webnews', 'WordPress', 'Wykop', 'Yahoo_Mail', 'Yoolink', 'youtube' );
+						$sharing_networks = array( 'facebook','gettr', 'gab', 'twitter', 'linkedin', 'print', 'email', 'reddit', 'digg', 'float_it', 'tumblr', 'vkontakte', 'pinterest', 'xing', 'whatsapp', 'instagram', 'yummly', 'buffer', 'parler', 'AIM', 'Amazon_Wish_List', 'AOL_Mail', 'App.net', 'Balatarin', 'BibSonomy', 'Bitty_Browser', 'Blinklist', 'Blogger_Post', 'BlogMarks', 'Bookmarks.fr', 'Box.net', 'BuddyMarks', 'Care2_News', 'Comment', 'Copy_Link', 'Diary.Ru', 'Diaspora', 'Diigo', 'Douban', 'Draugiem', 'Evernote', 'Facebook_Messenger', 'Fark', 'Fintel', 'Flipboard', 'Folkd', 'GentleReader', 'Google_Bookmarks', 'Google_Classroom', 'Google_Gmail', 'Hacker_News', 'Hatena', 'Instapaper', 'Jamespot', 'Kakao', 'Kik', 'Kindle_It', 'Known', 'Line', 'LiveJournal', 'Mail.Ru', 'Mendeley', 'Meneame', 'MeWe', 'mix', 'Mixi', 'MySpace', 'Netvouz', 'Odnoklassniki', 'Outlook.com', 'Papaly', 'Pinboard', 'Plurk', 'Pocket', 'PrintFriendly', 'Protopage_Bookmarks', 'Pusha', 'Qzone', 'Rediff MyPage', 'Refind', 'Renren', 'Sina Weibo', 'SiteJot', 'Skype', 'Slashdot', 'SMS', 'StockTwits', 'Svejo', 'Symbaloo_Feeds', 'Telegram', 'Threema', 'Trello', 'Tuenti', 'Twiddla', 'TypePad_Post', 'Viadeo', 'Viber', 'Webnews', 'WordPress', 'Wykop', 'Yahoo_Mail', 'Yoolink', 'youtube' );
 						?>
 
 						<tr>
 							<td colspan="2">
-								<a href="https://www.heateor.com/comparison-between-sassy-social-share-pro-and-premium/" target="_blank"><img src="<?php echo plugins_url( '../../images/unlock/multiple-instances.png', __FILE__ ) ?>" /></a>
+								<a href="https://www.heateor.com/comparison-between-sassy-social-share-pro-and-premium/" target="_blank"><img style="width:100%" src="<?php echo plugins_url( '../../images/unlock/multiple-instances.png', __FILE__ ) ?>" /></a>
 							</td>
 						</tr>
 
@@ -851,6 +851,8 @@ defined( 'ABSPATH' ) or die( "Cheating........Uh!!" );
 
 						<tr>
 							<td colspan="2">
+							<?php _e( '(Logo color of the icons here will always be white, even if you have saved any other Logo Color in the Theme Selection section. However, at the front-end of the website, icons will be of the color that you have saved in the Theme Selection section.', 'sassy-social-share' );
+							?>
 							<script>
 							// facebook app id and secret options toggle variables
 							var heateorSssHorizontalShares = <?php echo isset( $options['horizontal_counts'] ) ? 'true' : 'false' ?>, heateorSssHorizontalTotalShares = <?php echo isset( $options['horizontal_total_shares'] ) ? 'true' : 'false' ?>, heateorSssVerticalShares = <?php echo isset( $options['vertical_counts'] ) ? 'true' : 'false' ?>, heateorSssVerticalTotalShares = <?php echo isset( $options['vertical_total_shares'] ) ? 'true' : 'false' ?>, heateorSssHorizontalFacebookShareEnabled = <?php echo in_array( 'facebook', $options['horizontal_re_providers'] ) ? 'true' : 'false'; ?>, heateorSssVerticalFacebookShareEnabled = <?php echo in_array( 'facebook', $options['vertical_re_providers'] ) ? 'true' : 'false'; ?>;
@@ -951,11 +953,9 @@ defined( 'ABSPATH' ) or die( "Cheating........Uh!!" );
 							foreach( $sharing_networks as $sharing_network ) {
 								?>
 								<div class="heateorSssHorizontalSharingProviderContainer">
-								<?php echo $sharing_network == 'Goodreads' ? '<a href="https://www.heateor.com/comparison-between-sassy-social-share-pro-and-premium/" target="_blank">' : ''; ?>
-								<input id="heateor_sss_<?php echo $sharing_network ?>" type="checkbox" <?php echo $sharing_network == 'Goodreads' ? 'disabled ' : ''; ?><?php echo isset( $options['horizontal_re_providers'] ) && in_array( $sharing_network, $options['horizontal_re_providers'] ) ? 'checked = "checked"' : '';?> value="<?php echo $sharing_network ?>" />
-								<label <?php echo $sharing_network != 'Goodreads' ? 'for="heateor_sss_' . $sharing_network . '"' : ''; ?>><i style="display:block;width:18px;height:18px;" class="heateorSssSharing heateorSss<?php echo str_replace( array( '_', '.', ' ' ), '', ucfirst( $sharing_network ) ) ?>Background"><ss style="display:block;" class="heateorSssSharingSvg heateorSss<?php echo str_replace(array( '_', '.', ' ' ), '', ucfirst( $sharing_network) ) ?>Svg"></ss></i></label>
-								<label class="lblSocialNetwork" <?php echo $sharing_network != 'Goodreads' ? 'for="heateor_sss_' . $sharing_network . '"' : ''; ?>><?php echo str_replace( '_', ' ', ucfirst( $sharing_network ) ) ?></label>
-								<?php echo $sharing_network == 'Goodreads' ? '</a>' : ''; ?>
+								<input id="heateor_sss_<?php echo $sharing_network ?>" type="checkbox" <?php echo isset( $options['horizontal_re_providers'] ) && in_array( $sharing_network, $options['horizontal_re_providers'] ) ? 'checked = "checked"' : '';?> value="<?php echo $sharing_network ?>" />
+								<label for="heateor_sss_<?php echo $sharing_network ?>"><i style="display:block;width:18px;height:18px;" class="heateorSssSharing heateorSss<?php echo str_replace( array( '_', '.', ' ' ), '', ucfirst( $sharing_network ) ) ?>Background"><ss style="display:block;" class="heateorSssSharingSvg heateorSss<?php echo str_replace(array( '_', '.', ' ' ), '', ucfirst( $sharing_network) ) ?>Svg"></ss></i></label>
+								<label class="lblSocialNetwork" for="heateor_sss_<?php echo $sharing_network ?>"><?php echo str_replace( '_', ' ', ucfirst( $sharing_network ) ) ?></label>
 								</div>
 								<?php
 							}
@@ -1009,7 +1009,7 @@ defined( 'ABSPATH' ) or die( "Cheating........Uh!!" );
 						<tr>
 							<td colspan="2">
 							<div>
-							<a href="https://www.heateor.com/comparison-between-sassy-social-share-pro-and-premium/" target="_blank"><img src="<?php echo plugins_url( '../../images/unlock/social-share-popup.png', __FILE__ ) ?>" /></a>
+							<a href="https://www.heateor.com/comparison-between-sassy-social-share-pro-and-premium/" target="_blank"><img style="width:100%" src="<?php echo plugins_url( '../../images/unlock/social-share-popup.png', __FILE__ ) ?>" /></a>
 							</div>
 							</td>
 						</tr>
@@ -1152,7 +1152,7 @@ defined( 'ABSPATH' ) or die( "Cheating........Uh!!" );
 						<tr>
 							<td colspan="2">
 							<div>
-							<a href="https://www.heateor.com/comparison-between-sassy-social-share-pro-and-premium/" target="_blank"><img src="<?php echo plugins_url( '../../images/unlock/hide-standard-share-bar.png', __FILE__ ) ?>" /></a>
+							<a href="https://www.heateor.com/comparison-between-sassy-social-share-pro-and-premium/" target="_blank"><img style="width:100%" src="<?php echo plugins_url( '../../images/unlock/hide-standard-share-bar.png', __FILE__ ) ?>" /></a>
 							</div>
 							</td>
 						</tr>
@@ -1284,6 +1284,8 @@ defined( 'ABSPATH' ) or die( "Cheating........Uh!!" );
 						
 						<tr>
 							<td colspan="2">
+							<?php _e( '(Logo color of the icons here will always be white, even if you have saved any other Logo Color in the Theme Selection section. However, at the front-end of the website, icons will be of the color that you have saved in the Theme Selection section.', 'sassy-social-share' );
+							?>
 							<script>
 							<?php
 							$verticalSharingStyle = 'width:' . ( $options['vertical_sharing_shape'] != 'rectangle' ? $options['vertical_sharing_size'] : $options['vertical_sharing_width'] ) . 'px;height:' . $vertical_line_height . 'px;';
@@ -1382,11 +1384,9 @@ defined( 'ABSPATH' ) or die( "Cheating........Uh!!" );
 							foreach( $sharing_networks as $sharing_network) {
 								?>
 								<div class="heateorSssVerticalSharingProviderContainer">
-								<?php echo $sharing_network == 'Goodreads' ? '<a href="https://www.heateor.com/comparison-between-sassy-social-share-pro-and-premium/" target="_blank">' : ''; ?>
-								<input id="heateor_sss_vertical_sharing_<?php echo $sharing_network ?>" type="checkbox" <?php echo $sharing_network == 'Goodreads' ? 'disabled ' : ''; ?><?php echo isset( $options['vertical_re_providers'] ) && in_array( $sharing_network, $options['vertical_re_providers'] ) ? 'checked = "checked"' : '';?> value="<?php echo $sharing_network ?>" />
+								<input id="heateor_sss_vertical_sharing_<?php echo $sharing_network ?>" type="checkbox" <?php echo isset( $options['vertical_re_providers'] ) && in_array( $sharing_network, $options['vertical_re_providers'] ) ? 'checked = "checked"' : '';?> value="<?php echo $sharing_network ?>" />
 								<label for="heateor_sss_vertical_sharing_<?php echo $sharing_network ?>"><i style="display:block;width:18px;height:18px;" class="heateorSssSharing heateorSss<?php echo str_replace(array( '_', '.', ' ' ), '', ucfirst( $sharing_network) ) ?>Background"><ss style="display:block;" class="heateorSssSharingSvg heateorSss<?php echo str_replace(array( '_', '.', ' ' ), '', ucfirst( $sharing_network) ) ?>Svg"></ss></i></label>
-								<label class="lblSocialNetwork" <?php echo $sharing_network != 'Goodreads' ? 'for="heateor_sss_' . $sharing_network . '"' : ''; ?>><?php echo str_replace( '_', ' ', ucfirst( $sharing_network ) ) ?></label>
-								<?php echo $sharing_network == 'Goodreads' ? '</a>' : ''; ?>
+								<label class="lblSocialNetwork" for="heateor_sss_' . $sharing_network . '"><?php echo str_replace( '_', ' ', ucfirst( $sharing_network ) ) ?></label>
 								</div>
 								<?php
 							}
@@ -1697,7 +1697,7 @@ defined( 'ABSPATH' ) or die( "Cheating........Uh!!" );
 				<div class="heateor_sss_left_column">
 
 				<div>
-					<a href="https://www.heateor.com/comparison-between-sassy-social-share-pro-and-premium/" target="_blank"><img style="margin-bottom:19px;" src="<?php echo plugins_url( '../../images/unlock/track-shares.png', __FILE__ ) ?>" /></a>
+					<a href="https://www.heateor.com/comparison-between-sassy-social-share-pro-and-premium/" target="_blank"><img style="margin-bottom:19px;width:100%" src="<?php echo plugins_url( '../../images/unlock/track-shares.png', __FILE__ ) ?>" /></a>
 				</div>
 
 				<div class="stuffbox">
@@ -2087,7 +2087,7 @@ defined( 'ABSPATH' ) or die( "Cheating........Uh!!" );
 				</div>
 
 				<div>
-					<a href="https://www.heateor.com/comparison-between-sassy-social-share-pro-and-premium/" target="_blank"><img src="<?php echo plugins_url( '../../images/unlock/custom-icon-url.png', __FILE__ ) ?>" /></a>
+					<a href="https://www.heateor.com/comparison-between-sassy-social-share-pro-and-premium/" target="_blank"><img style="width:100%" src="<?php echo plugins_url( '../../images/unlock/custom-icon-url.png', __FILE__ ) ?>" /></a>
 				</div>
 							
 				</div>
@@ -2131,7 +2131,7 @@ defined( 'ABSPATH' ) or die( "Cheating........Uh!!" );
 					<div class="inside" style="padding-left:7px">
 						<p><a style="text-decoration:none" href="http://support.heateor.com/sassy-social-share-shortcode-and-widget" target="_blank"><?php _e( 'Social Share Shortcode & Widget', 'sassy-social-share' ) ?></a></p>
 						<p><a style="text-decoration:none" href="http://support.heateor.com/sassy-follow-icons-shortcode" target="_blank"><?php _e( 'Follow Icons Shortcode & Widget', 'sassy-social-share' ) ?></a></p>
-						<p><a href="https://www.heateor.com/comparison-between-sassy-social-share-pro-and-premium/" target="_blank"><img src="<?php echo plugins_url( '../../images/unlock/click-to-tweet-shortcode.png', __FILE__ ) ?>" /></a></p>
+						<p><a href="https://www.heateor.com/comparison-between-sassy-social-share-pro-and-premium/" target="_blank"><img style="width:100%" src="<?php echo plugins_url( '../../images/unlock/click-to-tweet-shortcode.png', __FILE__ ) ?>" /></a></p>
 					</div>
 				</div>
 				</div>
@@ -2177,7 +2177,6 @@ defined( 'ABSPATH' ) or die( "Cheating........Uh!!" );
 						</p>
 						<p><a href="https://www.heateor.com/recover-social-share-counts/" target="_blank"><?php _e('How to restore Social Share counts lost after moving my website to SSL/Https?', 'sassy-social-share' ) ?></a></p>
 						<p><a href="http://support.heateor.com/how-to-integrate-google-analytics-with-sharing" target="_blank"><?php _e( 'How to integrate Google Analytics with sharing?', 'sassy-social-share' ) ?></a></p>
-						<p><a href="http://support.heateor.com/color-share-icons-not-being-updated" target="_blank"><?php _e( 'Why the color of share icons is not being updated?', 'sassy-social-share' ) ?></a></p>
 						<p><a style="text-decoration:none" href="https://www.heateor.com/facebook-comments-moderation" target="_blank"><?php _e( 'How to show recent Facebook Comments from all over the website in a widget?', 'sassy-social-share' ) ?></a></p>
 						<p><a style="text-decoration:none" href="http://support.heateor.com/recover-facebook-comments-wordpress-moving-to-https-ssl/" target="_blank"><?php _e( 'How to recover the Facebook Comments lost after moving my website to SSL/Https?', 'sassy-social-share' ) ?></a></p>
 						<p><a href="http://support.heateor.com/place-title-social-share-icons-row/" target="_blank"><?php _e( 'How to Place Title and Social Share Icons in the Same Row?', 'sassy-social-share' ) ?></a></p>

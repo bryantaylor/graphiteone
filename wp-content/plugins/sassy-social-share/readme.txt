@@ -1,26 +1,26 @@
 ﻿=== Social Sharing Plugin - Sassy Social Share ===
 Contributors: Heateor, jatin8heateor, farhan8heateor
 Donate link: https://www.heateor.com/donate/?action=Sassy+Social+Share
-Tags: social share, social sharing, social media share, share facebook, facebook social share, wordpress social share, share buttons, social share buttons, facebook like, twitter tweet, whatsapp share, line share, gab share, parler share
+Tags: social share, social sharing, social media share, share facebook, facebook social share, wordpress social share, share buttons, social share buttons, facebook like, twitter tweet, whatsapp share, line share, gab share, gab, parler share, gettr, gettr share, mewe share, mewe
 Requires at least: 2.5.0
-Tested up to: 5.8.1
-Stable tag: 3.3.25
+Tested up to: 5.8.2
+Stable tag: 3.3.28
 License: GPLv2 or later
 
-Slickest, Simplest and Optimized Share buttons. Facebook, Twitter, Reddit, Pinterest, Whatsapp, Parler, Gab and over 100 more.
+Slickest, Simplest and Optimized Share buttons. Facebook, Twitter, Reddit, Pinterest, Whatsapp, Parler, Gab, Gettr and over 100 more.
 
 == Description ==
 
-Sassy Social Share enables your website users to share the content over Facebook, Twitter, Google, Linkedin, Whatsapp, Tumblr, Pinterest, Reddit, Parler, Gab and over 100 more social sharing and bookmarking services.
+Sassy Social Share enables your website users to share the content over Facebook, Twitter, Google, Linkedin, Whatsapp, Tumblr, Pinterest, Reddit, Parler, Gab, Gettr and over 100 more social sharing and bookmarking services.
 
-This is the simplest and the fastest Social Sharing plugin with optimized and great looking vector icons.
+This is the Simplest and Smoothest Social Sharing plugin with optimized and great looking vector icons.
 
 **Note:** Plugin will not work on local server. You should have an online website for the plugin to function properly.
 
 **This plugin does not save any cookie in the browser of the user visiting the website having this plugin installed**
 
 = Feature list =
-* GDPR Compliant
+* EU-GDPR Compliant
 * Compatible with Gutenberg editor
 * Compatible with myCRED (append myCRED referral ID at the end of the url being shared)
 * Around **100 Social Sharing/Bookmarking** services
@@ -123,6 +123,31 @@ Yes, we can help you with it. Just drop an email at support[at]heateor[dot]com
 4. **Universal Sharing Popup**: Universal Sharing popup having all the supported sharing and bookmarking services
 
 == Changelog ==
+= 3.3.28 [14 November 2021] =
+* [Bugfix] Copy Link icon was not functioning
+* [Bugfix] Print icon was not functioning
+* [Bugfix] Gettr share icon was not sharing properly
+* [Bugfix] Mewe, Gettr and Outlook share icons were not working in the More social share popup
+* [Improvement] Minor CSS improvements in the More social share popup
+
+= 3.3.27 [13 November 2021] =
+* [Bugfix] Background color of some social share icons was not correct in the previous update
+* [Bugfix] Threema social share icon was showing the logo of Telegram
+* [Bugfix] Center alignment was not working for the standard social share bar from the last update
+* [Bugfix] PHP warning was being generated in the AMP mode
+* [Bugfix] Pinterest share icon was not functioning since the last update
+* [Improvement] Horizontal sticky share bar was slightly hidden below the bottom of the screen
+
+= 3.3.26 [12 November 2021] =
+* [New] Added Gettr social share and social media follow icon
+* [Improvement] Extra CSS files will not be loaded anymore if you change the logo color of icons
+* [Improvement] Updated the Facebook JS SDK being used throughout the plugin to the latest version 12.0
+* [Improvement] Improved HTML of the social share and social media follow icons meeting the W3C standards
+* [Bugfix] Yoolink social share was not working
+* [Bugfix] Whatsapp share was not triggering the app in the mobile device
+* [Bugfix] Selecting "Floating" type in the Follow Icons widget was not triggering the relevant extra options
+* [Security] Fixed XSS vulnerability
+
 = 3.3.25 [16 October 2021] =
 * [Improvement] Fixed broken links at the plugin configuration page
 
@@ -362,7 +387,7 @@ Yes, we can help you with it. Just drop an email at support[at]heateor[dot]com
 = 3.2.4 =
 * [New] StumbleUpon share is now Mix share
 * [Bugfix] Enabling the horizontal sticky floating share bar was causing a white bar to appear at the bottom of webpages in mobile devices where floating bar was not enabled
-* [Bugfix] "heateor-sss-no-counts" attribute was causing "disallowed attribute" validation error on AMP 
+* [Bugfix] "data-heateor-sss-no-counts" attribute was causing "disallowed attribute" validation error on AMP 
 * [Improvement] Meta options for individual posts/pages were also appearing for non-admin users
 * [Improvement] "global $post" was generating PHP notices where $post was NULL
 
@@ -574,12 +599,12 @@ Yes, we can help you with it. Just drop an email at support[at]heateor[dot]com
 * [Improvement] Improved share counter functionality
 * [Improvement] Admin UI improvements
 
-= 1.0.0 =
+= 1.0 =
 * Initial release of the plugin
 
 == Upgrade Notice ==
 
-= 1.0.0 =
+= 1.0 =
 * Initial release of the plugin
 
 = 1.1 =
@@ -793,7 +818,7 @@ Yes, we can help you with it. Just drop an email at support[at]heateor[dot]com
 = 3.2.4 =
 * [New] StumbleUpon share is now Mix share
 * [Bugfix] Enabling the horizontal sticky floating share bar was causing a white bar to appear at the bottom of webpages in mobile devices where floating bar was not enabled
-* [Bugfix] "heateor-sss-no-counts" attribute was causing "disallowed attribute" validation error on AMP 
+* [Bugfix] "data-heateor-sss-no-counts" attribute was causing "disallowed attribute" validation error on AMP 
 * [Improvement] Meta options for individual posts/pages were also appearing for non-admin users
 * [Improvement] "global $post" was generating PHP notices where $post was NULL
 
@@ -1024,7 +1049,7 @@ Yes, we can help you with it. Just drop an email at support[at]heateor[dot]com
 * [Improvement] Performance improvement of Social Media Follow widget
 
 = 3.3.23 [29 July 2021] =
-* [New] Added options to export and import plugin configuration 
+* [New] Added options to export and import plugin configuration
 
 = 3.3.24 [17 September 2021] =
 * [Important] Fixed PHP Object Injection vulnerability
@@ -1032,3 +1057,28 @@ Yes, we can help you with it. Just drop an email at support[at]heateor[dot]com
 
 = 3.3.25 [16 October 2021] =
 * [Improvement] Fixed broken links at the plugin configuration page
+
+= 3.3.26 [12 November 2021] =
+* [New] Added Gettr social share and social media follow icon 
+* [Improvement] Extra CSS files will not be loaded anymore if you change the logo color of icons
+* [Improvement] Updated the Facebook JS SDK being used throughout the plugin to the latest version 12.0
+* [Improvement] Improved HTML of the social share and social media follow icons meeting the W3C standards
+* [Bugfix] Yoolink social share was not working
+* [Bugfix] Whatsapp share was not triggering the app in the mobile device
+* [Bugfix] Selecting "Floating" type in the Follow Icons widget was not triggering the relevant extra options
+* [Security] Fixed XSS vulnerability
+
+= 3.3.27 [13 November 2021] =
+* [Bugfix] Background color of some social share icons was not correct in the previous update
+* [Bugfix] Threema social share icon was showing the logo of Telegram
+* [Bugfix] Center alignment was not working for the standard social share bar from the last update
+* [Bugfix] PHP warning was being generated in the AMP mode
+* [Bugfix] Pinterest share icon was not functioning since the last update 
+* [Improvement] Horizontal sticky share bar was slightly hidden below the bottom of the screen
+
+= 3.3.28 [14 November 2021] =
+* [Bugfix] Copy Link icon was not functioning
+* [Bugfix] Print icon was not functioning
+* [Bugfix] Gettr share icon was not sharing properly
+* [Bugfix] Mewe, Gettr and Outlook share icons were not working in the More social share popup
+* [Improvement] Minor CSS improvements in the More social share popup

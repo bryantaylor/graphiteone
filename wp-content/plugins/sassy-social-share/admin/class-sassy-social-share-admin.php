@@ -3,14 +3,14 @@
 /**
  * Contains functions responsible for functionality at admin side
  *
- * @since      1.0.0
+ * @since      1.0
  *
  */
 
 /**
  * This class defines all code necessary for functionality at admin side
  *
- * @since      1.0.0
+ * @since      1.0
  *
  */
 class Sassy_Social_Share_Admin {
@@ -18,28 +18,28 @@ class Sassy_Social_Share_Admin {
 	/**
 	 * Options saved in database
 	 *
-	 * @since    1.0.0
+	 * @since    1.0
 	 */
 	private $options;
 
 	/**
 	 * Current version of the plugin
 	 *
-	 * @since    1.0.0
+	 * @since    1.0
 	 */
 	private $version;
 
 	/**
 	 * Flag to check if BuddyPress is active
 	 *
-	 * @since    1.0.0
+	 * @since    1.0
 	 */
 	private $is_bp_active = false;
 
 	/**
 	 * Get saved options
 	 *
-	 * @since    1.0.0
+	 * @since    1.0
      * @param    array    $options    Plugin options saved in database
 	 */
 	public function __construct( $options, $version ) {
@@ -52,7 +52,7 @@ class Sassy_Social_Share_Admin {
 	/**
 	 * Creates plugin menu in admin area
 	 *
-	 * @since    1.0.0
+	 * @since    1.0
 	 */
 	public function create_admin_menu() {
 
@@ -144,7 +144,7 @@ class Sassy_Social_Share_Admin {
 	/**
 	 * Register plugin settings and its sanitization callback.
 	 *
-	 * @since    1.0.0
+	 * @since    1.0
 	 */
 	public function options_init() {
 
@@ -166,7 +166,7 @@ class Sassy_Social_Share_Admin {
 	/**
 	 * Update options in all the old blogs.
 	 *
-	 * @since    1.0.0
+	 * @since    1.0
 	 */
 	public function update_old_blogs( $old_config ) {
 		
@@ -185,7 +185,7 @@ class Sassy_Social_Share_Admin {
 	/**
 	 * Replicate the options to the new blog created.
 	 *
-	 * @since    1.0.0
+	 * @since    1.0
 	 */
 	public function replicate_settings( $blog_id ) {
 
@@ -196,7 +196,7 @@ class Sassy_Social_Share_Admin {
 	/**
 	 * Show sharing meta options
 	 *
-	 * @since    1.0.0
+	 * @since    1.0
 	 */
 	public function sharing_meta_setup() {
 
@@ -263,7 +263,7 @@ class Sassy_Social_Share_Admin {
 	/**
 	 * Save sharing meta fields.
 	 *
-	 * @since    1.0.0
+	 * @since    1.0
 	 */
 	public function save_sharing_meta( $post_id ) {
 	    
@@ -296,7 +296,7 @@ class Sassy_Social_Share_Admin {
 	 *
 	 * IMPROVEMENT: complexity can be reduced (this function is called on each option page validation and "if ( $k == 'providers' ) {"
 	 * condition is being checked every time)
-     * @since    1.0.0
+     * @since    1.0
 	 */ 
 	public function validate_options( $heateorSssOptions ) {
 		
@@ -312,7 +312,7 @@ class Sassy_Social_Share_Admin {
 	/**
 	 * Include Javascript at plugin options page in admin area
 	 *
-	 * @since    1.0.0
+	 * @since    1.0
 	 */	
 	public function admin_options_scripts() {
 
@@ -329,7 +329,7 @@ class Sassy_Social_Share_Admin {
 	/**
 	 * Include Javascript SDK in admin.
 	 *
-	 * @since    1.0.0
+	 * @since    1.0
 	 */	
 	public function fb_sdk_script() {
 
@@ -340,7 +340,7 @@ class Sassy_Social_Share_Admin {
 	/**
 	 * Include CSS files in admin.
 	 *
-	 * @since    1.0.0
+	 * @since    1.0
 	 */	
 	public function admin_style() {
 
@@ -351,34 +351,18 @@ class Sassy_Social_Share_Admin {
 	/**
 	 * Include CSS files at plugin options page in admin area
 	 *
-	 * @since    1.0.0
+	 * @since    1.0
 	 */	
 	public function admin_options_style() {
 
 		wp_enqueue_style( 'heateor_sss_admin_svg', plugins_url( 'css/sassy-social-share-svg.css', __FILE__ ), false, $this->version );
-		if ( $this->options['horizontal_font_color_default'] != '' ) {
-			$updated = $this->update_css( 'horizontal_sharing_replace_color', 'horizontal_font_color_default', 'sassy-social-share-default-svg-horizontal' );
-			wp_enqueue_style( 'heateor_sss_admin_svg_horizontal', plugins_url( 'css/sassy-social-share-default-svg-horizontal.css', __FILE__ ), false, ( $updated === true ? rand() :  $this->version ) );
-		}
-		if ( $this->options['horizontal_font_color_hover'] != '' ) {
-			$updated = $this->update_css( 'horizontal_sharing_replace_color_hover', 'horizontal_font_color_hover', 'sassy-social-share-hover-svg-horizontal' );
-			wp_enqueue_style( 'heateor_sss_admin_svg_horizontal_hover', plugins_url( 'css/sassy-social-share-hover-svg-horizontal.css', __FILE__ ), false, ( $updated === true ? rand() :  $this->version ) );
-		}
-		if ( $this->options['vertical_font_color_default'] != '' ) {
-			$updated = $this->update_css( 'vertical_sharing_replace_color', 'vertical_font_color_default', 'sassy-social-share-default-svg-vertical' );
-			wp_enqueue_style( 'heateor_sss_admin_svg_vertical', plugins_url( 'css/sassy-social-share-default-svg-vertical.css', __FILE__ ), false, ( $updated === true ? rand() :  $this->version ) );
-		}
-		if ( $this->options['vertical_font_color_hover'] != '' ) {
-			$updated = $this->update_css( 'vertical_sharing_replace_color_hover', 'vertical_font_color_hover', 'sassy-social-share-hover-svg-vertical' );
-			wp_enqueue_style( 'heateor_sss_admin_svg_vertical_hover', plugins_url( 'css/sassy-social-share-hover-svg-vertical.css', __FILE__ ), false, ( $updated === true ? rand() :  $this->version ) );
-		}
 	
 	}
 
 	/**
 	 * Update CSS file
 	 *
-	 * @since    1.0.0
+	 * @since    1.0
 	 */
 	private function update_css( $replace_color_option, $logo_color_option, $css_file ) {
 		
@@ -407,7 +391,7 @@ class Sassy_Social_Share_Admin {
 	/**
 	 * Include javascript files in admin.
 	 *
-	 * @since    1.0.0
+	 * @since    1.0
 	 */	
 	public function admin_scripts() {
 		
@@ -469,7 +453,7 @@ class Sassy_Social_Share_Admin {
 	/**
 	 * Renders options page
 	 *
-	 * @since    1.0.0
+	 * @since    1.0
 	 */
 	public function options_page() {
 
@@ -486,14 +470,13 @@ class Sassy_Social_Share_Admin {
 	/**
 	 * Display notification message when plugin options are saved
 	 *
-	 * @since    1.0.0
+	 * @since    1.0
      * @return   string    Notification after saving options
 	 */
 	private function settings_saved_notification() {
 
 		if ( isset( $_GET['settings-updated'] ) && $_GET['settings-updated'] == 'true' ) {
-			return '<div id="setting-error-settings_updated" class="updated settings-error notice is-dismissible below-h2"> 
-	<p><strong>' . __( 'Settings saved', 'sassy-social-share' ) . '</strong></p><button type="button" class="notice-dismiss"><span class="screen-reader-text">' . __( 'Dismiss this notice', 'sassy-social-share' ) . '</span></button></div>';
+			return '<div class="notice notice-success is-dismissible"><p><strong>' . __( 'Settings saved', 'sassy-social-share' ) . '</strong></p></div>';
 		}
 	
 	}
@@ -501,16 +484,18 @@ class Sassy_Social_Share_Admin {
 	/**
 	 * Check if plugin is active
 	 *
-	 * @since    1.0.0
+	 * @since    1.0
 	 */
 	private function is_plugin_active( $plugin_file ) {
+
 		return in_array( $plugin_file, apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) );
+	
 	}
 
 	/**
 	 * Set BuddyPress active flag to true
 	 *
-	 * @since    1.0.0
+	 * @since    1.0
 	 */
 	public function is_bp_loaded() {
 		
@@ -624,11 +609,20 @@ class Sassy_Social_Share_Admin {
 		        delete_transient( 'heateor-sss-admin-notice-on-activation' );
 		    }
 
-			if ( defined( 'HEATEOR_SOCIAL_SHARE_MYCRED_INTEGRATION_VERSION' ) && version_compare( '1.3.3', HEATEOR_SOCIAL_SHARE_MYCRED_INTEGRATION_VERSION ) > 0 ) {
+			if ( defined( 'HEATEOR_SOCIAL_SHARE_MYCRED_INTEGRATION_VERSION' ) && version_compare( '1.3.12', HEATEOR_SOCIAL_SHARE_MYCRED_INTEGRATION_VERSION ) > 0 ) {
 				?>
 				<div class="error notice">
 					<h3>Social Share - myCRED Integration</h3>
-					<p><?php _e( 'Update "Social Share myCRED Integration" add-on for maximum compatibility with current version of Sassy Social Share', 'sassy-social-share' ) ?></p>
+					<p><?php _e( 'Update "Social Share myCRED Integration" add-on for compatibility with the current version of Sassy Social Share', 'sassy-social-share' ) ?></p>
+				</div>
+				<?php
+			}
+
+			if ( defined( 'HEATEOR_SHARING_GOOGLE_ANALYTICS_VERSION' ) && version_compare( '1.1.7', HEATEOR_SHARING_GOOGLE_ANALYTICS_VERSION ) > 0 ) {
+				?>
+				<div class="error notice">
+					<h3>Social Sharing Analytics</h3>
+					<p><?php _e( 'Update "Social Sharing Analytics" add-on for compatibility with the current version of Sassy Social Share', 'sassy-social-share' ) ?></p>
 				</div>
 				<?php
 			}
