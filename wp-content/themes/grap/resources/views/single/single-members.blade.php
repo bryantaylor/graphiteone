@@ -10,12 +10,6 @@ $thumbnail = get_the_post_thumbnail_url($id);
                 @if ($thumbnail)
                     <img src="{{ $thumbnail }}" alt="member-image">
                 @endif
-                <div class="social-share">
-                    <div class="h5">Share</div>
-                    <div class="short-code">
-                        {!! do_shortcode('[Sassy_Social_Share]') !!}
-                    </div>
-                </div>
             </div>
             <div class="content">
                 {!! the_content() !!}
