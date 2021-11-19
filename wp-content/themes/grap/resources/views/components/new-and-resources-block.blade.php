@@ -7,10 +7,13 @@ $posts_per_page = $posts_data['posts_per_page'];
 $no_posts_found_message = $posts_data['no_posts_found_message'];
 $cat_query = $_GET['cat'];
 $total_page = App\get_total_by_category_slug($cat_query, $posts_per_page);
+foreach ($categories as $category) {
+    $categories_list .= $category->slug . ' ';
+}
 @endphp
 
 <div class="new-and-resources-block post-grid-block light" data-page="{{ $page }}" data-posts-per-page="{{ $posts_per_page }}"
-    data-no-posts-found-message="{{ $no_posts_found_message }}">
+    data-no-posts-found-message="{{ $no_posts_found_message }}" data-categories="{{ $categories_list }}">
     <div class="container">
         <div class="filter-bar">
             <div class="filter-item h3 filter-active">

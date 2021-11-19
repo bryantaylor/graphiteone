@@ -1,9 +1,30 @@
 export function handleLoadPosts() {
     $(document).on('click', '.page-number', handleChangePage)
     $('.filter-item').click(handleChangePostCat)
+    handleChangePostCatByHash()
 }
 
 let ajax
+
+let url = new URL(window.location.href)
+const index = url.href.indexOf('#')
+const hash = url.href.substring(index + 1)
+
+function handleChangePostCatByHash() {
+    const categories = $('.post-grid-block').data('categories')
+    if (url.hash !== '') {
+        if (url.hash && categories.includes(hash) && index !== -1) {
+            $('.filter-bar').find('.filter-item').removeClass('filter-active')
+            $('.filter-bar').find('[data-cta=' + hash + ']').addClass('filter-active')
+            getPosts({ category: hash, page: 1 })
+        } else {
+            const postList = $('.posts')
+            postList.find('.post-card-wrap').remove()
+            postList.html(`<p class="no-posts-found mx-auto py-5 text-center"><b>No Posts Found.</b></p>`)
+            $('.pagination-wrap').hide()
+        }
+    }
+}
 
 function handleChangePostCat(e) {
     e.preventDefault()
@@ -61,8 +82,9 @@ function getPosts({ page, category, preRequest }) {
     const postList = $('.posts')
     let url = new URL(window.location.href)
     url.searchParams.append('paged', page)
-
-    if (category) url.href += '&cat=' + category
+    if (category) {
+        url.href = `${url.href.split(`#${hash}`).join('')}&cat=${category}`
+    }
 
     ajax = $.ajax({
         url: url.href,
