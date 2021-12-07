@@ -24,11 +24,11 @@
 
     .input-section {
       display: flex;
-      @include mq(md) {
-        flex-direction: column;
-      }
       @include mq(lg) {
         width: 100%;
+      }
+      @include mq(sm) {
+        flex-direction: column;
       }
 
       .email-input {
@@ -47,17 +47,18 @@
           line-height: 20px;
           @include text-color(base-light);
         }
-        @include mq(md) {
+        @include mq(lg) {
+          width: 36rem;
+        }
+        @include mq(sm) {
           margin-bottom: 2.5rem;
           margin-right: 0;
-        }
-        @include mq(lg) {
           width: 100%;
         }
       }
 
       .primary-button {
-        @include mq(md) {
+        @include mq(sm) {
           width: 100%;
         }
       }
