@@ -1,0 +1,66 @@
+.newsletter-signup-form {
+  padding: 10rem 1.5rem;
+  @include bg-color(secondary-dark);
+  @include mq(lg) {
+    padding: 4.5rem 1rem;
+  }
+
+  .form-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
+    @include mq(lg) {
+      flex-direction: column;
+      align-items: unset;
+    }
+
+    .form-label {
+      @include text-color(base-light);
+      @include mq(lg) {
+        margin-bottom: 2.5rem;
+      }
+    }
+
+    .input-section {
+      display: flex;
+      @include mq(md) {
+        flex-direction: column;
+      }
+      @include mq(lg) {
+        width: 100%;
+      }
+
+      .email-input {
+        border-radius: 4.5rem;
+        width: 25vw;
+        height: 4.5rem;
+        margin-right: 4.5rem;
+        border: 2px solid #fff;
+        background-color: rgba(255, 255, 255, 0.1);
+        padding-left: 2.8rem;
+        font-size: 1.6rem;
+        line-height: 20px;
+        @include text-color(base-light);
+        &::placeholder {
+          font-size: 1.6rem;
+          line-height: 20px;
+          @include text-color(base-light);
+        }
+        @include mq(md) {
+          margin-bottom: 2.5rem;
+          margin-right: 0;
+        }
+        @include mq(lg) {
+          width: 100%;
+        }
+      }
+
+      .primary-button {
+        @include mq(md) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

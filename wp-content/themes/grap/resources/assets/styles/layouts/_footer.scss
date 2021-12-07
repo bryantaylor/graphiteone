@@ -1,4 +1,5 @@
 footer {
+  border-top: 2px solid #fff;
   @include bg-color(secondary-dark);
 
   .footer-wrap {
