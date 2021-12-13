@@ -261,7 +261,7 @@ function handle_submit_newsletter_form() {
         $form_guid = isset($_POST['formGuid']) ? $_POST['formGuid'] : '';
         $api_url = "https://api.hsforms.com/submissions/v3/integration/submit/$portal_id/$form_guid";
         $email_in_base64 = base64_encode($email);
-        $subscribed = get_option("subscribed_$email_in_base64");
+        $subscribed = get_option("subscribed_$email_in_base64"."_$form_guid");
 
         if (!$subscribed) {
             global $wp;
@@ -284,7 +284,7 @@ function handle_submit_newsletter_form() {
             $result = json_decode($res['body'], true);
 
             if (empty($result['errors'])) {
-                update_option("subscribed_$email_in_base64", true);
+                update_option("subscribed_$email_in_base64"."_$form_guid", true);
             }
         } else {
             $result = array('inlineMessage' => "You're Already Subscribed!");
