@@ -173,3 +173,7 @@ if (function_exists('acf_add_options_page')) {
  */
 add_action('wp_head', 'App\add_favicon');
 add_action('admin_head', 'App\add_favicon');
+
+// Handle submit newsletter signup form
+add_action('wp_ajax_submit_newsletter_form', 'App\handle_submit_newsletter_form');
+add_action('wp_ajax_nopriv_submit_newsletter_form', 'App\handle_submit_newsletter_form');

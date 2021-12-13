@@ -251,3 +251,47 @@ function get_post_list()
         'no_posts_found_message'
     );
 }
+
+function handle_submit_newsletter_form() {
+    $result = null;
+
+    try {
+        $email = isset($_POST['email']) ? $_POST['email'] : '';
+        $portal_id = isset($_POST['portalId']) ? $_POST['portalId'] : '';
+        $form_guid = isset($_POST['formGuid']) ? $_POST['formGuid'] : '';
+        $api_url = "https://api.hsforms.com/submissions/v3/integration/submit/$portal_id/$form_guid";
+        $email_in_base64 = base64_encode($email);
+        $subscribed = get_option("subscribed_$email_in_base64");
+
+        if (!$subscribed) {
+            global $wp;
+            $current_url = home_url( add_query_arg( array(), $wp->request ) );
+            $form_data = array(
+                'fields' => array(
+                    array('name' => 'email', 'value' => $email)
+                ),
+                'context' => array(
+                    'pageUri' => $current_url
+                )
+            );
+    
+            $args = array(
+                'headers' => array( 'Content-type' => 'application/json' ),
+                'body' => json_encode($form_data)
+            );
+    
+            $res = wp_remote_post($api_url, $args);
+            $result = json_decode($res['body'], true);
+
+            if (empty($result['errors'])) {
+                update_option("subscribed_$email_in_base64", true);
+            }
+        } else {
+            $result = array('inlineMessage' => "You're Already Subscribed!");
+        }
+    } catch (\Exception $e) {
+        //throw $e;
+    }
+
+    wp_send_json($result);
+}

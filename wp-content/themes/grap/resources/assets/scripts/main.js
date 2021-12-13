@@ -14,4 +14,5 @@ $(document).ready(() => {
   Func.trimElement()
   Func.activeTab()
   Func.handleLoadPosts()
+  Func.createNewsletterSignUpFormHandler()
 })
