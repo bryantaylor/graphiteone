@@ -100,7 +100,7 @@ class Sassy_Social_Share_Admin {
 		<div class="metabox-holder columns-2" id="post-body">
 			<h1>Social Share myCRED Integration</h1>
 			<div class="heateor_sss_left_column">
-				<a href="https://www.heateor.com/sassy-social-share-premium/" target="_blank"><img src="<?php echo plugins_url( '../images/unlock/mycred-options.png', __FILE__ ) ?>" /></a>
+				<a href="https://www.heateor.com/sassy-social-share-premium/" target="_blank"><img style="width:100%" src="<?php echo plugins_url( '../images/unlock/mycred-options.png', __FILE__ ) ?>" /></a>
 			</div>
 			<?php include 'partials/sassy-social-share-about.php'; ?>
 		</div>
@@ -117,7 +117,7 @@ class Sassy_Social_Share_Admin {
 		<div class="metabox-holder columns-2" id="post-body">
 			<h1>Recover Social Share Counts</h1>
 			<div class="heateor_sss_left_column">
-				<a href="https://www.heateor.com/sassy-social-share-premium/" target="_blank"><img src="<?php echo plugins_url( '../images/unlock/rssc-options.png', __FILE__ ) ?>" /></a>
+				<a href="https://www.heateor.com/sassy-social-share-premium/" target="_blank"><img style="width:100%" src="<?php echo plugins_url( '../images/unlock/rssc-options.png', __FILE__ ) ?>" /></a>
 			</div>
 			<?php include 'partials/sassy-social-share-about.php'; ?>
 		</div>
@@ -134,7 +134,7 @@ class Sassy_Social_Share_Admin {
 		<div class="metabox-holder columns-2" id="post-body">
 			<h1>Social Analytics</h1>
 			<div class="heateor_sss_left_column">
-				<a href="https://www.heateor.com/sassy-social-share-premium/" target="_blank"><img src="<?php echo plugins_url( '../images/unlock/ssga-options.png', __FILE__ ) ?>" /></a>
+				<a href="https://www.heateor.com/sassy-social-share-premium/" target="_blank"><img style="width:99%" src="<?php echo plugins_url( '../images/unlock/ssga-options.png', __FILE__ ) ?>" /></a>
 			</div>
 			<?php include 'partials/sassy-social-share-about.php'; ?>
 		</div>
@@ -281,8 +281,11 @@ class Sassy_Social_Share_Admin {
 				return $post_id;
 	    	}
 		}
-	    if ( isset( $_POST['_heateor_sss_meta'] ) ) {
+	    if ( isset( $_POST['_heateor_sss_meta'] ) && is_array( $_POST['_heateor_sss_meta'] ) ) {
 			$newData = $_POST['_heateor_sss_meta'];
+			foreach ( $_POST['_heateor_sss_meta'] as $key => $value ) {
+				$newData[$key] = sanitize_text_field ( $value );
+			}
 		} else {
 			$newData = array( 'sharing' => 0, 'vertical_sharing' => 0 );
 		}
@@ -437,6 +440,11 @@ class Sassy_Social_Share_Admin {
 			if ( isset( $_POST['config'] ) && strlen( trim( $_POST['config'] ) ) > 0 ) {
 				$config = json_decode( stripslashes( trim( $_POST['config'] ) ), true );
 				if ( is_array( $config ) && count( $config ) > 0 ) {
+					foreach ( $config as $key => $value ) {
+						if ( is_string( $value ) ) {
+							$config[$key] = sanitize_text_field( $value );
+						}
+					}
 					update_option( 'heateor_sss', $config );
 					die( json_encode(
 						array(
@@ -740,19 +748,6 @@ class Sassy_Social_Share_Admin {
 
 		$current_version = get_option( 'heateor_sss_version' );
 		if ( $current_version != $this->version ) {
-			if ( $this->options['horizontal_font_color_default'] ) {
-				heateor_sss_update_svg_css( $this->options['horizontal_font_color_default'], 'sassy-social-share-default-svg-horizontal' );
-			}
-			if ( $this->options['horizontal_font_color_hover'] ) {
-				heateor_sss_update_svg_css( $this->options['horizontal_font_color_hover'], 'sassy-social-share-hover-svg-horizontal' );
-			}
-			if ( $this->options['vertical_font_color_default'] ) {
-				heateor_sss_update_svg_css( $this->options['vertical_font_color_default'], 'sassy-social-share-default-svg-vertical' );
-			}
-			if ( $this->options['vertical_font_color_hover'] ) {
-				heateor_sss_update_svg_css( $this->options['vertical_font_color_hover'], 'sassy-social-share-hover-svg-vertical' );
-			}
-
 			if ( version_compare( '3.3.9', $current_version ) > 0 ) {
 				$this->options['bitly_access_token'] = '';
 				update_option( 'heateor_sss', $this->options );

@@ -4,7 +4,7 @@ Donate link: https://www.heateor.com/donate/?action=Sassy+Social+Share
 Tags: social share, social sharing, social media share, share facebook, facebook social share, wordpress social share, share buttons, social share buttons, facebook like, twitter tweet, whatsapp share, line share, gab share, gab, parler share, gettr, gettr share, mewe share, mewe
 Requires at least: 2.5.0
 Tested up to: 5.8.2
-Stable tag: 3.3.28
+Stable tag: 3.3.37
 License: GPLv2 or later
 
 Slickest, Simplest and Optimized Share buttons. Facebook, Twitter, Reddit, Pinterest, Whatsapp, Parler, Gab, Gettr and over 100 more.
@@ -22,6 +22,7 @@ This is the Simplest and Smoothest Social Sharing plugin with optimized and grea
 = Feature list =
 * EU-GDPR Compliant
 * Compatible with Gutenberg editor
+* Compatible with WPML and multilingual website
 * Compatible with myCRED (append myCRED referral ID at the end of the url being shared)
 * Around **100 Social Sharing/Bookmarking** services
 * Social Media follow icons (Redirect website visitors to your Social Media pages)
@@ -123,6 +124,43 @@ Yes, we can help you with it. Just drop an email at support[at]heateor[dot]com
 4. **Universal Sharing Popup**: Universal Sharing popup having all the supported sharing and bookmarking services
 
 == Changelog ==
+= 3.3.37 [9 December 2021] =
+* [Improvement] Added wpml-config.xml file for compatibility with the multi-language translation
+
+= 3.3.36 [7 December 2021] =
+* [Improvement] Integrating Social Media Follow widget was breaking the functionality at the Widgets page in the admin area in some cases
+
+= 3.3.35 [2 December 2021] =
+* [Bugfix] Multi-colored background of Instagram icon was not changing if customized from the Theme Selection section
+* [Bugfix] Floating option was not working for the social media follow icons
+* [Bugfix] "More" text was being displayed with the "More" share icon
+* [New] Added an option to align the standard Social Media follow bar to the left, center or right
+* [Improvement] Improved the code of the Social Media Follow widget
+
+= 3.3.34 [26 November 2021] =
+* [Improvement] Code improvement
+* [Improvement] Admin UI improvement
+
+= 3.3.33 [23 November 2021] =
+* [Bugfix] Social share widet, Social Media follow widget and social share icons at BuddyPress pages were causing fatal errors after previous update
+
+= 3.3.32 [23 November 2021] =
+* [Improvement] Code improvement
+* [Improvement] Removed unnecessary CSS from the public.css file
+* [Improvement] Admin UI improvements
+
+= 3.3.31 [16 November 2021] =
+* [Bugfix] Icons rendered by the shortcode for Social Media Follow Icons were broken since the version 3.3.26 
+
+= 3.3.30 [16 November 2021] =
+* [Bugfix] PHP warning was being displayed on updating the plugin if custom logo color was being used in the Theme Selection section at the plugin configuration page
+
+= 3.3.29 [16 November 2021] =
+* [Bugfix] Fixed Gmail social share icon
+* [Bugfix] Background color of Instagram in the social media follow widget was not changing to multi-colored after changing from the Miscellaneous section 
+* [Improvement] Improved logo of WordPress social share icon
+* [Improvement] Performance improvement
+
 = 3.3.28 [14 November 2021] =
 * [Bugfix] Copy Link icon was not functioning
 * [Bugfix] Print icon was not functioning
@@ -1082,3 +1120,40 @@ Yes, we can help you with it. Just drop an email at support[at]heateor[dot]com
 * [Bugfix] Gettr share icon was not sharing properly
 * [Bugfix] Mewe, Gettr and Outlook share icons were not working in the More social share popup
 * [Improvement] Minor CSS improvements in the More social share popup
+
+= 3.3.29 [16 November 2021] =
+* [Bugfix] Fixed Gmail social share icon
+* [Bugfix] Background color of Instagram in the social media follow widget was not changing to multi-colored after changing from the Miscellaneous section 
+* [Improvement] Improved logo of WordPress social share icon
+* [Improvement] Performance improvement
+
+= 3.3.30 [16 November 2021] =
+* [Bugfix] PHP warning was being displayed on updating the plugin if custom logo color was being used in the Theme Selection section at the plugin configuration page
+
+= 3.3.31 [16 November 2021] =
+* [Bugfix] Icons rendered by the shortcode for Social Media Follow Icons were broken since the version 3.3.26 
+
+= 3.3.32 [23 November 2021] =
+* [Improvement] Code improvement
+* [Improvement] Removed unnecessary CSS from the public.css file
+* [Improvement] Admin UI improvements
+
+= 3.3.33 [23 November 2021] =
+* [Bugfix] Social share widet, Social Media follow widget and social share icons at BuddyPress pages were causing fatal errors after previous update
+
+= 3.3.34 [26 November 2021] =
+* [Improvement] Code improvement
+* [Improvement] Admin UI improvement
+
+= 3.3.35 [2 December 2021] =
+* [Bugfix] Multi-colored background of Instagram icon was not changing if customized from the Theme Selection section
+* [Bugfix] Floating option was not working for the social media follow icons
+* [Bugfix] "More" text was being displayed with the "More" share icon
+* [New] Added an option to align the standard Social Media follow bar to the left, center or right
+* [Improvement] Improved the code of the Social Media Follow widget
+
+= 3.3.36 [7 December 2021] =
+* [Improvement] Integrating Social Media Follow widget was breaking the functionality at the Widgets page in the admin area in some cases
+
+= 3.3.37 [9 December 2021] =
+* [Improvement] Added wpml-config.xml file for compatibility with the multi-language translation

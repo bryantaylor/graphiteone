@@ -1,5 +1,3 @@
-function heateorSssCallAjax(e){if(typeof jQuery!="undefined"){e()}else{heateorSssGetScript("https://code.jquery.com/jquery-latest.min.js",e)}}
-function heateorSssGetScript(e,t){var n=document.createElement("script");n.src=e;var r=document.getElementsByTagName("head")[0],i=false;n.onload=n.onreadystatechange=function(){if(!i&&(!this.readyState||this.readyState=="loaded"||this.readyState=="complete")){i=true;t();n.onload=n.onreadystatechange=null;r.removeChild(n)}};r.appendChild(n)}
 function heateorSssDetermineWhatsappShareAPI(a){if(a)return-1!=navigator.userAgent.indexOf("Mobi")?"api.whatsapp.com":"web.whatsapp.com";var p=jQuery("i.heateorSssWhatsappBackground a").attr("href");return void 0!==p?-1!=navigator.userAgent.indexOf("Mobi")?(jQuery("i.heateorSssWhatsappBackground a").attr("href",p.replace("web.whatsapp.com","api.whatsapp.com")),"api.whatsapp.com"):(jQuery("i.heateorSssWhatsappBackground a").attr("href",p.replace("api.whatsapp.com","web.whatsapp.com")),"web.whatsapp.com"):""}
 /**
  * Show more sharing services popup
@@ -372,6 +370,7 @@ function heateorSssMoreSharingPopup(elem, postUrl, postTitle, twitterTitle){
 		svg: '<svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-7 -7 46 46"><path fill="#fff" d="M25.058 25.892c-.25 0-.484.065-.694.17l-5.907-8.2a1.548 1.548 0 0 0 .344-1.68l4.28-2.573c.288.333.71.552 1.187.552.862 0 1.56-.7 1.56-1.56 0-.776-.567-1.415-1.31-1.535V6.11a1.556 1.556 0 0 0-.25-3.095c-.862 0-1.56.7-1.56 1.56 0 .196.04.383.106.556l-4.256 2.477a1.548 1.548 0 0 0-1.2-.574c-.862 0-1.56.7-1.56 1.56 0 .778.567 1.417 1.31 1.537v5.1c-.218.035-.42.112-.598.23L9.93 8.204c.213-.268.345-.6.345-.97a1.56 1.56 0 1 0-.712 1.309l6.575 7.25c-.213.267-.345.6-.345.968 0 .23.054.45.144.647L8.08 22.66a1.547 1.547 0 0 0-1.138-.5 1.56 1.56 0 1 0 1.56 1.56c0-.23-.053-.45-.144-.646l7.857-5.25c.07.076.147.144.23.204l-1.95 3.927a1.536 1.536 0 0 0-.457-.076c-.862 0-1.56.695-1.56 1.56a1.56 1.56 0 1 0 2.468-1.27l1.95-3.926c.146.045.297.076.458.076.25 0 .484-.064.694-.17l5.907 8.2a1.56 1.56 0 1 0 1.103-.459zM18.914 8.59c0-.197-.04-.383-.106-.556l4.257-2.473c.236.29.567.49.95.55v4.96a1.558 1.558 0 0 0-1.197 2.115l-4.278 2.573a1.542 1.542 0 0 0-.935-.53v-5.102a1.555 1.555 0 0 0 1.31-1.534z"/></svg>'
 	  },
 	  Bitty_Browser: {
+	    background_color:"#3d3c3b",
 		title: "Bitty Browser",
 		redirect_url: "http://www.bitty.com/manual/?contenttype=&contentvalue=" + postUrl,
 		svg: '<svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32"><path fill="#fff" d="M4 4h12v12H4z"/><path fill="#fff" d="M20 4v16H4v8h24V4"/></svg>'
@@ -634,10 +633,7 @@ if(heateorSssHorizontalSharingCountEnable || heateorSssVerticalSharingCountEnabl
 	// get sharing counts on window load
 	heateorSssLoadEvent(
 		function(){
-			// sharing counts
-			heateorSssCallAjax(function(){
-				heateorSssGetSharingCounts();
-			});
+			heateorSssGetSharingCounts();
 		}
 	);
 }

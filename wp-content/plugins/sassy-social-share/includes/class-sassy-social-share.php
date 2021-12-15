@@ -213,6 +213,8 @@ class Sassy_Social_Share {
 			add_filter( 'heateor_sss_target_share_url_filter', array( $plugin_public, 'append_mycred_referral_id' ), 10, 3 );
 		}
 
+		add_filter( 'safe_style_css', array( $plugin_public, 'add_safe_styles' ), 10, 1 );
+
 	}
 
 	/**

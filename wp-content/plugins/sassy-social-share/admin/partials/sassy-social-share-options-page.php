@@ -11,9 +11,21 @@ defined( 'ABSPATH' ) or die( "Cheating........Uh!!" );
 
 <div class="metabox-holder columns-2" id="post-body">
 	<h1>Sassy Social Share</h1>
+		<div class="notice notice-warning settings-error is-dismissible"> 
+			<p>
+				<strong><span style="display: block; margin: 0.5em 0.5em 0 0; clear: both;"><?php _e( 'We also offer WordPress Website Development and Customization services', 'sassy-social-share' ) ?>: <a href="mailto:support@heateor.com?subject=WordPress%20Website%20Development&body=I%20would%20like%20to%20request%20a%20quote%20for%20the%20following%20requirement%20specifications%20of%20my%20website" target="_blank" class="thickbox"><?php _e( 'Request a Quote', 'sassy-social-share' ) ?></a></span>
+				</strong>
+			</p>
+		</div>
+		<div class="notice notice-warning settings-error is-dismissible"> 
+			<p>
+				<strong><span style="display: block; margin: 0.5em 0.5em 0 0; clear: both;"><?php echo sprintf( __( 'You can appreciate the effort put in this free plugin by rating it <a href="%s" target="_blank">here</a>', 'sassy-social-share' ), 'https://wordpress.org/support/view/plugin-reviews/sassy-social-share' ); ?></span>
+				</strong>
+			</p>
+		</div>
 		<div>
 			<?php
-			echo sprintf( __( 'You can appreciate the effort put in this free plugin by rating it <a href="%s" target="_blank">here</a>', 'sassy-social-share' ), 'https://wordpress.org/support/view/plugin-reviews/sassy-social-share' );
+			
 			?>
 		</div>
 		<div class="menu_div" id="tabs">
@@ -78,10 +90,10 @@ defined( 'ABSPATH' ) or die( "Cheating........Uh!!" );
 										}
 										?>
 										#heateor_sss_preview{
-											color:<?php echo $sharing_color ? $sharing_color : "#fff" ?>;
+											color:<?php echo $sharing_color ? esc_html( $sharing_color ) : "#fff" ?>;
 										}
 										#heateor_sss_preview:hover{
-											color:<?php echo $sharing_color_hover ?>;
+											color:<?php echo esc_html( $sharing_color_hover ) ?>;
 										}
 										</style>
 										<div>
@@ -259,7 +271,7 @@ defined( 'ABSPATH' ) or die( "Cheating........Uh!!" );
 										<img id="heateor_sss_font_color_help" class="heateor_sss_help_bubble" src="<?php echo plugins_url( '../../images/info.png', __FILE__ ) ?>" />
 									</th>
 									<td>
-										<script type="text/javascript">var heateorSssSharingTempColor = '<?php echo $sharing_color ? $sharing_color : "#fff" ?>';</script>
+										<script type="text/javascript">var heateorSssSharingTempColor = '<?php echo $sharing_color ? esc_js( $sharing_color ) : "#fff" ?>';</script>
 										<label for="heateor_sss_font_color_default"><?php _e("Default", 'sassy-social-share' ); ?></label><input style="width: 100px" id="heateor_sss_font_color_default" onkeyup="if (this.value.trim() == '' || this.value.trim().length >= 3) { jQuery( '#horizontal_svg' ).attr( 'style', jQuery( '#horizontal_svg' ).attr( 'style' ).replace(heateorSssSharingTempColor.replace( '#', '%23' ), this.value.trim() ? this.value.trim().replace( '#', '%23' ) : '%23fff' ) ); heateorSssSharingTempColor = this.value.trim() ? this.value.trim() : '#fff';jQuery( '#heateor_sss_preview' ).css( 'color', heateorSssSharingTempColor.replace( '%23','#' ) ) }" name="heateor_sss[horizontal_font_color_default]" type="text" value="<?php echo $sharing_color; ?>" />
 										<input name="heateor_sss[horizontal_sharing_replace_color]" type="hidden" value="<?php echo isset( $options['horizontal_sharing_replace_color'] ) ? $options['horizontal_sharing_replace_color'] : ''; ?>" />
 										<label style="margin-left:10px" for="heateor_sss_font_color_hover"><?php _e("On Hover", 'sassy-social-share' ); ?></label><input style="width: 100px" id="heateor_sss_font_color_hover" name="heateor_sss[horizontal_font_color_hover]" type="text" onkeyup="" value="<?php echo $sharing_color_hover; ?>" />
@@ -300,8 +312,8 @@ defined( 'ABSPATH' ) or die( "Cheating........Uh!!" );
 										<img id="heateor_sss_border_help" class="heateor_sss_help_bubble" src="<?php echo plugins_url( '../../images/info.png', __FILE__ ) ?>" />
 									</th>
 									<td>
-										<script type="text/javascript">var heateorSssBorderWidthHover = '<?php echo $border_width_hover = isset( $options['horizontal_border_width_hover'] ) ? $options['horizontal_border_width_hover'] : ''; ?>', heateorSssBorderColorHover = '<?php echo $border_color_hover = isset( $options['horizontal_border_color_hover'] ) ? $options['horizontal_border_color_hover'] : ''; ?>'</script>
-										<label><strong><?php _e("Default", 'sassy-social-share' ); ?></strong></label>
+										<script type="text/javascript">var heateorSssBorderWidthHover = '<?php echo $border_width_hover = isset( $options['horizontal_border_width_hover'] ) ? esc_js( $options['horizontal_border_width_hover'] ) : ''; ?>', heateorSssBorderColorHover = '<?php echo $border_color_hover = isset( $options['horizontal_border_color_hover'] ) ? esc_js( $options['horizontal_border_color_hover'] ) : ''; ?>'</script>
+										<label><strong><?php _e( "Default", 'sassy-social-share' ); ?></strong></label>
 										<br/>
 										<label for="heateor_sss_border_width_default"><?php _e("Border Width", 'sassy-social-share' ); ?></label><input style="width: 100px" id="heateor_sss_border_width_default" onkeyup="heateorSssBorderWidth = this.value.trim(); jQuery( '#heateor_sss_preview' ).css( 'borderStyle', 'solid' ); heateorSssUpdateSharingPreview(this.value.trim(), 'borderWidth', '0px', 'heateor_sss_preview' ); heateorSssSharingHorizontalPreview();" name="heateor_sss[horizontal_border_width_default]" type="text" value="<?php echo $border_width ?>" />pixel(s)
 										<label style="margin-left:10px" for="heateor_sss_border_color_default"><?php _e("Border Color", 'sassy-social-share' ); ?></label><input style="width: 100px" onkeyup="heateorSssBorderColor = this.value.trim(); jQuery( '#heateor_sss_preview' ).css( 'borderStyle', 'solid' ); heateorSssUpdateSharingPreview(this.value.trim(), 'borderColor', 'transparent', 'heateor_sss_preview' )" id="heateor_sss_border_color_default" name="heateor_sss[horizontal_border_color_default]" type="text" value="<?php echo $border_color ?>" />
@@ -394,10 +406,10 @@ defined( 'ABSPATH' ) or die( "Cheating........Uh!!" );
 										?>
 										<style type="text/css">
 										#heateor_sss_vertical_preview{
-											color:<?php echo $vertical_sharing_color ? $vertical_sharing_color : "#fff" ?>;
+											color:<?php echo $vertical_sharing_color ? esc_html( $vertical_sharing_color ) : "#fff" ?>;
 										}
 										#heateor_sss_vertical_preview:hover{
-											color:<?php echo $vertical_sharing_color_hover ?>;
+											color:<?php echo esc_html( $vertical_sharing_color_hover ) ?>;
 										}
 										</style>
 										<div>
@@ -838,7 +850,7 @@ defined( 'ABSPATH' ) or die( "Cheating........Uh!!" );
 
 						<tr>
 							<td colspan="2">
-								<a href="https://www.heateor.com/comparison-between-sassy-social-share-pro-and-premium/" target="_blank"><img style="width:100%" src="<?php echo plugins_url( '../../images/unlock/multiple-instances.png', __FILE__ ) ?>" /></a>
+								<a href="https://www.heateor.com/comparison-between-sassy-social-share-pro-and-premium/" target="_blank"><img style="width:99%" src="<?php echo plugins_url( '../../images/unlock/multiple-instances.png', __FILE__ ) ?>" /></a>
 							</td>
 						</tr>
 
@@ -1697,7 +1709,7 @@ defined( 'ABSPATH' ) or die( "Cheating........Uh!!" );
 				<div class="heateor_sss_left_column">
 
 				<div>
-					<a href="https://www.heateor.com/comparison-between-sassy-social-share-pro-and-premium/" target="_blank"><img style="margin-bottom:19px;width:100%" src="<?php echo plugins_url( '../../images/unlock/track-shares.png', __FILE__ ) ?>" /></a>
+					<a href="https://www.heateor.com/comparison-between-sassy-social-share-pro-and-premium/" target="_blank"><img style="margin-bottom:14px;width:100%" src="<?php echo plugins_url( '../../images/unlock/track-shares.png', __FILE__ ) ?>" /></a>
 				</div>
 
 				<div class="stuffbox">
@@ -2071,7 +2083,7 @@ defined( 'ABSPATH' ) or die( "Cheating........Uh!!" );
 							<img id="heateor_sss_custom_css_help" class="heateor_sss_help_bubble" src="<?php echo plugins_url( '../../images/info.png', __FILE__ ) ?>" />
 							</th>
 							<td>
-							<textarea rows="7" cols="63" id="heateor_sss_custom_css" name="heateor_sss[custom_css]"><?php echo isset( $options['custom_css'] ) ? $options['custom_css'] : '' ?></textarea>
+							<textarea rows="7" cols="63" id="heateor_sss_custom_css" name="heateor_sss[custom_css]"><?php echo isset( $options['custom_css'] ) ? esc_textarea( $options['custom_css'] ) : '' ?></textarea>
 							</td>
 						</tr>
 						
@@ -2131,7 +2143,7 @@ defined( 'ABSPATH' ) or die( "Cheating........Uh!!" );
 					<div class="inside" style="padding-left:7px">
 						<p><a style="text-decoration:none" href="http://support.heateor.com/sassy-social-share-shortcode-and-widget" target="_blank"><?php _e( 'Social Share Shortcode & Widget', 'sassy-social-share' ) ?></a></p>
 						<p><a style="text-decoration:none" href="http://support.heateor.com/sassy-follow-icons-shortcode" target="_blank"><?php _e( 'Follow Icons Shortcode & Widget', 'sassy-social-share' ) ?></a></p>
-						<p><a href="https://www.heateor.com/comparison-between-sassy-social-share-pro-and-premium/" target="_blank"><img style="width:100%" src="<?php echo plugins_url( '../../images/unlock/click-to-tweet-shortcode.png', __FILE__ ) ?>" /></a></p>
+						<p><a href="https://www.heateor.com/comparison-between-sassy-social-share-pro-and-premium/" target="_blank"><img style="width:98%" src="<?php echo plugins_url( '../../images/unlock/click-to-tweet-shortcode.png', __FILE__ ) ?>" /></a></p>
 					</div>
 				</div>
 				</div>
@@ -2199,21 +2211,21 @@ defined( 'ABSPATH' ) or die( "Cheating........Uh!!" );
 			</div>
 			
 			<div class="heateor_sss_clear"></div>
-			<p class="submit">
-				<input style="margin-left:8px" type="submit" name="save" class="button button-primary" value="<?php _e( "Save Changes", 'sassy-social-share' ); ?>" />
-			</p>
 			<p>
 				<?php
 				echo sprintf( __( 'You can appreciate the effort put in this free plugin by rating it <a href="%s" target="_blank">here</a>', 'sassy-social-share' ), 'https://wordpress.org/support/view/plugin-reviews/sassy-social-share' );
 				?>
 			</p>
+			<p class="submit">
+				<input style="margin-left:8px" type="submit" name="save" class="button button-primary" value="<?php _e( "Save Changes", 'sassy-social-share' ); ?>" />
+			</p>
 			</form>
-
-			<div class="stuffbox">
+			<div class="notice notice-warning settings-error is-dismissible">
 				<h3><label>Instagram Shoutout</label></h3>
-				<div class="inside" style="padding-left:7px">
-				<p><?php _e( 'If you can send (to hello@heateor.com) how this plugin is helping your business, we would be glad to shoutout on Instagram. You can also send any relevant hashtags and people to mention in the Instagram post.', 'sassy-social-share' ) ?></p>
-				</div>
+				<p>
+					<strong><span style="display: block; margin: 0.5em 0.5em 0 0; clear: both;"><?php _e( 'If you can send (to hello@heateor.com) how this plugin is helping your business, we would be glad to shoutout on Instagram. You can also send any relevant hashtags and people to mention in the Instagram post.', 'sassy-social-share' ) ?></span>
+					</strong>
+				</p>
 			</div>
 		</div>
 </div>
