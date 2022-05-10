@@ -5,8 +5,8 @@ Author: Jules Colle
 Website: http://bdwm.be
 Tags: wordpress, contact form 7, forms, conditional fields
 Requires at least: 5.0
-Tested up to: 5.8.2
-Stable tag: 2.0.8
+Tested up to: 5.9.3
+Stable tag: 2.1.3
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -122,6 +122,31 @@ The conditional fields javascript code is loaded during wp_footer, so a call to 
 Make sure to also update CF7 to the latest version! (Version 2.0 is only compatible with CF7 versions 5.4 and up. Version 1.9.16 is only compatible with CF7 version 5.3.*)
 
 == Changelog ==
+
+= 2.1.3 (2022-04-18) =
+* check for user_cap 'wpcf7_edit_contact_forms' instead of 'wpcf7_edit_contact_form' in several places. Thanks, [@paybox](https://wordpress.org/support/topic/some-notices-appearing-fix-suggested/)!
+* PRO multistep: make "Next step" and "Previous step" buttons translatable by third party plugins like wpml and loco translate.
+* PRO multistep: show spinner while validating a step.
+* PRO Fix additional disable_on_hide bug with multistep [GH issue 87-4](https://github.com/pwkip/contact-form-7-conditional-fields/issues/87)
+* Replace all occurences of text domain 'contact-form-7' with 'cf7-conditional-fields'
+
+= 2.1.2 (2022-02-23) =
+* Fully tested with Contact Form 7 version 5.5.6
+
+= 2.1.1 (2022-02-14) =
+* Fully tested with Contact Form 7 version 5.5.5
+* Make scroll to success message less annoying. [GH Issue 90](https://github.com/pwkip/contact-form-7-conditional-fields/issues/90)
+* Add extra check to make sure that scroll to success message only happens when the e-mail is sent. [GH Issue 90](https://github.com/pwkip/contact-form-7-conditional-fields/issues/90)
+* PRO: fix disable_on_hide bugs. [GH sssue 87](https://github.com/pwkip/contact-form-7-conditional-fields/issues/87) 
+
+= 2.1 (2022-01-27) =
+* Tested up to wp 5.9
+* Scroll success message into view after successful form submission. [GH Issue 90](https://github.com/pwkip/contact-form-7-conditional-fields/issues/90)
+* Small changes [GH PR 86](https://github.com/pwkip/contact-form-7-conditional-fields/pull/86)
+* Make 'change' event bubble up [GH PR 88](https://github.com/pwkip/contact-form-7-conditional-fields/pull/88)
+
+= 2.0.9 (2022-01-20) =
+* Fully tested with Contact Form 7 version 5.5.4
 
 = 2.0.8 (2021-11-28) =
 * Check how code changes in CF7 related to `wpcf7_contact_form_properties` impact the plugin, and update TODO comments accordingly.

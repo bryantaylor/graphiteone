@@ -19,7 +19,7 @@ function wpcf7cf_admin_enqueue_scripts( $hook_suffix ) {
 add_filter('wpcf7_editor_panels', 'add_conditional_panel');
 
 function add_conditional_panel($panels) {
-	if ( current_user_can( 'wpcf7_edit_contact_form' ) ) {
+	if ( current_user_can( 'wpcf7_edit_contact_forms' ) ) {
 		$panels['wpcf7cf-conditional-panel'] = array(
 			'title'    => __( 'Conditional fields', 'cf7-conditional-fields' ),
 			'callback' => 'wpcf7cf_editor_panel_conditional'
@@ -93,8 +93,6 @@ function wpcf7cf_editor_panel_conditional($form) {
 
 	$wpcf7cf_entries = CF7CF::getConditions($form_id);
 
-	if (!is_array($wpcf7cf_entries)) $wpcf7cf_entries = array();
-
 	$wpcf7cf_entries = array_values($wpcf7cf_entries);
 
 	?>
@@ -115,9 +113,6 @@ function wpcf7cf_editor_panel_conditional($form) {
 			print_entries_html($form);
 			?>
 			<div id="wpcf7cf-entries">
-				<?php
-				//print_entries_html($form, $wpcf7cf_entries);
-				?>
 			</div>
 			
 			<span id="wpcf7cf-add-button" title="<?php _e( 'add new rule', 'cf7-conditional-fields' ); ?>"><?php _e( '+ add new conditional rule', 'cf7-conditional-fields'); ?></span>
@@ -304,7 +299,7 @@ add_action('admin_notices', function () {
 		?>
 			<div class="wpcf7cf-admin-notice notice notice-warning is-dismissible" data-notice-id="<?php echo $nid ?>">
 				<p>
-					<strong>Conditional Fields for Contact Form 7</strong> is not yet compatible with your current version of Contact Form 7.
+					<strong>Conditional Fields for Contact Form 7</strong> is not yet tested with your current version of Contact Form 7.
 					<br>If you notice any problems with your forms, please roll back to Contact Form 7 <strong>version <?php echo WPCF7CF_CF7_MAX_VERSION ?></strong>.
 					<br>For a quick and safe rollback, we recommend <a href="https://wordpress.org/plugins/wp-rollback/" target="_blank">WP Rollback</a>.
 				</p>
