@@ -72,6 +72,14 @@
                 a {
                     @include text-color(primary-orange);
                 }
+
+                .secondary-button {
+                  margin-top: 3.2rem;
+
+                  &:hover {
+                    color: map-get($colors, base-light) !important;
+                  }
+                }
             }
         }
     }

@@ -39,7 +39,7 @@
       .member {
         position: relative;
         z-index: 3;
-        
+
         &-image {
           position: relative;
           margin-bottom: 1.9rem;
@@ -55,6 +55,12 @@
           .info-group {
             .position {
               margin-top: 1rem;
+              padding-right: 1.6rem;
+              @include font-weight(regular);
+            }
+            .secondary-title {
+              padding-right: 1.6rem;
+              opacity: 0.5;
               @include font-weight(regular);
             }
           }
@@ -64,11 +70,12 @@
           display: flex;
           justify-content: center;
           align-items: center;
+          flex: 0 0 auto;
           width: 3.525rem;
           height: 3.525rem;
           border-radius: 50%;
           @include bg-color(primary-orange);
-          
+
           .dot {
             width: 0.5rem;
             height: 0.5rem;
