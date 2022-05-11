@@ -9,7 +9,7 @@
     ]
   },
   "publicPath": "/wp-content/themes/grap",
-  "devUrl": "http://grap.test",
+  "devUrl": "http://appserver_nginx.graphiteone.internal",
   "proxyUrl": "http://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",
   "watch": [

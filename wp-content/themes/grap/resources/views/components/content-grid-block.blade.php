@@ -4,6 +4,8 @@ $intro = $content_grid_block['intro'];
 $intro_title = $intro['title'];
 $intro_description = $intro['description'];
 $intro_button = $intro['button'];
+$disclaimer_title = $intro['disclaimer_title'];
+$disclaimer_description = $intro['disclaimer_description'];
 $table_of_contents = $content_grid_block['table_of_contents'];
 @endphp
 
@@ -19,6 +21,24 @@ $table_of_contents = $content_grid_block['table_of_contents'];
                 @if ($intro_description)
                     <div class="content">{!! $intro_description !!}</div>
                 @endif
+                {{-- Disclaimer --}}
+                @if($disclaimer_title && $disclaimer_description)
+                <div class="disclaimer">
+                  <input type="checkbox" id="disclaimer">
+                  <label class="disclaimer__title" for="disclaimer">
+                    <span class="label">{{ $disclaimer_title }}</span>
+                    <div class="more-icon">
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                    </div>
+                  </label>
+                  <div class="disclaimer__description">
+                    {!! $disclaimer_description !!}
+                  </div>
+                </div>
+                @endif
+                {{-- END: Disclaimer --}}
                 @if ($intro_button['title'] && $intro_button['url'])
                     <a href="{{ $intro_button['url'] }}" target="{{ $button['target'] }}" class="primary-button">{{ $intro_button['title'] }}</a>
                 @endif

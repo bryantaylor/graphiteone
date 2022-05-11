@@ -71,7 +71,7 @@
                     "collapsed": "",
                     "min": 0,
                     "max": 0,
-                    "layout": "table",
+                    "layout": "block",
                     "button_label": "",
                     "sub_fields": [
                         {
@@ -94,9 +94,9 @@
                             "maxlength": ""
                         },
                         {
-                            "key": "field_616e35bc85ec0",
-                            "label": "Name",
-                            "name": "name",
+                            "key": "field_627bbf5c90bc2",
+                            "label": "Description",
+                            "name": "description",
                             "type": "text",
                             "instructions": "",
                             "required": 0,
@@ -111,6 +111,25 @@
                             "prepend": "",
                             "append": "",
                             "maxlength": ""
+                        },
+                        {
+                            "key": "field_627bbf6690bc3",
+                            "label": "Footnote",
+                            "name": "footnote",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": 4,
+                            "new_lines": ""
                         }
                     ]
                 },
@@ -147,7 +166,8 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1634613051
+    "show_in_rest": 0,
+    "modified": 1652277710
 }

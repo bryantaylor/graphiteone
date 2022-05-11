@@ -23,10 +23,27 @@ $statistics = $advanced_vertical_block['statistics'];
                         @foreach ($statistics as $item)
                             <div class="statistics-item">
                                 @if ($item['big_number'])
-                                    <div class="big-number primary-orange">{{ $item['big_number'] }}</div>
+                                  <div class="big-number primary-orange">{{ $item['big_number'] }}</div>
                                 @endif
+                                  <div class="description">
+                                    @if ($item['footnote'])
+                                    <input type="checkbox" id="footnote">
+                                    <label class="description__title name ex" for="footnote">
+                                      <span class="label">{{ $item['description'] }}</span>
+                                      <div class="more-icon-wrap">
+                                        <div class="more-icon">
+                                          <span class="dot"></span>
+                                          <span class="dot"></span>
+                                          <span class="dot"></span>
+                                        </div>
+                                      </div>
+                                    </label>
+                                    <div class="discription__footnote name ex">{{ $item['footnote'] }}</div>
+                                    @else
+                                    <div class="name ex">{{ $item['description'] }}</div>
+                                    @endif
+                                  </div>
                                 @if ($item['name'])
-                                    <div class="name ex">{{ $item['name'] }}</div>
                                 @endif
                             </div>
                         @endforeach
