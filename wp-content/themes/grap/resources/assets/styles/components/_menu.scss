@@ -52,12 +52,28 @@
     margin-top: 4.4rem;
 
     .menu-item {
-      &:not(:last-child) {
-        margin-bottom: 2rem;
+      margin-bottom: 0;
+
+      &:not(:first-child) {
+        margin-top: 3.2rem;
       }
-      
+
       &:hover {
         @include text-color(primary-orange);
+      }
+
+      .has-children {
+        margin-bottom: 2rem;
+      }
+
+      &--subitem {
+        margin-top: 0.8rem !important;
+        margin-bottom: 0 !important;
+
+        &::before {
+          content: "— ";
+          @include text-color(primary-orange);
+        }
       }
     }
   }
@@ -67,10 +83,11 @@
     margin-bottom: 8.9rem;
 
     .cta-item {
-      margin-bottom: 1.6rem;
+      margin-right: 3.2rem;
 
-      &:hover {
-        @include text-color(primary-orange);
+      @include mq(md) {
+        margin-bottom: 3.2rem;
+        margin-right: 0;
       }
     }
   }

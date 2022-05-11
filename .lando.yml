@@ -1,0 +1,18 @@
+name: graphite-one
+recipe: pantheon
+proxy:
+  theme:
+  - localhost:3000
+config:
+  framework: wordpress
+  site: graphite-one
+  id: 3da833dd-113f-44f1-b7f0-ef28595ec322
+services:
+  theme:
+    type: node:10
+    overrides:
+      ports:
+        - 3000:3000
+tooling:
+  yarn:
+    service: theme

@@ -5,16 +5,29 @@
   font-size: 2rem;
   line-height: 20px;
   text-align: center;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   border-radius: 4rem;
   position: relative;
   z-index: 3;
+
   @include mq(lg) {
     padding: 0.7rem 2.1rem 1rem;
     font-size: 1.6rem;
     line-height: 21px;
   }
+
+  &--small {
+    font-size: 1.4rem;
+    padding: 0.5rem 1.8rem 0.8rem;
+
+    @include mq(md) {
+      font-size: 1.2rem;
+      padding: 0.3rem 1.6rem 0.6rem;
+      letter-spacing: 0.05rem;
+    }
+  }
 }
+
 
 .primary-button {
   @extend .button;
@@ -27,17 +40,37 @@
     @include text-color(primary-orange);
     @include border-color(primary-orange);
   }
+
+  &.small {
+    @extend .button--small;
+  }
 }
 
 .secondary-button {
   @extend .button;
-  @include text-color(secondary-dark);
-  @include text-color(base-light);
+  @include text-color(primary-orange);
+  @include border-color(primary-orange);
   transition: all .3s;
 
   &:hover {
     background-color: unset;
     @include text-color(base-light);
-    @include border-color(base-light);
+    @include bg-color(primary-orange);
+  }
+}
+
+.secondary-button-light {
+  @extend .button;
+  @include text-color(base-light);
+  @include border-color(base-light);
+  transition: all .3s;
+
+  &:hover {
+    opacity: 0.75;
+    @include text-color(base-light);
+  }
+
+  &.small {
+    @extend .button--small;
   }
 }

@@ -26,20 +26,39 @@ $menu_cta = get_field('menu_cta', 'option');
         <div class="menu-group d-flex flex-column">
             @if ($primary_menu)
                 @foreach ($primary_menu as $item)
-                    <a href="{{ $item->url }}" class="menu-item h1 light">{!! $item->title !!}</a>
+                    @php
+                    $has_child_items = $item->child_items ? true : false;
+                    @endphp
+                    <a href="{{ $item->url }}"
+                       class="menu-item h3 light @if($has_child_items){{ 'has-children' }}@endif"
+                    >{!! $item->title !!}</a>
+                    @if($has_child_items)
+                    @foreach($item->child_items as $subitem)
+                    <a href="{{ $subitem->url }}" class="menu-item menu-item--subitem p light">{{  $subitem->title }}</a>
+                    @endforeach
+                    @endif
                 @endforeach
             @endif
         </div>
 
-        <div class="cta-group d-flex flex-column">
+        <div class="cta-group d-flex flex-column flex-md-row">
             @if ($menu_cta)
                 @foreach ($menu_cta as $item)
                     @php
                         $cta_item = $item['cta_item'];
                     @endphp
                     @if ($cta_item['title'] && $cta_item['url'])
-                        <a href="{{ $cta_item['url'] }}" target="{{ $cta_item['target'] }}"
-                            class="cta-item h3 light">{{ $cta_item['title'] }}</a>
+                    @if($loop->first)
+                        <a href="{{ $cta_item['url'] }}"
+                           target="{{ $cta_item['target'] }}"
+                           class="cta-item primary-button"
+                        >{{ $cta_item['title'] }}</a>
+                    @else
+                        <a href="{{ $cta_item['url'] }}"
+                          target="{{ $cta_item['target'] }}"
+                          class="cta-item secondary-button"
+                        >{{ $cta_item['title'] }}</a>
+                    @endif
                     @endif
                 @endforeach
             @endif

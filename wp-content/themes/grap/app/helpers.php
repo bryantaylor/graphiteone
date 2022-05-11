@@ -142,7 +142,7 @@ function display_sidebar()
  * @return void
  */
 function add_favicon()
-{  
+{
     $favicon =  get_field('favicon', 'option');
     if ($favicon) {
         echo "<link rel='icon' type='image/x-icon' href='$favicon'>";
@@ -274,12 +274,12 @@ function handle_submit_newsletter_form() {
                     'pageUri' => $current_url
                 )
             );
-    
+
             $args = array(
                 'headers' => array( 'Content-type' => 'application/json' ),
                 'body' => json_encode($form_data)
             );
-    
+
             $res = wp_remote_post($api_url, $args);
             $result = json_decode($res['body'], true);
 
@@ -294,4 +294,14 @@ function handle_submit_newsletter_form() {
     }
 
     wp_send_json($result);
+}
+
+/*--------------------------------------------------------------------------------
+** Dump PHP objects/variables/results to the Javascript console
+** so you don't have to mess with stupid var_dump in the browser
+**------------------------------------------------------------------------------*/
+function console_dump($data) {
+	echo "<script>";
+	echo "console.log(" . json_encode($data) .");";
+	echo "</script>";
 }
