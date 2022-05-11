@@ -1,11 +1,30 @@
 {
     "key": "group_616942c036590",
-    "title": "Member Position",
+    "title": "Member Details",
     "fields": [
         {
             "key": "field_616942c89554c",
-            "label": "",
+            "label": "Title",
             "name": "member_position",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_627c2e618e5c3",
+            "label": "Secondary Title",
+            "name": "secondary_title",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -37,7 +56,8 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1634288340
+    "show_in_rest": 0,
+    "modified": 1652305601
 }

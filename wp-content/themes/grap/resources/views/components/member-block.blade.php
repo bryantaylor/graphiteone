@@ -21,6 +21,7 @@ $member_block = get_field('member_block');
                             @php
                                 $member_img = get_the_post_thumbnail_url($member->ID);
                                 $position = get_field('member_position', $member->ID);
+                                $secondary_title = get_field('secondary_title', $member->ID);
                                 $member_link = get_permalink($member->ID);
                             @endphp
                             <a href="{{ $member_link }}" class="member {{ !$member_img ? 'light-border-top' : '' }}">
@@ -39,6 +40,9 @@ $member_block = get_field('member_block');
                                         <p class="name h5">{{ $member->post_title }}</p>
                                         @if ($position)
                                             <p class="position h5">{{ $position }}</p>
+                                        @endif
+                                        @if ($secondary_title)
+                                            <p class="secondary-title h5">{{ $secondary_title }}</p>
                                         @endif
                                     </div>
                                     @if (!$member_img)

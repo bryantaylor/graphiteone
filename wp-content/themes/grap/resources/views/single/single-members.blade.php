@@ -13,6 +13,7 @@ $thumbnail = get_the_post_thumbnail_url($id);
             </div>
             <div class="content">
                 {!! the_content() !!}
+                <a href="/company/" class="secondary-button">Back to Comapny</a>
             </div>
         </div>
     </div>
