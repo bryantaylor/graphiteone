@@ -1,0 +1,142 @@
+.contact-form {
+  min-height: 50vh;
+}
+
+.contact-form .form-has-validation {
+  .form-control {
+    transition: 0.25s;
+  }
+
+  .form-group {
+    position: relative;
+    margin-bottom: 2.7rem;
+    overflow: hidden;
+
+    .wpcf7-not-valid-tip {
+      display: none;
+    }
+
+    &::before {
+
+      content: "";
+      position: absolute;
+      z-index: 1;
+      font-size: 10px;
+      left: 2.8rem;
+      letter-spacing: 1.25px;
+      font-weight: 900;
+      text-transform: uppercase;
+      @include text-color(primary-orange);
+
+      top: -15px;
+      transition: 0.2s;
+    }
+
+    &.empty::before {
+      content: "This field is required";
+    }
+
+    &.invalid-email::before {
+      content: "The e-mail address entered is invalid.";
+    }
+
+    &.invalid-phone::before {
+      content: "The telephone number is invalid.";
+    }
+
+    &.empty,
+    &.invalid-email,
+    &.invalid-phone {
+
+      input[type="text"],
+      input[type="email"],
+      textarea {
+        border: 2px solid map-get($colors, primary-orange);
+      }
+
+      &::before {
+        top: -4px;
+      }
+
+      &::after {
+        opacity: 0;
+      }
+
+      .form-control {
+        padding-top: 1.4rem;
+      }
+    }
+  }
+
+  .wpcf7-response-output {
+    display: none !important;
+  }
+}
+
+input[type="text"],
+input[type="email"],
+textarea.form-control {
+  border-radius: 2.25rem;
+  height: 4.5rem;
+  margin-right: 4.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
+  padding-left: 2.8rem;
+  font-size: 1.6rem;
+  line-height: 20px;
+  @include text-color(base-light);
+
+  transition: background-color 0.2s ease-in, color 0.2s ease-in,
+    border-color 0.2s ease-in;
+
+  &::placeholder {
+    font-size: 1.6rem;
+    line-height: 20px;
+    @include text-color(base-light);
+    transition: color 0.2s ease-in;
+  }
+
+  &:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid map-get($colors, base-light);
+    box-shadow: none;
+    background-clip: unset;
+    @include text-color(base-light);
+  }
+}
+
+textarea.form-control {
+  height: 27.4rem;
+  padding-top: 1rem;
+}
+
+.wpcf7-form {
+  @extend .form-has-validation;
+
+  .primary-button {
+    margin-top: 0 !important;
+  }
+
+  .success-message {
+    display: none;
+
+    h3 {
+      @include text-color(primary-orange);
+    }
+
+    p {
+      @include text-color(base-light);
+    }
+  }
+
+  &.sent {
+    .success-message {
+      display: block;
+    }
+
+    .form-fields,
+    .form-title {
+      display: none;
+    }
+  }
+}

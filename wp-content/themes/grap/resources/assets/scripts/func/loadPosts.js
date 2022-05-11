@@ -13,14 +13,14 @@ const hash = url.href.substring(index + 1)
 function handleChangePostCatByHash() {
     const categories = $('.post-grid-block').data('categories')
     if (url.hash !== '') {
-        if (url.hash && categories.includes(hash) && index !== -1) {
+        if (categories !== undefined && url.hash && categories.includes(hash) && index !== -1) {
             $('.filter-bar').find('.filter-item').removeClass('filter-active')
             $('.filter-bar').find('[data-cta=' + hash + ']').addClass('filter-active')
             getPosts({ category: hash, page: 1 })
         } else {
             const postList = $('.posts')
             postList.find('.post-card-wrap').remove()
-            postList.html(`<p class="no-posts-found mx-auto py-5 text-center"><b>No Posts Found.</b></p>`)
+            postList.html('<p class="no-posts-found mx-auto py-5 text-center"><b>No Posts Found.</b></p>')
             $('.pagination-wrap').hide()
         }
     }

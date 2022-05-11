@@ -4,7 +4,13 @@ import 'slick-carousel'
 // Import everything from autoload
 import './autoload/**/*'
 
+import Router from './util/Router'
+import contact from './routes/contact'
 import * as Func from './func'
+
+const routes = new Router({
+  contact,
+});
 
 // Load Events
 $(document).ready(() => {
@@ -15,4 +21,5 @@ $(document).ready(() => {
   Func.activeTab()
   Func.handleLoadPosts()
   Func.createNewsletterSignUpFormHandler()
+  routes.loadEvents()
 })
