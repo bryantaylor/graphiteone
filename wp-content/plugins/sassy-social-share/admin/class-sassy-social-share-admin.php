@@ -224,9 +224,9 @@ class Sassy_Social_Share_Admin {
 				foreach ( array_intersect( $this->options['horizontal_re_providers'], $valid_networks ) as $network ) {
 					?>
 					<br/>
-					<label for="heateor_sss_<?php echo $network ?>_horizontal_sharing_count">
+					<label for="heateor_sss_<?php echo esc_attr( $network ) ?>_horizontal_sharing_count">
 						<span style="width: 242px; float:left"><?php _e( 'Starting share count for ' . ucfirst( str_replace ( '_', ' ', $network ) ), 'sassy-social-share' ) ?></span>
-						<input type="text" name="_heateor_sss_meta[<?php echo $network ?>_horizontal_count]" id="heateor_sss_<?php echo $network ?>_horizontal_sharing_count" value="<?php echo is_array( $sharing_meta ) && isset( $sharing_meta[$network . '_horizontal_count'] ) ? $sharing_meta[$network . '_horizontal_count'] : '' ?>" />
+						<input type="text" name="_heateor_sss_meta[<?php echo esc_attr( $network ) ?>_horizontal_count]" id="heateor_sss_<?php echo $network ?>_horizontal_sharing_count" value="<?php echo is_array( $sharing_meta ) && isset( $sharing_meta[$network . '_horizontal_count'] ) ? esc_attr( $sharing_meta[$network . '_horizontal_count'] ) : '' ?>" />
 					</label>
 					<?php
 				}
@@ -243,9 +243,9 @@ class Sassy_Social_Share_Admin {
 				foreach ( array_intersect( $this->options['vertical_re_providers'], $valid_networks ) as $network ) {
 					?>
 					<br/>
-					<label for="heateor_sss_<?php echo $network ?>_vertical_sharing_count">
+					<label for="heateor_sss_<?php echo esc_attr( $network ) ?>_vertical_sharing_count">
 						<span style="width: 242px; float:left"><?php _e( 'Starting share count for ' . ucfirst( str_replace ( '_', ' ', $network ) ), 'sassy-social-share' ) ?></span>
-						<input type="text" name="_heateor_sss_meta[<?php echo $network ?>_vertical_count]" id="heateor_sss_<?php echo $network ?>_vertical_sharing_count" value="<?php echo is_array( $sharing_meta ) && isset( $sharing_meta[$network . '_vertical_count'] ) ? $sharing_meta[$network . '_vertical_count'] : '' ?>" />
+						<input type="text" name="_heateor_sss_meta[<?php echo esc_attr( $network ) ?>_vertical_count]" id="heateor_sss_<?php echo $network ?>_vertical_sharing_count" value="<?php echo is_array( $sharing_meta ) && isset( $sharing_meta[$network . '_vertical_count'] ) ? esc_attr( $sharing_meta[$network . '_vertical_count'] ) : '' ?>" />
 					</label>
 					<?php
 				}
@@ -427,6 +427,20 @@ class Sassy_Social_Share_Admin {
 	}
 
 	/**
+	 * Sanitize the value of the passed configuration array
+	 *
+	 * @since    3.3.41
+	 */
+	private function sanitize_configuration_array( $config_value ) {
+
+		if ( is_string( $config_value ) ) {
+			return sanitize_text_field( $config_value );
+		}
+		return $config_value;
+
+	}
+
+	/**
 	 * Import plugin configuration
 	 *
 	 * @since    3.3.22
@@ -440,11 +454,7 @@ class Sassy_Social_Share_Admin {
 			if ( isset( $_POST['config'] ) && strlen( trim( $_POST['config'] ) ) > 0 ) {
 				$config = json_decode( stripslashes( trim( $_POST['config'] ) ), true );
 				if ( is_array( $config ) && count( $config ) > 0 ) {
-					foreach ( $config as $key => $value ) {
-						if ( is_string( $value ) ) {
-							$config[$key] = sanitize_text_field( $value );
-						}
-					}
+					$config = array_map( array( $this, 'sanitize_configuration_array' ), $config );
 					update_option( 'heateor_sss', $config );
 					die( json_encode(
 						array(
