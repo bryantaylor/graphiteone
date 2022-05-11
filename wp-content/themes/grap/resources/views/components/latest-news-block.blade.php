@@ -1,7 +1,7 @@
 @php
 $latest_news_block = get_field('latest_news_block');
 $title = $latest_news_block['title'];
-$posts = $latest_news_block['posts'];
+$posts = empty($latest_news_block['posts']) ? App\get_latest_posts('post', 3) : $latest_news_block['posts'];
 $button = $latest_news_block['button'];
 $background_url = $latest_news_block['background'];
 $bg_position = $latest_news_block['bg_position'];
