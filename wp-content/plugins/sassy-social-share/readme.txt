@@ -3,8 +3,8 @@ Contributors: Heateor, jatin8heateor, farhan8heateor
 Donate link: https://www.heateor.com/donate/?action=Sassy+Social+Share
 Tags: social share, social sharing, social media share, share facebook, facebook social share, wordpress social share, share buttons, social share buttons, facebook like, twitter tweet, whatsapp share, line share, gab share, gab, parler share, gettr, gettr share, mewe share, mewe
 Requires at least: 2.5.0
-Tested up to: 5.9.3
-Stable tag: 3.3.41
+Tested up to: 6.0
+Stable tag: 3.3.42
 License: GPLv2 or later
 
 Slickest, Simplest and Optimized Share buttons. Facebook, Twitter, Reddit, Pinterest, Whatsapp, Parler, Gab, Gettr and over 100 more.
@@ -125,6 +125,9 @@ Yes, we can help you with it. Just drop an email at support[at]heateor[dot]com
 4. **Universal Sharing Popup**: Universal Sharing popup having all the supported sharing and bookmarking services
 
 == Changelog ==
+= 3.3.42 [23 May 2022] =
+* [Improvement] Code quality improvement
+
 = 3.3.41 [11 May 2022] =
 * [Improvement] Code quality improvement
 
@@ -1189,4 +1192,7 @@ Yes, we can help you with it. Just drop an email at support[at]heateor[dot]com
 * [Improvement] Performmance improvement
 
 = 3.3.41 [11 May 2022] =
+* [Improvement] Code quality improvement
+
+= 3.3.42 [23 May 2022] =
 * [Improvement] Code quality improvement

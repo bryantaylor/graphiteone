@@ -2037,7 +2037,7 @@ defined( 'ABSPATH' ) or die( "Cheating........Uh!!" );
 							<td colspan="2">
 							<textarea id="heateor_sss_import_config_txt" rows="5" cols="50"></textarea>
 							<br/>
-							<input type="button" class="button-primary" value="<?php _e( "Import Configuration", 'sassy-social-share' ); ?>"  onclick="heateorSssImportConfig()" />
+							<input type="button" class="button-primary" value="<?php _e( "Import Configuration", 'sassy-social-share' ); ?>"  onclick="heateorSssImportConfig()" style="margin-top:10px" />
 							<div class="heateor_sss_clear"></div>
 							<img src="<?php echo plugins_url( '../../images/ajax_loader.gif', __FILE__ ) ?>" id="import_config_loading" style="display:none;margin-top:5px" />
 							</td>

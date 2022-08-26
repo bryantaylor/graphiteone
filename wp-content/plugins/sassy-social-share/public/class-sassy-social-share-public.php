@@ -1150,17 +1150,6 @@ class Sassy_Social_Share_Public {
 	}
 
 	/**
-	 * Sanitize the share counts of the passed array
-	 *
-	 * @since    3.3.41
-	 */
-	private function sanitize_share_count_array( $share_count ) {
-
-		return sanitize_text_field( $share_count );
-
-	}
-
-	/**
 	 * Save Facebook share counts in transient
 	 *
 	 * @since    2.4.2
@@ -1168,7 +1157,7 @@ class Sassy_Social_Share_Public {
 	public function save_facebook_shares() {
 		
 		if ( isset( $_GET['share_counts'] ) && is_array( $_GET['share_counts'] ) && count( $_GET['share_counts'] ) > 0 ) {
-			$target_urls = array_map( array( $this, 'sanitize_share_count_array' ), $_GET['share_counts'] );
+			$target_urls = array_map( 'intval', $_GET['share_counts'] );
 		} else {
 			$this->ajax_response( array( 'status' => 0, 'message' => __( 'Invalid request' ) ) );
 		}

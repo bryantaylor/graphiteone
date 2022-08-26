@@ -86,129 +86,21 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./js/scripts_es6.js":
-/*!***************************!*\
-  !*** ./js/scripts_es6.js ***!
-  \***************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./js/polyfill.js":
+/*!************************!*\
+  !*** ./js/polyfill.js ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "./node_modules/@babel/runtime/helpers/toConsumableArray.js");
-/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "./node_modules/@babel/runtime/helpers/slicedToArray.js");
-/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
-/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/asyncToGenerator.js");
-/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4__);
-
-
-
-
-
-
-
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2___default()(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-var cf7signature_resized = 0; // for compatibility with contact-form-7-signature-addon
-
-var wpcf7cf_timeout;
-var wpcf7cf_change_time_ms = 100;
-
-if (window.wpcf7 && !wpcf7.setStatus) {
-  wpcf7.setStatus = function (form, status) {
-    form = form.length ? form[0] : form; // if form is a jQuery object, only grab te html-element
-
-    var defaultStatuses = new Map([// 0: Status in API response, 1: Status in HTML class
-    ['init', 'init'], ['validation_failed', 'invalid'], ['acceptance_missing', 'unaccepted'], ['spam', 'spam'], ['aborted', 'aborted'], ['mail_sent', 'sent'], ['mail_failed', 'failed'], ['submitting', 'submitting'], ['resetting', 'resetting']]);
-
-    if (defaultStatuses.has(status)) {
-      status = defaultStatuses.get(status);
-    }
-
-    if (!Array.from(defaultStatuses.values()).includes(status)) {
-      status = status.replace(/[^0-9a-z]+/i, ' ').trim();
-      status = status.replace(/\s+/, '-');
-      status = "custom-".concat(status);
-    }
-
-    var prevStatus = form.getAttribute('data-status');
-    form.wpcf7.status = status;
-    form.setAttribute('data-status', status);
-    form.classList.add(status);
-
-    if (prevStatus && prevStatus !== status) {
-      form.classList.remove(prevStatus);
-    }
-
-    return status;
-  };
-}
-
-if (window.wpcf7cf_running_tests) {
-  jQuery('input[name="_wpcf7cf_options"]').each(function (e) {
-    var $input = jQuery(this);
-    var opt = JSON.parse($input.val());
-    opt.settings.animation_intime = 0;
-    opt.settings.animation_outtime = 0;
-    $input.val(JSON.stringify(opt));
-  });
-  wpcf7cf_change_time_ms = 0;
-}
-
-var wpcf7cf_show_animation = {
-  "height": "show",
-  "marginTop": "show",
-  "marginBottom": "show",
-  "paddingTop": "show",
-  "paddingBottom": "show"
-};
-var wpcf7cf_hide_animation = {
-  "height": "hide",
-  "marginTop": "hide",
-  "marginBottom": "hide",
-  "paddingTop": "hide",
-  "paddingBottom": "hide"
-};
-var wpcf7cf_show_step_animation = {
-  "opacity": "show"
-};
-var wpcf7cf_hide_step_animation = {
-  "opacity": "hide"
-};
-var wpcf7cf_change_events = 'input.wpcf7cf paste.wpcf7cf change.wpcf7cf click.wpcf7cf propertychange.wpcf7cf changedisabledprop.wpcf7cf';
-var wpcf7cf_forms = [];
-window.wpcf7cf_dom = {};
-
-var wpcf7cf_reload_dom = function wpcf7cf_reload_dom($form) {
-  wpcf7cf_dom = wpcf7cf.get_simplified_dom_model($form[0]);
-};
-
-var wpcf7cf_getFieldsByOriginalName = function wpcf7cf_getFieldsByOriginalName(originalName) {
-  return Object.values(wpcf7cf_dom).filter(function (inputField) {
-    return inputField.original_name === originalName || inputField.original_name === originalName + '[]';
-  });
-};
-
-var wpcf7cf_getFieldByName = function wpcf7cf_getFieldByName(name) {
-  return wpcf7cf_dom[name] || wpcf7cf_dom[name + '[]'];
-}; // endsWith polyfill
-
-
+// endsWith polyfill
 if (!String.prototype.endsWith) {
-  String.prototype.endsWith = function (search, this_len) {
-    if (this_len === undefined || this_len > this.length) {
-      this_len = this.length;
+  String.prototype.endsWith = function (search, thisLength) {
+    if (thisLength === undefined || thisLength > this.length) {
+      thisLength = this.length;
     }
 
-    return this.substring(this_len - search.length, this_len) === search;
+    return this.substring(thisLength - search.length, thisLength) === search;
   };
 } // Object.values polyfill
 
@@ -310,6 +202,114 @@ if (!Array.from) {
   }();
 }
 
+/***/ }),
+
+/***/ "./js/scripts_es6.js":
+/*!***************************!*\
+  !*** ./js/scripts_es6.js ***!
+  \***************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "./node_modules/@babel/runtime/helpers/slicedToArray.js");
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/asyncToGenerator.js");
+/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "./node_modules/@babel/runtime/helpers/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_4__);
+ // disable client side validation introduced in CF7 5.6 for now
+
+
+
+
+
+
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+if (typeof wpcf7 !== 'undefined') {
+  wpcf7.validate = function (a, b) {
+    return null;
+  };
+}
+
+var cf7signature_resized = 0; // for compatibility with contact-form-7-signature-addon
+
+var wpcf7cf_timeout;
+var wpcf7cf_change_time_ms = 100; // the timeout after a change in the form is detected
+
+if (window.wpcf7 && !wpcf7.setStatus) {
+  wpcf7.setStatus = function (form, status) {
+    form = form.length ? form[0] : form; // if form is a jQuery object, only grab te html-element
+
+    var defaultStatuses = new Map([// 0: Status in API response, 1: Status in HTML class
+    ['init', 'init'], ['validation_failed', 'invalid'], ['acceptance_missing', 'unaccepted'], ['spam', 'spam'], ['aborted', 'aborted'], ['mail_sent', 'sent'], ['mail_failed', 'failed'], ['submitting', 'submitting'], ['resetting', 'resetting']]);
+
+    if (defaultStatuses.has(status)) {
+      status = defaultStatuses.get(status);
+    }
+
+    if (!Array.from(defaultStatuses.values()).includes(status)) {
+      status = status.replace(/[^0-9a-z]+/i, ' ').trim();
+      status = status.replace(/\s+/, '-');
+      status = "custom-".concat(status);
+    }
+
+    var prevStatus = form.getAttribute('data-status');
+    form.wpcf7.status = status;
+    form.setAttribute('data-status', status);
+    form.classList.add(status);
+
+    if (prevStatus && prevStatus !== status) {
+      form.classList.remove(prevStatus);
+    }
+
+    return status;
+  };
+}
+
+if (window.wpcf7cf_running_tests) {
+  jQuery('input[name="_wpcf7cf_options"]').each(function (e) {
+    var $input = jQuery(this);
+    var opt = JSON.parse($input.val());
+    opt.settings.animation_intime = 0;
+    opt.settings.animation_outtime = 0;
+    $input.val(JSON.stringify(opt));
+  });
+  wpcf7cf_change_time_ms = 0;
+}
+
+var wpcf7cf_show_animation = {
+  "height": "show",
+  "marginTop": "show",
+  "marginBottom": "show",
+  "paddingTop": "show",
+  "paddingBottom": "show"
+};
+var wpcf7cf_hide_animation = {
+  "height": "hide",
+  "marginTop": "hide",
+  "marginBottom": "hide",
+  "paddingTop": "hide",
+  "paddingBottom": "hide"
+};
+var wpcf7cf_show_step_animation = {
+  "opacity": "show"
+};
+var wpcf7cf_hide_step_animation = {
+  "opacity": "hide"
+};
+var wpcf7cf_change_events = 'input.wpcf7cf paste.wpcf7cf change.wpcf7cf click.wpcf7cf propertychange.wpcf7cf changedisabledprop.wpcf7cf';
+var wpcf7cf_forms = [];
+
 var Wpcf7cfForm = function Wpcf7cfForm($form) {
   var options_element = $form.find('input[name="_wpcf7cf_options"]').eq(0);
 
@@ -327,11 +327,77 @@ var Wpcf7cfForm = function Wpcf7cfForm($form) {
   form.$input_repeaters = $form.find('[name="_wpcf7cf_repeaters"]');
   form.$input_steps = $form.find('[name="_wpcf7cf_steps"]');
   form.unit_tag = $form.closest('.wpcf7').attr('id');
-  form.conditions = form_options['conditions']; // Wrapper around jQuery(selector, form.$form)
+  form.conditions = form_options['conditions'];
+  form.simpleDom = null;
+
+  form.reloadSimpleDom = function () {
+    form.simpleDom = wpcf7cf.get_simplified_dom_model(form.$form[0]);
+  }; // quicker than reloading the simpleDom completely with reloadSimpleDom
+
+
+  form.updateSimpleDom = function () {
+    if (!form.simpleDom) {
+      form.reloadSimpleDom();
+    }
+
+    var inputs = Object.values(form.simpleDom).filter(function (item) {
+      return item.type === 'input';
+    });
+    var formdata = new FormData(form.$form[0]);
+
+    var formdataEntries = _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_4___default()(formdata.entries()).map(function (entry) {
+      var _entry$1$name;
+
+      return [entry[0], (_entry$1$name = entry[1].name) !== null && _entry$1$name !== void 0 ? _entry$1$name : entry[1]];
+    }); // const changedInputs = inputs.filter(item => !form.isDomMatch(item, formdataEntries));
+
+
+    inputs.forEach(function (simpleDomItem) {
+      var newValue = form.getNewDomValueIfChanged(simpleDomItem, formdataEntries);
+
+      if (newValue !== null) {
+        form.simpleDom[simpleDomItem.name].val = newValue;
+      }
+    });
+  };
+
+  form.isDomMatch = function (simpleDomItem, formDataEntries) {
+    var simpleDomItemName = simpleDomItem.name;
+    var simpleDomItemValues = simpleDomItem.val;
+    var currentValues = formDataEntries.filter(function (entry) {
+      return entry[0] === simpleDomItemName;
+    }).map(function (entry) {
+      return entry[1];
+    });
+    return currentValues.join('|') === simpleDomItemValues.join('|');
+  };
+  /**
+   * 
+   * @param {*} simpleDomItem 
+   * @param {*} formDataEntries 
+   * @returns the new value, or NULL if no change
+   */
+
+
+  form.getNewDomValueIfChanged = function (simpleDomItem, formDataEntries) {
+    var simpleDomItemName = simpleDomItem.name;
+    var simpleDomItemValues = simpleDomItem.val;
+    var currentValues = formDataEntries.filter(function (entry) {
+      return entry[0] === simpleDomItemName;
+    }).map(function (entry) {
+      return entry[1];
+    });
+    return currentValues.join('|') === simpleDomItemValues.join('|') ? null : currentValues;
+  }; // Wrapper around jQuery(selector, form.$form)
+
 
   form.get = function (selector) {
     // TODO: implement some caching here.
     return jQuery(selector, form.$form);
+  };
+
+  form.getFieldByName = function (name) {
+    return form.simpleDom[name] || form.simpleDom[name + '[]'];
   }; // compatibility with conditional forms created with older versions of the plugin ( < 1.4 )
 
 
@@ -370,6 +436,7 @@ var Wpcf7cfForm = function Wpcf7cfForm($form) {
   form.$form.on('reset.wpcf7cf', form, function (e) {
     var form = e.data;
     setTimeout(function () {
+      form.reloadSimpleDom();
       form.displayFields();
       form.resetRepeaters();
 
@@ -432,8 +499,7 @@ Wpcf7cfForm.prototype.displayFields = function () {
     }
   }
 
-  form.$groups.addClass('wpcf7cf-hidden');
-  wpcf7cf_reload_dom(form.$form);
+  form.$groups.addClass('wpcf7cf-hidden'); //form.reloadSimpleDom();
 
   for (var i = 0; i < wpcf7cf_conditions.length; i++) {
     var condition = wpcf7cf_conditions[i];
@@ -583,7 +649,7 @@ Wpcf7cfForm.prototype.updateGroups = function () {
   var form = this;
   form.$groups = form.$form.find('[data-class="wpcf7cf_group"]');
   form.$groups.height('auto');
-  form.conditions = window.wpcf7cf.get_nested_conditions(form.initial_conditions, form.$form);
+  form.conditions = window.wpcf7cf.get_nested_conditions(form);
 };
 
 Wpcf7cfForm.prototype.updateEventListeners = function () {
@@ -594,6 +660,7 @@ Wpcf7cfForm.prototype.updateEventListeners = function () {
     clearTimeout(wpcf7cf_timeout);
     wpcf7cf_timeout = setTimeout(function () {
       window.wpcf7cf.updateMultistepState(form.multistep);
+      form.updateSimpleDom();
       form.displayFields();
     }, wpcf7cf_change_time_ms);
   }); // PRO ONLY
@@ -643,7 +710,7 @@ function Wpcf7cfRepeater($repeater, form) {
     var orig_name = $this.attr('data-orig_name') != null ? $this.attr('data-orig_name') : prev_name;
     $this.attr('name', new_name);
     $this.attr('data-orig_name', orig_name);
-    $this.closest('.wpcf7-form-control-wrap').addClass(new_name.replace('[]', ''));
+    $this.closest('.wpcf7-form-control-wrap').attr('data-name', new_name.replace('[]', ''));
   });
   $repeater_sub_clone.find('.wpcf7cf_repeater,[data-class="wpcf7cf_group"]').each(function () {
     var $this = jQuery(this);
@@ -828,8 +895,6 @@ Wpcf7cfRepeater.prototype.addSubs = function (subs_to_add) {
 
   return false;
 };
-/** TODO: implement this */
-
 
 Wpcf7cfRepeater.prototype.updateSuffixes = function () {
   // Loop trough all subs
@@ -866,7 +931,7 @@ Wpcf7cfRepeater.prototype.updateSuffixes = function () {
       jQuery('label[for="' + el.name + '"]', $sub).attr('for', newName);
       var $nested_repeater = jQuery('[data-id="' + el.name + '"]', $sub);
       $nested_repeater.attr('data-id', newName);
-      jQuery('.wpcf7-form-control-wrap.' + pureElName, $sub).removeClass(pureElName).addClass(pureNewName);
+      jQuery(".wpcf7-form-control-wrap[data-name=\"".concat(pureElName, "\"]"), $sub).attr('data-name', pureNewName);
 
       if (el.type === 'repeater') {
         var nested_repeater = form.repeaters.find(function (repeater) {
@@ -949,9 +1014,9 @@ function Wpcf7cfMultistep($multistep, form) {
     multistep.$dots.append("\n            <div class=\"dot\" data-step=\"".concat(i, "\">\n                <div class=\"step-index\">").concat(i, "</div>\n                <div class=\"step-title\">").concat(multistep.$steps.eq(i - 1).attr('data-title'), "</div>\n            </div>\n        "));
   }
 
-  multistep.$btn_next.on('click.wpcf7cf_step', /*#__PURE__*/_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee() {
+  multistep.$btn_next.on('click.wpcf7cf_step', /*#__PURE__*/_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3___default()( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.mark(function _callee() {
     var result;
-    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee$(_context) {
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
@@ -1029,7 +1094,7 @@ Wpcf7cfMultistep.prototype.validateStep = function (step_index) {
         jQuery.each(json.invalid_fields, function (index, el) {
           if ($multistep.find('input[name="' + index + '"]').length || $multistep.find('input[name="' + index + '[]"]').length || $multistep.find('select[name="' + index + '"]').length || $multistep.find('select[name="' + index + '[]"]').length || $multistep.find('textarea[name="' + index + '"]').length || $multistep.find('textarea[name="' + index + '[]"]').length) {
             checkError = checkError + 1;
-            var controlWrap = form.get('.wpcf7-form-control-wrap.' + index);
+            var controlWrap = form.get(".wpcf7-form-control-wrap[data-name=\"".concat(index, "\"]"));
             controlWrap.find('.wpcf7-form-control').addClass('wpcf7-not-valid');
             controlWrap.find('span.wpcf7-not-valid-tip').remove();
             controlWrap.append('<span role="alert" class="wpcf7-not-valid-tip">' + el.reason + '</span>');
@@ -1079,9 +1144,9 @@ Wpcf7cfMultistep.prototype.moveToStep = function (step_index) {
 };
 
 Wpcf7cfMultistep.prototype.getFieldsInStep = function (step_index) {
-  wpcf7cf_reload_dom(this.form.$form);
+  this.form.reloadSimpleDom();
   var inStep = false;
-  return Object.values(wpcf7cf_dom).filter(function (item, i) {
+  return Object.values(this.form.simpleDom).filter(function (item, i) {
     if (item.type == 'step') {
       inStep = item.val == step_index + '';
     }
@@ -1112,7 +1177,7 @@ window.wpcf7cf = {
 
     if (oldIndexes && newIndexes && oldIndexes.length === parentRepeaters.length && newIndexes.length === parentRepeaters.length) {
       var parentRepeatersInfo = parentRepeaters.map(function (repeaterId, i) {
-        return _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2___default()({}, repeaterId.split('__')[0], [oldIndexes[i], newIndexes[i]]);
+        return _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()({}, repeaterId.split('__')[0], [oldIndexes[i], newIndexes[i]]);
       });
       var length = parentRepeatersInfo.length;
       var replacements = oldIndexes.map(function (oldIndex, i) {
@@ -1127,7 +1192,7 @@ window.wpcf7cf = {
       }
 
       replacements.forEach(function (_ref3) {
-        var _ref4 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1___default()(_ref3, 2),
+        var _ref4 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_ref3, 2),
             oldSuffix = _ref4[0],
             newSuffix = _ref4[1];
 
@@ -1151,8 +1216,6 @@ window.wpcf7cf = {
   },
   getWpcf7cfForm: function getWpcf7cfForm($form) {
     var matched_forms = wpcf7cf_forms.filter(function (form) {
-      var f1 = form.$form.get(0);
-      var f2 = $form.get(0);
       return form.$form.get(0) === $form.get(0);
     });
 
@@ -1162,10 +1225,11 @@ window.wpcf7cf = {
 
     return false;
   },
-  get_nested_conditions: function get_nested_conditions(conditions, $current_form) {
-    //loop trough conditions. Then loop trough the dom, and each repeater we pass we should update all sub_values we encounter with __index
-    wpcf7cf_reload_dom($current_form);
-    var groups = Object.values(wpcf7cf_dom).filter(function (item, i) {
+  get_nested_conditions: function get_nested_conditions(form) {
+    var conditions = form.initial_conditions; //loop trough conditions. Then loop trough the dom, and each repeater we pass we should update all sub_values we encounter with __index
+
+    form.reloadSimpleDom();
+    var groups = Object.values(form.simpleDom).filter(function (item, i) {
       return item.type === 'group';
     });
     var sub_conditions = [];
@@ -1198,9 +1262,9 @@ window.wpcf7cf = {
     var parentRepeaters = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : [];
     var type = currentNode.classList && currentNode.classList.contains('wpcf7cf_repeater') ? 'repeater' : currentNode.dataset["class"] == 'wpcf7cf_group' ? 'group' : currentNode.className == 'wpcf7cf_step' ? 'step' : currentNode.hasAttribute('name') && !currentNode.disabled ? 'input' : false;
 
-    var newParentRepeaters = _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default()(parentRepeaters);
+    var newParentRepeaters = _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_4___default()(parentRepeaters);
 
-    var newParentGroups = _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default()(parentGroups);
+    var newParentGroups = _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_4___default()(parentGroups);
 
     if (type) {
       var name = type === 'input' ? currentNode.getAttribute('name') : currentNode.dataset.id;
@@ -1248,9 +1312,12 @@ window.wpcf7cf = {
           simplified_dom[name].val.push(currentNode.value);
         }
       }
-    }
+    } // can't use currentNode.children (because then field name cannot be "children")
 
-    Array.from(currentNode.children).forEach(function (childNode) {
+
+    var getter = Object.getOwnPropertyDescriptor(Element.prototype, "children").get;
+    var children = getter.call(currentNode);
+    Array.from(children).forEach(function (childNode) {
       var dom = wpcf7cf.get_simplified_dom_model(childNode, simplified_dom, newParentGroups, newParentRepeaters);
       simplified_dom = _objectSpread(_objectSpread({}, dom), simplified_dom);
     });
@@ -1304,13 +1371,13 @@ window.wpcf7cf = {
       }
     }
   },
-  should_group_be_shown: function should_group_be_shown(condition) {
+  should_group_be_shown: function should_group_be_shown(condition, form) {
     var show_group = true;
 
     for (var and_rule_i = 0; and_rule_i < condition.and_rules.length; and_rule_i++) {
       var condition_ok = false;
       var condition_and_rule = condition.and_rules[and_rule_i];
-      var inputField = wpcf7cf_getFieldByName(condition_and_rule.if_field);
+      var inputField = form.getFieldByName(condition_and_rule.if_field);
       if (!inputField) continue; // field not found
 
       var if_val = condition_and_rule.if_value;
@@ -1501,9 +1568,9 @@ window.wpcf7cf = {
    * @param {Number} step 
    */
   multistepMoveToStepWithValidation: function multistepMoveToStepWithValidation($form, step) {
-    return _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_4___default()( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee2() {
+    return _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3___default()( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.mark(function _callee2() {
       var multistep, result;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee2$(_context2) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.wrap(function _callee2$(_context2) {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
@@ -4027,13 +4094,14 @@ module.exports = function (module) {
 /***/ }),
 
 /***/ 0:
-/*!*****************************************************!*\
-  !*** multi es6-promise-promise ./js/scripts_es6.js ***!
-  \*****************************************************/
+/*!**********************************************************************!*\
+  !*** multi es6-promise-promise ./js/polyfill.js ./js/scripts_es6.js ***!
+  \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! es6-promise-promise */"./node_modules/es6-promise-promise/index.js");
+__webpack_require__(/*! ./js/polyfill.js */"./js/polyfill.js");
 module.exports = __webpack_require__(/*! ./js/scripts_es6.js */"./js/scripts_es6.js");
 
 

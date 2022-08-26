@@ -281,14 +281,7 @@ class Sassy_Social_Share_Admin {
 				return $post_id;
 	    	}
 		}
-	    if ( isset( $_POST['_heateor_sss_meta'] ) && is_array( $_POST['_heateor_sss_meta'] ) ) {
-			$newData = $_POST['_heateor_sss_meta'];
-			foreach ( $_POST['_heateor_sss_meta'] as $key => $value ) {
-				$newData[$key] = sanitize_text_field ( $value );
-			}
-		} else {
-			$newData = array( 'sharing' => 0, 'vertical_sharing' => 0 );
-		}
+		$newData = isset( $_POST['_heateor_sss_meta'] ) && is_array( $_POST['_heateor_sss_meta'] ) ? array_map('sanitize_text_field', $_POST['_heateor_sss_meta'] ) : array( 'sharing' => 0, 'vertical_sharing' => 0 );
 		update_post_meta( $post_id, '_heateor_sss_meta', $newData );
 	    return $post_id;
 
@@ -433,10 +426,11 @@ class Sassy_Social_Share_Admin {
 	 */
 	private function sanitize_configuration_array( $config_value ) {
 
-		if ( is_string( $config_value ) ) {
+		if ( is_array( $config_value ) ) {
+			return array_map( array( $this, 'sanitize_configuration_array' ), $config_value );
+		} else {
 			return sanitize_text_field( $config_value );
 		}
-		return $config_value;
 
 	}
 
@@ -672,7 +666,7 @@ class Sassy_Social_Share_Admin {
 			}
 
 			if ( version_compare( '3.2.5', $this->version ) <= 0 ) {
-				if ( (isset( $this->options['hor_enable'] ) && isset( $this->options['horizontal_re_providers'] ) && in_array( 'twitter', $this->options['horizontal_re_providers'] ) && ( isset( $this->options['horizontal_counts'] ) || isset( $this->options['horizontal_total_shares'] ) ) ) || ( isset( $this->options['vertical_enable'] ) && isset( $this->options['vertical_re_providers'] ) && in_array( 'twitter', $this->options['vertical_re_providers'] ) && ( isset($this->options['vertical_counts'] ) || isset( $this->options['vertical_total_shares'] ) ) ) ) {
+				if ( ( isset( $this->options['hor_enable'] ) && isset( $this->options['horizontal_re_providers'] ) && in_array( 'twitter', $this->options['horizontal_re_providers'] ) && ( isset( $this->options['horizontal_counts'] ) || isset( $this->options['horizontal_total_shares'] ) ) ) || ( isset( $this->options['vertical_enable'] ) && isset( $this->options['vertical_re_providers'] ) && in_array( 'twitter', $this->options['vertical_re_providers'] ) && ( isset($this->options['vertical_counts'] ) || isset( $this->options['vertical_total_shares'] ) ) ) ) {
 					if ( ! get_option( 'heateor_sss_twitter_share_notification_read' ) ) {
 						?>
 						<script type="text/javascript">
