@@ -760,19 +760,25 @@ defined( 'ABSPATH' ) or die( "Cheating........Uh!!" );
 
 						<?php
 						$youtube_username = '';
-						if ( isset( $options['youtube_username'] ) ) {
+						if ( isset( $options['youtube_username'] ) && $options['youtube_username'] ) {
 							$youtube_username = $options['youtube_username'];
 						} elseif ( isset( $options['vertical_youtube_username'] ) ) {
 							$youtube_username = $options['vertical_youtube_username'];
 						}
+						$rutube_username = '';
+						if ( isset( $options['rutube_username'] ) && $options['rutube_username'] ) {
+							$rutube_username = $options['rutube_username'];
+						} elseif ( isset( $options['vertical_rutube_username'] ) ) {
+							$rutube_username = $options['vertical_rutube_username'];
+						}
 						$instagram_username = '';
-						if ( isset( $options['instagram_username'] ) ) {
+						if ( isset( $options['instagram_username'] ) && $options['instagram_username'] ) {
 							$instagram_username = $options['instagram_username'];
 						} elseif ( isset( $options['vertical_instagram_username'] ) ) {
 							$instagram_username = $options['vertical_instagram_username'];
 						}
 						$commentform_container_id = '';
-						if ( isset( $options['comment_container_id'] ) ) {
+						if ( isset( $options['comment_container_id'] ) && $options['comment_container_id'] ) {
 							$commentform_container_id = $options['comment_container_id'];
 						} elseif ( isset( $options['vertical_comment_container_id'] ) ) {
 							$commentform_container_id = $options['vertical_comment_container_id'];
@@ -818,7 +824,27 @@ defined( 'ABSPATH' ) or die( "Cheating........Uh!!" );
 							<tr class="heateor_sss_help_content" id="heateor_sss_youtube_username_help_cont">
 								<td colspan="2">
 								<div>
-								<?php _e( 'Username of the Youtube account you want to redirect users to, on clicking the icon', 'sassy-social-share' ) ?>
+								<?php _e( 'URL of the Youtube account you want to redirect users to, on clicking the icon', 'sassy-social-share' ) ?>
+								</div>
+								</td>
+							</tr>
+						</tbody>
+
+						<tbody id="heateor_sss_rutube_options" <?php echo ! isset( $options['horizontal_re_providers'] ) || ! in_array( 'rutube', $options['horizontal_re_providers'] ) ? 'style="display: none"' : '';?> >
+							<tr>
+								<th>
+								<label for="heateor_sss_rutube_username"><?php _e( "Rutube URL", 'sassy-social-share' ); ?></label>
+								<img id="heateor_sss_rutube_username_help" class="heateor_sss_help_bubble" src="<?php echo plugins_url( '../../images/info.png', __FILE__ ) ?>" />
+								</th>
+								<td>
+								<input id="heateor_sss_rutube_username" name="heateor_sss[rutube_username]" type="text" value="<?php echo esc_attr( $rutube_username ) ?>" />
+								</td>
+							</tr>
+							
+							<tr class="heateor_sss_help_content" id="heateor_sss_rutube_username_help_cont">
+								<td colspan="2">
+								<div>
+								<?php _e( 'URL of the Rutube account you want to redirect users to, on clicking the icon', 'sassy-social-share' ) ?>
 								</div>
 								</td>
 							</tr>
@@ -845,7 +871,7 @@ defined( 'ABSPATH' ) or die( "Cheating........Uh!!" );
 						</tbody>
 						<?php
 						$like_buttons = array( 'facebook_share', 'facebook_like', 'facebook_recommend', 'twitter_tweet', 'linkedin_share', 'pinterest_pin', 'buffer_share', 'xing_share', 'yummly_share', 'reddit_badge' );
-						$sharing_networks = array( 'facebook','gettr', 'gab', 'twitter', 'linkedin', 'print', 'email', 'reddit', 'digg', 'float_it', 'tumblr', 'vkontakte', 'pinterest', 'xing', 'whatsapp', 'instagram', 'yummly', 'buffer', 'parler', 'AIM', 'Amazon_Wish_List', 'AOL_Mail', 'App.net', 'Balatarin', 'BibSonomy', 'Bitty_Browser', 'Blinklist', 'Blogger_Post', 'BlogMarks', 'Bookmarks.fr', 'Box.net', 'BuddyMarks', 'Care2_News', 'Comment', 'Copy_Link', 'Diary.Ru', 'Diaspora', 'Diigo', 'Douban', 'Draugiem', 'Evernote', 'Facebook_Messenger', 'Fark', 'Fintel', 'Flipboard', 'Folkd', 'GentleReader', 'Google_Bookmarks', 'Google_Classroom', 'Google_Gmail', 'Hacker_News', 'Hatena', 'Instapaper', 'Jamespot', 'Kakao', 'Kik', 'Kindle_It', 'Known', 'Line', 'LiveJournal', 'Mail.Ru', 'Mendeley', 'Meneame', 'MeWe', 'mix', 'Mixi', 'MySpace', 'Netvouz', 'Odnoklassniki', 'Outlook.com', 'Papaly', 'Pinboard', 'Plurk', 'Pocket', 'PrintFriendly', 'Protopage_Bookmarks', 'Pusha', 'Qzone', 'Rediff MyPage', 'Refind', 'Renren', 'Sina Weibo', 'SiteJot', 'Skype', 'Slashdot', 'SMS', 'StockTwits', 'Svejo', 'Symbaloo_Feeds', 'Telegram', 'Threema', 'Trello', 'Tuenti', 'Twiddla', 'TypePad_Post', 'Viadeo', 'Viber', 'Webnews', 'WordPress', 'Wykop', 'Yahoo_Mail', 'Yoolink', 'youtube' );
+						$sharing_networks = array( 'facebook','gettr', 'gab', 'twitter', 'linkedin', 'mastodon', 'print', 'email', 'reddit', 'digg', 'float_it', 'tumblr', 'vkontakte', 'pinterest', 'xing', 'whatsapp', 'instagram', 'yummly', 'buffer', 'parler', 'AIM', 'Amazon_Wish_List', 'AOL_Mail', 'App.net', 'Balatarin', 'BibSonomy', 'Bitty_Browser', 'Blinklist', 'Blogger_Post', 'BlogMarks', 'Bookmarks.fr', 'Box.net', 'BuddyMarks', 'Care2_News', 'Comment', 'Copy_Link', 'Diary.Ru', 'Diaspora', 'Diigo', 'Douban', 'Draugiem', 'Evernote', 'Facebook_Messenger', 'Fark', 'Fintel', 'Flipboard', 'Folkd', 'GentleReader', 'Google_Classroom', 'Google_Gmail', 'Hacker_News', 'Hatena', 'Instapaper', 'Jamespot', 'Kakao', 'Kik', 'Kindle_It', 'Known', 'Line', 'LiveJournal', 'Mail.Ru', 'Mendeley', 'Meneame', 'MeWe', 'mix', 'Mixi', 'MySpace', 'Netvouz', 'Odnoklassniki', 'Outlook.com', 'Papaly', 'Pinboard', 'Plurk', 'Pocket', 'PrintFriendly', 'Protopage_Bookmarks', 'Pusha', 'Qzone', 'Rediff MyPage', 'Refind', 'Renren', 'Sina Weibo', 'SiteJot', 'Skype', 'Slashdot', 'SMS', 'StockTwits', 'Svejo', 'Symbaloo_Feeds', 'Telegram', 'Threema', 'Trello', 'Tuenti', 'Twiddla', 'TypePad_Post', 'Viadeo', 'Viber', 'Webnews', 'WordPress', 'Wykop', 'Yahoo_Mail', 'Yoolink', 'youtube', 'rutube' );
 						?>
 
 						<tr>
@@ -1247,7 +1273,7 @@ defined( 'ABSPATH' ) or die( "Cheating........Uh!!" );
 							</tr>
 						</tbody>
 						<tbody id="heateor_sss_vertical_youtube_options" <?php echo ! in_array( 'youtube', $options['vertical_re_providers'] ) ? 'style="display:none"' : '';?> >
-						<tr>
+							<tr>
 								<th>
 								<label for="heateor_sss_vertical_youtube_username"><?php _e( "Youtube URL", 'sassy-social-share' ); ?></label>
 								<img id="heateor_sss_vertical_youtube_username_help" class="heateor_sss_help_bubble" src="<?php echo plugins_url( '../../images/info.png', __FILE__ ) ?>" />
@@ -1258,11 +1284,22 @@ defined( 'ABSPATH' ) or die( "Cheating........Uh!!" );
 								<input id="heateor_sss_vertical_youtube_username" name="heateor_sss[vertical_youtube_username]" type="text" value="<?php echo esc_attr( $youtube_username ) ?>" />
 								</td>
 							</tr>
+							<tbody id="heateor_sss_vertical_rutube_options" <?php echo ! in_array( 'rutube', $options['vertical_re_providers'] ) ? 'style="display:none"' : '';?> >
+							<tr>
+								<th>
+								<label for="heateor_sss_vertical_rutube_username"><?php _e( "Rutube URL", 'sassy-social-share' ); ?></label>
+								<img id="heateor_sss_vertical_rutube_username_help" class="heateor_sss_help_bubble" src="<?php echo plugins_url( '../../images/info.png', __FILE__ ) ?>" />
+								</th>
+								<td>
+
+								<input id="heateor_sss_vertical_rutube_username" name="heateor_sss[vertical_rutube_username]" type="text" value="<?php echo esc_attr( $rutube_username ) ?>" />
+								</td>
+							</tr>
 							
 							<tr class="heateor_sss_help_content" id="heateor_sss_vertical_instagram_username_help_cont">
 								<td colspan="2">
 								<div>
-								<?php _e( 'Username of the Instagram account you want to redirect users to, on clicking the icon', 'sassy-social-share' ) ?>
+								<?php _e( 'URL of the Rutube account you want to redirect users to, on clicking the icon', 'sassy-social-share' ) ?>
 								</div>
 								</td>
 							</tr>
@@ -1398,7 +1435,7 @@ defined( 'ABSPATH' ) or die( "Cheating........Uh!!" );
 								<div class="heateorSssVerticalSharingProviderContainer">
 								<input id="heateor_sss_vertical_sharing_<?php echo esc_attr( $sharing_network ) ?>" type="checkbox" <?php echo isset( $options['vertical_re_providers'] ) && in_array( $sharing_network, $options['vertical_re_providers'] ) ? 'checked = "checked"' : '';?> value="<?php echo esc_attr( $sharing_network ) ?>" />
 								<label for="heateor_sss_vertical_sharing_<?php echo esc_attr( $sharing_network ) ?>"><i style="display:block;width:18px;height:18px;" class="heateorSssSharing heateorSss<?php echo esc_attr( str_replace( array( '_', '.', ' ' ), '', ucfirst( $sharing_network ) ) ) ?>Background"><ss style="display:block;" class="heateorSssSharingSvg heateorSss<?php echo esc_attr( str_replace( array( '_', '.', ' ' ), '', ucfirst( $sharing_network ) ) ) ?>Svg"></ss></i></label>
-								<label class="lblSocialNetwork" for="heateor_sss_' . $sharing_network . '"><?php echo esc_html( str_replace( '_', ' ', ucfirst( $sharing_network ) ) ) ?></label>
+								<label class="lblSocialNetwork" for="heateor_sss_vertical_sharing_<?php echo $sharing_network ?>"><?php echo esc_html( str_replace( '_', ' ', ucfirst( $sharing_network ) ) ) ?></label>
 								</div>
 								<?php
 							}

@@ -1,10 +1,10 @@
 ﻿=== Social Sharing Plugin - Sassy Social Share ===
-Contributors: Heateor, jatin8heateor, farhan8heateor
+Contributors: Heateor, kamirkhan, mohammadfarhankhan, the_champ
 Donate link: https://www.heateor.com/donate/?action=Sassy+Social+Share
-Tags: social share, social sharing, social media share, share facebook, facebook social share, wordpress social share, share buttons, social share buttons, facebook like, twitter tweet, whatsapp share, line share, gab share, gab, parler share, gettr, gettr share, mewe share, mewe
+Tags: social share, social sharing, social media share, share facebook, facebook social share, wordpress social share, share buttons, social share buttons, facebook like, twitter tweet, whatsapp share, line share, gab share, gab social share, gab, parler share, parler social share, gettr, gettr share, gettr social share, mewe share, mewe social share, mewe, mastodon share, mastodon social share, mastodon, rutube share, rutube social share, rutube
 Requires at least: 2.5.0
-Tested up to: 6.0
-Stable tag: 3.3.42
+Tested up to: 6.0.2
+Stable tag: 3.3.43
 License: GPLv2 or later
 
 Slickest, Simplest and Optimized Share buttons. Facebook, Twitter, Reddit, Pinterest, Whatsapp, Parler, Gab, Gettr and over 100 more.
@@ -12,13 +12,13 @@ Slickest, Simplest and Optimized Share buttons. Facebook, Twitter, Reddit, Pinte
 == Description ==
 **Try it out live => <a href="https://tastewp.com/new/?pre-installed-plugin-slug=sassy-social-share">Click here</a>**
 
-Sassy Social Share enables your website users to share the content over Facebook, Twitter, Google, Linkedin, Whatsapp, Tumblr, Pinterest, Reddit, Parler, Gab, Gettr and over 100 more social sharing and bookmarking services.
+Sassy Social Share allows your website visitors to share your content over Facebook, Twitter, Google, Linkedin, Whatsapp, Tumblr, Pinterest, Reddit, Parler, Gab, Gettr and over 110 more social sharing and bookmarking services.
 
-This is the Simplest and Smoothest Social Sharing plugin with optimized and great looking vector icons.
+This is the Simplest and Slickest Social Share plugin with optimized and great looking vector icons.
 
 **Note:** Plugin will not work on local server. You should have an online website for the plugin to function properly.
 
-**This plugin does not save any cookie in the browser of the user visiting the website having this plugin installed**
+**This plugin does not save any cookies in the browser of the user visiting the website having this plugin installed**
 
 = Feature list =
 * EU-GDPR Compliant
@@ -125,6 +125,15 @@ Yes, we can help you with it. Just drop an email at support[at]heateor[dot]com
 4. **Universal Sharing Popup**: Universal Sharing popup having all the supported sharing and bookmarking services
 
 == Changelog ==
+= 3.3.43 [1 September 2022] =
+* [New] Added Mastodon and Rutube social share icons
+* [Bugfix] Evernote and Pocket social share icons were not working
+* [Bugfix] Youtube URL and Instagram Username were not being saved when saving in the Floating Interface section first
+* [Improvement] Improved More social share icon
+* [Improvement] Improved Vkontakte, Gettr, Parler and Pocket icons
+* [Improvement] Admin UI improvements
+* [Improvement] Updated the official Facebook SDK being used throughout the plugin to the latest version 14.0
+
 = 3.3.42 [23 May 2022] =
 * [Improvement] Code quality improvement
 
@@ -1196,3 +1205,13 @@ Yes, we can help you with it. Just drop an email at support[at]heateor[dot]com
 
 = 3.3.42 [23 May 2022] =
 * [Improvement] Code quality improvement
+
+= 3.3.43 [1 September 2022] =
+* [New] Added Mastodon and Rutube social share icons
+* [Bugfix] Evernote and Pocket social share icons were not working
+* [Bugfix] Youtube URL and Instagram Username were not being saved when saving in the Floating Interface section first
+* [Improvement] Improved More social share icon
+* [Improvement] Improved Vkontakte, Gettr, Parler and Pocket icons
+* [Improvement] Admin UI improvements
+* [Improvement] Updated the official Facebook SDK being used throughout the plugin to the latest version 14.0
+* Removed Google Bookmarks icon
