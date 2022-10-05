@@ -3,7 +3,8 @@ $hero_header = get_field('hero_header');
 $title = $hero_header['title'];
 $background = $hero_header['background'];
 $subnav = $hero_header['sub_navigation'];
-$page_title = get_the_title();
+$label = $hero_header['label'];
+$page_title = $label ? $label : get_the_title();
 $id = get_the_ID();
 $single_post_title = get_the_title($id);
 @endphp
