@@ -57,7 +57,7 @@
             }
           }
         }
-        
+
         .label-outside {
           @include mq(lg) {
             padding-bottom: 3.2rem;
@@ -85,16 +85,15 @@
 
         .big-number {
           font-size: 11.11vw;
-          line-height: 130px;
+          line-height: 1;
           @include font-weight(light);
           @include mq(lg) {
             font-size: 10rem;
-            line-height: 100px;
           }
         }
 
         .big-text {
-          font-size: 6.4rem;
+          font-size: 4.4444vw;
           line-height: 64px;
           @include mq(lg) {
             font-size: 3.6rem;
@@ -109,6 +108,19 @@
         .from-org {
           font-size: 1.6rem;
           line-height: 22px;
+          margin-bottom: 1.6rem;
+        }
+
+        .stat-notes {
+          p, ul, ol {
+            font-size: 1.6rem;
+            line-height: 1.375;
+          }
+
+          ul {
+            padding-left: 1.6rem;
+            list-style-type: disc;
+          }
         }
       }
     }

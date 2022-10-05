@@ -1,4 +1,5 @@
 .vertical-feature-block {
+  position: relative;
   padding: 7rem 0;
   @include bg-color(secondary-dark);
   @include mq(lg) {

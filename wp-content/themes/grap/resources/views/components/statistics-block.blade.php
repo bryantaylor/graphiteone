@@ -16,6 +16,7 @@ $background = $statistics_block['background'];
                         $big_text = $item['big_text'];
                         $achievement = $item['achievement'];
                         $from_org = $item['from_organization'];
+                        $stat_notes = $item['stat_notes'];
                         $external_link = $item['external_link'];
                     @endphp
                     <div class="statistics-item">
@@ -55,6 +56,11 @@ $background = $statistics_block['background'];
                             @endif
                             @if ($from_org)
                                 <div class="from-org">{{ $from_org }}</div>
+                            @endif
+                            @if ($stat_notes)
+                            <div class="stat-notes">
+                              {!! $stat_notes !!}
+                            </div>
                             @endif
                         </div>
                     </div>

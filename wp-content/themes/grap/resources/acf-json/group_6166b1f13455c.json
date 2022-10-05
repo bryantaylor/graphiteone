@@ -34,7 +34,7 @@
                     "min": 0,
                     "max": 0,
                     "layout": "block",
-                    "button_label": "",
+                    "button_label": "Add Row",
                     "sub_fields": [
                         {
                             "key": "field_6166b7ffb57fa",
@@ -58,7 +58,8 @@
                             "max_width": "",
                             "max_height": "",
                             "max_size": "",
-                            "mime_types": ""
+                            "mime_types": "",
+                            "parent_repeater": "field_6166b7c5b57f9"
                         },
                         {
                             "key": "field_6166b810b57fb",
@@ -77,7 +78,8 @@
                             "placeholder": "",
                             "prepend": "",
                             "append": "",
-                            "maxlength": ""
+                            "maxlength": "",
+                            "parent_repeater": "field_6166b7c5b57f9"
                         },
                         {
                             "key": "field_6166b817b57fc",
@@ -96,7 +98,8 @@
                             "placeholder": "",
                             "prepend": "",
                             "append": "",
-                            "maxlength": ""
+                            "maxlength": "",
+                            "parent_repeater": "field_6166b7c5b57f9"
                         },
                         {
                             "key": "field_6166b822b57fd",
@@ -115,7 +118,8 @@
                             "placeholder": "",
                             "prepend": "",
                             "append": "",
-                            "maxlength": ""
+                            "maxlength": "",
+                            "parent_repeater": "field_6166b7c5b57f9"
                         },
                         {
                             "key": "field_6166b827b57fe",
@@ -134,7 +138,8 @@
                             "placeholder": "",
                             "prepend": "",
                             "append": "",
-                            "maxlength": ""
+                            "maxlength": "",
+                            "parent_repeater": "field_6166b7c5b57f9"
                         },
                         {
                             "key": "field_6166b838b57ff",
@@ -153,7 +158,56 @@
                             "placeholder": "",
                             "prepend": "",
                             "append": "",
-                            "maxlength": ""
+                            "maxlength": "",
+                            "parent_repeater": "field_6166b7c5b57f9"
+                        },
+                        {
+                            "key": "field_633da81d8a9bc",
+                            "label": "Add Stat Notes",
+                            "name": "add_stat_notes",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": "",
+                            "ui": 1,
+                            "parent_repeater": "field_6166b7c5b57f9"
+                        },
+                        {
+                            "key": "field_633da7f08a9bb",
+                            "label": "Stat notes",
+                            "name": "stat_notes",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_633da81d8a9bc",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "delay": 0,
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "parent_repeater": "field_6166b7c5b57f9"
                         },
                         {
                             "key": "field_617269dda8719",
@@ -168,9 +222,11 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "array"
+                            "return_format": "array",
+                            "parent_repeater": "field_6166b7c5b57f9"
                         }
-                    ]
+                    ],
+                    "rows_per_page": 20
                 },
                 {
                     "key": "field_6166b6da4f4a6",
@@ -189,7 +245,7 @@
                         "black": "black",
                         "white": "white"
                     },
-                    "default_value": [],
+                    "default_value": false,
                     "allow_null": 0,
                     "multiple": 0,
                     "ui": 0,
@@ -215,7 +271,8 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1635410044
+    "show_in_rest": 0,
+    "modified": 1664985180
 }
